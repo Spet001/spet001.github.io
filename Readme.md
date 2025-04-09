@@ -1,6 +1,6 @@
 # 👨‍💻 Eduardo Gelain de Menezes Junior - Portfólio
 
-Olá! Sou estudante de **Engenharia da Computação** com foco em **desenvolvimento de software** e grande interesse por **jogos eletrônicos**, especialmente os baseados em engines clássicas como *Doom (id Tech 1)*. Este portfólio reúne alguns dos meus projetos acadêmicos, pessoais e experimentais.
+Olá! Sou estudante de **Engenharia da Computação** com foco em **desenvolvimento de software** e grande interesse por **jogos eletrônicos**. Este portfólio reúne alguns dos meus projetos acadêmicos, pessoais e experimentais.
 
 ---
 
@@ -47,8 +47,8 @@ Projeto desenvolvido em linguagem **C** com o objetivo de aplicar gamificação 
 ## 🧠 Sobre Mim
 
 - 🎓 Estudante de Engenharia da Computação 
-- 👨‍💻 Interesse em C, engines de jogos clássicas, mods e game design
-- 🎮 Experiência com dev de jogos/mods e traduções
+
+- 🎮 Experiência com dev de jogos/mods e traduções, programação
 
 
 ---
