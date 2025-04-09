@@ -30,7 +30,7 @@ Tradução gráfica do WAD original do *Doom* para o português brasileiro. Toda
 ![Doom translation demo](Assets/demotranslate.gif)
 
 **Tecnologias:** SLADE, edição de gráficos em GIMP  
-**Status:** Finalizado  
+**Status:** 80%   
 🔗 [Repositório](https://github.com/Spet001/Doom-WAD-Traduzido-PTBR)
 
 ---
