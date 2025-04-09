@@ -27,7 +27,7 @@ Adaptação do patch FF13Fix para funcionar com a versão de *Final Fantasy XIII
 ### 🌐 Doom WAD Traduzido - PT-BR
 Tradução gráfica do WAD original do *Doom* para o português brasileiro. Todas as telas, menus e HUDs foram adaptados mantendo a estética clássica.
 
-![Doom translation demo](assets/demotranslate.gif)
+![Doom translation demo](Assets/demotranslate.gif)
 
 **Tecnologias:** SLADE, edição de gráficos em GIMP  
 **Status:** Finalizado  
