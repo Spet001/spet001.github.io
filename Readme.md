@@ -7,9 +7,9 @@ Olá! Sou estudante de **Engenharia da Computação** com foco em **desenvolvime
 ## 🚀 Projetos em Destaque
 
 ### 🎮 Project E
-Jogo de tiro em primeira pessoa com estilo retrô, inspirado em *Doom*, ambientado na lua Europa. Desenvolvido com a engine **GZDoom**, utilizando assets próprios com inspiração lovecraftiana.
+Jogo de tiro em primeira pessoa com estilo retrô, inspirado em *Doom*, ambientado na lua Europa. Desenvolvido com a engine **GZDoom**, utilizando assets próprios.
 
-**Tecnologias:** GZDoom, SLADE, Ultimate Doom Builder, Obsidian  
+**Tecnologias:** GZDoom, SLADE, Ultimate Doom Builder, Doom Language (Baseado em C)  
 **Status:** Em desenvolvimento  
 🔗 [Repositório](https://github.com/Spet001/ProjectE)
 
@@ -32,7 +32,7 @@ Tradução gráfica do WAD original do *Doom* para o português brasileiro. Toda
 ![Doom translation demo](Assets/demotranslate.gif)
 
 **Tecnologias:** SLADE, edição de gráficos em GIMP  
-**Status:** Finalizado  
+**Status:** 80%   
 🔗 [Repositório](https://github.com/Spet001/Doom-WAD-Traduzido-PTBR)
 
 ---
