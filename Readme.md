@@ -32,6 +32,7 @@ Xbox Gamelist Extractor é uma aplicação desenvolvida para facilitar a vida de
 ![ex Demo](Assets/extrator.png)
 
 **Tecnologias:** Python
+
 **Status:** Concluido
 🔗 [Repositório](https://github.com/Spet001/Xbox-Gamelist-Extractor)
 
