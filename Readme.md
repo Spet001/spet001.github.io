@@ -26,6 +26,18 @@ Adaptação do patch FF13Fix para funcionar com a versão de *Final Fantasy XIII
 
 ---
 
+### 🎮 Xbox Game Extractor
+Xbox Gamelist Extractor é uma aplicação desenvolvida para facilitar a vida de gamers com centenas de jogos em suas contas Xbox. Ela extrai a lista de jogos de um perfil, gerando um arquivo de texto com todos os jogos do usuário, poupando tempo e esforço.
+
+![ex Demo](Assets/extrator.png)
+
+**Tecnologias:** Python
+**Status:** Concluido
+🔗 [Repositório](https://github.com/Spet001/Xbox-Gamelist-Extractor)
+
+---
+
+
 ### 🌐 Doom WAD Traduzido - PT-BR
 Tradução gráfica do WAD original do *Doom* para o português brasileiro. Todas as telas, menus e HUDs foram adaptados mantendo a estética clássica.
 
