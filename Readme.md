@@ -26,7 +26,7 @@ Adaptação do patch FF13Fix para funcionar com a versão de *Final Fantasy XIII
 
 ---
 
-### 🎮 Xbox Game Extractor
+### 🎮 Xbox Gamelist Extractor
 Xbox Gamelist Extractor é uma aplicação desenvolvida para facilitar a vida de gamers com centenas de jogos em suas contas Xbox. Ela extrai a lista de jogos de um perfil, gerando um arquivo de texto com todos os jogos do usuário, poupando tempo e esforço.
 
 ![ex Demo](Assets/extrator.png)
