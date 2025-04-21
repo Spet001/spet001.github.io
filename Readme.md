@@ -9,7 +9,8 @@ Olá! Sou estudante de **Engenharia da Computação** com foco em **desenvolvime
 ### 🎮 Project E
 Jogo de tiro em primeira pessoa com estilo retrô, inspirado em *Doom*, ambientado na lua Europa. Desenvolvido com a engine **GZDoom**, utilizando assets próprios.
 
-**Tecnologias:** GZDoom, SLADE, Ultimate Doom Builder, Doom Language (Baseado em C)  
+**Tecnologias:** GZDoom, SLADE, Ultimate Doom Builder, Linguagem C (Doom Language C)
+
 **Status:** Em desenvolvimento  
 🔗 [Repositório](https://github.com/Spet001/ProjectE)
 
@@ -26,6 +27,30 @@ Adaptação do patch FF13Fix para funcionar com a versão de *Final Fantasy XIII
 
 ---
 
+
+
+### 🌐 Doom WAD Traduzido - PT-BR
+Tradução gráfica do WAD original do *Doom* para o português brasileiro. Todas as telas, menus e HUDs foram adaptados mantendo a estética clássica.
+
+![Doom translation demo](Assets/demotranslate.gif)
+
+**Tecnologias:** SLADE, edição de gráficos em GIMP, Doom Language  
+**Status:** 80%   
+🔗 [Repositório](https://github.com/Spet001/Doom-WAD-Traduzido-PTBR)
+
+---
+
+### 📚 Game Quiz Acadêmico (GamificFCL)
+Projeto desenvolvido em python com o objetivo de aplicar gamificação em treinamentos corporativos, no formato de quiz interativo em terminal. Faz parte de um projeto de extensão universitária.
+
+**Tecnologias:** Python, lógica de programação aplicada à educação  
+**Status:** Em andamento  
+🔗 [Repositório](https://github.com/Spet001/GamificFCL)
+
+---
+
+### 🌐 Repositórios diversos/experimentais
+
 ### 🎮 Xbox Gamelist Extractor
 Xbox Gamelist Extractor é uma aplicação desenvolvida para facilitar a vida de gamers com centenas de jogos em suas contas Xbox. Ela extrai a lista de jogos de um perfil, gerando um arquivo de texto com todos os jogos do usuário, poupando tempo e esforço.
 
@@ -38,26 +63,21 @@ Xbox Gamelist Extractor é uma aplicação desenvolvida para facilitar a vida de
 
 ---
 
+### Calculadora
+Comparando uma calculadora em C e uma em python.
 
-### 🌐 Doom WAD Traduzido - PT-BR
-Tradução gráfica do WAD original do *Doom* para o português brasileiro. Todas as telas, menus e HUDs foram adaptados mantendo a estética clássica.
+![ex Demo](Assets/calculadora.png)
 
-![Doom translation demo](Assets/demotranslate.gif)
+**Tecnologias:** Python, C
 
-**Tecnologias:** SLADE, edição de gráficos em GIMP  
-**Status:** 80%   
-🔗 [Repositório](https://github.com/Spet001/Doom-WAD-Traduzido-PTBR)
+**Status:** Concluido
+🔗 [Repositório](https://github.com/Spet001/Calculadora-Simples-Python-e-C)
 
----
-
-### 📚 Game Quiz Acadêmico (GamificFCL)
-Projeto desenvolvido em linguagem **C** com o objetivo de aplicar gamificação em treinamentos corporativos, no formato de quiz interativo em terminal. Faz parte de um projeto de extensão universitária.
-
-**Tecnologias:** C, terminal, lógica de programação aplicada à educação  
-**Status:** Em andamento  
-🔗 [Repositório](https://github.com/Spet001/GamificFCL)
 
 ---
+
+
+
 
 ## 🧠 Sobre Mim
 
