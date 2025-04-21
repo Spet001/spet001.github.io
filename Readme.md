@@ -49,7 +49,7 @@ Projeto desenvolvido em python com o objetivo de aplicar gamificação em treina
 
 ---
 
-### 🌐 Repositórios diversos/experimentais
+## 🌐 Repositórios diversos/experimentais
 
 ### 🎮 Xbox Gamelist Extractor
 Xbox Gamelist Extractor é uma aplicação desenvolvida para facilitar a vida de gamers com centenas de jogos em suas contas Xbox. Ela extrai a lista de jogos de um perfil, gerando um arquivo de texto com todos os jogos do usuário, poupando tempo e esforço.
