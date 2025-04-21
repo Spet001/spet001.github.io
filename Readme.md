@@ -9,7 +9,8 @@ Olá! Sou estudante de **Engenharia da Computação** com foco em **desenvolvime
 ### 🎮 Project E
 Jogo de tiro em primeira pessoa com estilo retrô, inspirado em *Doom*, ambientado na lua Europa. Desenvolvido com a engine **GZDoom**, utilizando assets próprios.
 
-**Tecnologias:** GZDoom, SLADE, Ultimate Doom Builder, Doom Language (Baseado em C)  
+**Tecnologias:** GZDoom, SLADE, Ultimate Doom Builder, Linguagem C (Doom Language C)
+
 **Status:** Em desenvolvimento  
 🔗 [Repositório](https://github.com/Spet001/ProjectE)
 
@@ -26,16 +27,6 @@ Adaptação do patch FF13Fix para funcionar com a versão de *Final Fantasy XIII
 
 ---
 
-### 🎮 Xbox Game Extractor
-Xbox Gamelist Extractor é uma aplicação desenvolvida para facilitar a vida de gamers com centenas de jogos em suas contas Xbox. Ela extrai a lista de jogos de um perfil, gerando um arquivo de texto com todos os jogos do usuário, poupando tempo e esforço.
-
-![ex Demo](Assets/extrator.png)
-
-**Tecnologias:** Python
-**Status:** Concluido
-🔗 [Repositório](https://github.com/Spet001/Xbox-Gamelist-Extractor)
-
----
 
 
 ### 🌐 Doom WAD Traduzido - PT-BR
@@ -43,20 +34,50 @@ Tradução gráfica do WAD original do *Doom* para o português brasileiro. Toda
 
 ![Doom translation demo](Assets/demotranslate.gif)
 
-**Tecnologias:** SLADE, edição de gráficos em GIMP  
+**Tecnologias:** SLADE, edição de gráficos em GIMP, Doom Language  
 **Status:** 80%   
 🔗 [Repositório](https://github.com/Spet001/Doom-WAD-Traduzido-PTBR)
 
 ---
 
 ### 📚 Game Quiz Acadêmico (GamificFCL)
-Projeto desenvolvido em linguagem **C** com o objetivo de aplicar gamificação em treinamentos corporativos, no formato de quiz interativo em terminal. Faz parte de um projeto de extensão universitária.
+Projeto desenvolvido em python com o objetivo de aplicar gamificação em treinamentos corporativos, no formato de quiz interativo em terminal. Faz parte de um projeto de extensão universitária.
 
-**Tecnologias:** C, terminal, lógica de programação aplicada à educação  
+**Tecnologias:** Python, lógica de programação aplicada à educação  
 **Status:** Em andamento  
 🔗 [Repositório](https://github.com/Spet001/GamificFCL)
 
 ---
+
+### 🌐 Repositórios diversos/experimentais
+
+### 🎮 Xbox Gamelist Extractor
+Xbox Gamelist Extractor é uma aplicação desenvolvida para facilitar a vida de gamers com centenas de jogos em suas contas Xbox. Ela extrai a lista de jogos de um perfil, gerando um arquivo de texto com todos os jogos do usuário, poupando tempo e esforço.
+
+![ex Demo](Assets/extrator.png)
+
+**Tecnologias:** Python
+
+**Status:** Concluido
+🔗 [Repositório](https://github.com/Spet001/Xbox-Gamelist-Extractor)
+
+---
+
+### Calculadora
+Comparando uma calculadora em C e uma em python.
+
+![ex Demo](Assets/calculadora.png)
+
+**Tecnologias:** Python, C
+
+**Status:** Concluido
+🔗 [Repositório](https://github.com/Spet001/Calculadora-Simples-Python-e-C)
+
+
+---
+
+
+
 
 ## 🧠 Sobre Mim
 
