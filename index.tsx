@@ -191,7 +191,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Cadeirante-Simulator--The-Game",
     },
     {
-        image: "Assets/ProjectE.png",
+        image: "Assets/e.png",
         title: "Project E",
         description: "Jogo de tiro em primeira pessoa com estilo retrô, inspirado em Doom, ambientado na lua Europa. Desenvolvido com a engine GZDoom, utilizando assets próprios.",
         technologies: ["GZDoom", "SLADE", "Ultimate Doom Builder", "Doom Language C"],
@@ -224,7 +224,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Otimizador-WIN10-11",
     },
     {
-        image: "Assets/GDD-organizer.png",
+        image: "Assets/GDDorganizer.png",
         title: "Organizador de GDDs",
         description: "Aplicativo desktop para organizar Game Design Documents (GDDs) e arquivos relacionados, com interface visual de abas e sistema de cards.",
         technologies: ["Python", "Tkinter"],
@@ -232,7 +232,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/GDD-Organizer",
     },
     {
-        image: "Assets/xbox-extractor.png",
+        image: "Assets/extrator.png",
         title: "Xbox Gamelist Extractor",
         description: "Aplicação para extrair a lista de jogos de um perfil Xbox, gerando um arquivo de texto com todos os jogos do usuário.",
         technologies: ["Python", "Scraping", "Selenium", "Tkinter"],
@@ -240,7 +240,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Xbox-Gamelist-Extractor",
     },
     {
-        image: "Assets/textmap_converter.png",
+        image: "Assets/texttomap.png",
         title: "Conversor TEXTMAP p/ OBJ",
         description: "Ferramenta de linha de comando que converte mapas do Doom (formato UDMF) em modelos 3D .OBJ, preservando com precisão a geometria e as texturas.",
         technologies: ["Python", "Tool"],
@@ -257,31 +257,31 @@ const projects: Project[] = [
     },
     // Academic & Personal
     {
-        noImage: true,
-        icon: "fas fa-gamepad",
+        image: "Assets/pygopher.png",
+        
         title: "PYGopher",
         description: "Adaptação em Python do Gopher360, permitindo controle do mouse com joystick para setups personalizados e acessibilidade.",
         technologies: ["Python", "Tkinter", "Pygame"],
         status: "Concluído",
-        repoUrl: "https://github.com/Spet001/PyGopher-Servidor-Cliente-Python",
+        repoUrl: "https://github.com/Spet001/PyGopher",
     },
     {
-        noImage: true,
-        icon: "fas fa-question-circle",
+        image: "Assets/FSL1.png",
+        
         title: "Game Quiz Acadêmico (GamificFCL)",
         description: "Projeto em python para aplicar gamificação em treinamentos corporativos no formato de quiz interativo em terminal. Projeto de extensão universitária.",
         technologies: ["Python", "Tkinter"],
         status: "Concluído",
-        repoUrl: "https://github.com/Spet001/FSL1",
+        repoUrl: "https://github.com/Spet001/GamificFCL",
     },
     {
-        noImage: true,
-        icon: "fas fa-calculator",
+        image: "Assets/calculadora.png",
+        
         title: "Calculadora",
         description: "Comparação entre uma calculadora em C e uma em python, para práticas básicas e estudo de linguagens.",
         technologies: ["Python", "Tkinter", "C"],
         status: "Concluído",
-        repoUrl: "https://github.com/Spet001/Calculadora",
+        repoUrl: "https://github.com/Spet001/Calculadora-Simples-Python-e-C",
     },
     {
         image: "Assets/DIO.png",
@@ -289,7 +289,7 @@ const projects: Project[] = [
         description: "Conjunto de projetos realizados nos desafios técnicos da DIO, envolvendo .NET, C, JavaScript e lógica de programação. Projetos: Classes, Nível de Herói, Calculadora de Partidas Rankeadas.",
         technologies: ["JavaScript", "C", "Python"],
         repoUrl: "https://github.com/Spet001?tab=repositories",
-        liveUrlText: "Ver Repositórios"
+        
     },
     {
         noImage: true,
