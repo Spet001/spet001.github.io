@@ -1,7 +1,13 @@
 import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
 import { createRoot } from 'react-dom/client';
 
-// --- I18N (Internationalization) ---
+import ReactDOM from 'react-dom/client';
+
+import './index.css'; 
+import { images, documents } from './assets';
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
 
 type Translations = {
     [key: string]: any;
@@ -165,7 +171,7 @@ interface Project {
 const projects: Project[] = [
     // Games
     {
-        image: "Assets/Outcaster1.jpg",
+        image: "/assets/Outcaster1.jpg",
         title: "Outcaster",
         description: "Liderei o desenvolvimento de um FPS 'Boomer Shooter' de alta octanagem na Unity, com foco em mecânicas de ritmo acelerado e estética retrô. O projeto está definido para lançamento comercial na Steam.",
         technologies: ["Unity", "C#", "Game"],
@@ -173,7 +179,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Outcaster",
     },
     {
-        image: "Assets/sparky1.jpg",
+        image: "/assets/sparky1.jpg",
         title: "Sparky Rush - QA",
         description: "Contribuí como Analista de Garantia de Qualidade para um jogo de plataforma de terror psicológico estilo PS1, identificando e documentando bugs críticos para melhorar a estabilidade do jogo e a experiência do jogador.",
         technologies: ["Unity", "Unity Debug QA", "C#"],
@@ -183,7 +189,7 @@ const projects: Project[] = [
         liveUrlText: "Steam (Em Breve)",
     },
     {
-        image: "Assets/cadeirante-simulator.gif",
+        image: "/assets/cadeirante-simulator.gif",
         title: "Cadeirante Simulator",
         description: "Um jogo experimental em Unity que explora a física ragdoll complexa e mecânicas de clonagem para uma experiência de controle única e desafiadora.",
         technologies: ["Unity", "C#", "Game"],
@@ -191,7 +197,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Cadeirante-Simulator--The-Game",
     },
     {
-        image: "Assets/e.png",
+        image: "/assets/e.png",
         title: "Project E",
         description: "Jogo de tiro em primeira pessoa com estilo retrô, inspirado em Doom, ambientado na lua Europa. Desenvolvido com a engine GZDoom, utilizando assets próprios.",
         technologies: ["GZDoom", "SLADE", "Ultimate Doom Builder", "Doom Language C"],
@@ -200,7 +206,7 @@ const projects: Project[] = [
     },
     // Game Mods & Tools
     {
-        image: "Assets/demotranslate.gif",
+        image: "/assets/demotranslate.gif",
         title: "Doom WAD Traduzido - PT-BR",
         description: "Tradução gráfica do WAD original do Doom para o português brasileiro. Todas as telas, menus e HUDs foram adaptadas mantendo a estética clássica.",
         technologies: ["SLADE", "Graphics", "Doom Language (C)"],
@@ -208,7 +214,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Doom-WAD-Traduzido-PTBR",
     },
     {
-        image: "Assets/ff13-traducao.png",
+        image: "/assets/ff13-traducao.png",
         title: "FF13 Tradução PT-BR (MS Store)",
         description: "Mod que aplica tradução parcial em Final Fantasy XIII da Microsoft Store. Utiliza scripts de extração e recompilação de arquivos do jogo.",
         technologies: ["PowerShell", "WhiteBinTools"],
@@ -216,7 +222,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/FF13--PTBR-MS-Store",
     },
     {
-        image: "Assets/otimizador.png",
+        image: "/assets/otimizador.png",
         title: "Otimizador WIN10/11",
         description: "App com GUI para aplicar otimizações não-invasivas no Windows visando performance e limpeza do sistema.",
         technologies: ["Python", "Tkinter", "PowerShell"],
@@ -224,7 +230,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Otimizador-WIN10-11",
     },
     {
-        image: "Assets/GDDorganizer.png",
+        image: "/assets/GDDorganizer.png",
         title: "Organizador de GDDs",
         description: "Aplicativo desktop para organizar Game Design Documents (GDDs) e arquivos relacionados, com interface visual de abas e sistema de cards.",
         technologies: ["Python", "Tkinter"],
@@ -232,7 +238,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/GDD-Organizer",
     },
     {
-        image: "Assets/extrator.png",
+        image: "/assets/extrator.png",
         title: "Xbox Gamelist Extractor",
         description: "Aplicação para extrair a lista de jogos de um perfil Xbox, gerando um arquivo de texto com todos os jogos do usuário.",
         technologies: ["Python", "Scraping", "Selenium", "Tkinter"],
@@ -240,7 +246,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Xbox-Gamelist-Extractor",
     },
     {
-        image: "Assets/texttomap.png",
+        image: "/assets/texttomap.png",
         title: "Conversor TEXTMAP p/ OBJ",
         description: "Ferramenta de linha de comando que converte mapas do Doom (formato UDMF) em modelos 3D .OBJ, preservando com precisão a geometria e as texturas.",
         technologies: ["Python", "Tool"],
@@ -248,7 +254,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/TEXTMAP-to-Unity-Object",
     },
     {
-        image: "Assets/ff13msdemo.png",
+        image: "/assets/ff13msdemo.png",
         title: "FF13Fix para MS Store",
         description: "Script para corrigir problemas na versão do FF13 da Xbox/MS Store, como travamentos e incompatibilidades.",
         technologies: ["PowerShell", "Batch", "Tool"],
@@ -257,7 +263,7 @@ const projects: Project[] = [
     },
     // Academic & Personal
     {
-        image: "Assets/pygopher.png",
+        image: "/assets/pygopher.png",
         
         title: "PYGopher",
         description: "Adaptação em Python do Gopher360, permitindo controle do mouse com joystick para setups personalizados e acessibilidade.",
@@ -266,16 +272,16 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/PyGopher",
     },
     {
-        image: "Assets/FSL1.png",
+        image: "/assets/FSL1.png",
         
         title: "Game Quiz Acadêmico (GamificFCL)",
         description: "Projeto em python para aplicar gamificação em treinamentos corporativos no formato de quiz interativo em terminal. Projeto de extensão universitária.",
         technologies: ["Python", "Tkinter"],
-        status: "Concluído",
+        status: "Concluido",
         repoUrl: "https://github.com/Spet001/GamificFCL",
     },
     {
-        image: "Assets/calculadora.png",
+        image: "/assets/calculadora.png",
         
         title: "Calculadora",
         description: "Comparação entre uma calculadora em C e uma em python, para práticas básicas e estudo de linguagens.",
@@ -284,7 +290,7 @@ const projects: Project[] = [
         repoUrl: "https://github.com/Spet001/Calculadora-Simples-Python-e-C",
     },
     {
-        image: "Assets/DIO.png",
+        image: "/assets/DIO.png",
         title: "DIO Labs (Projetos Acadêmicos)",
         description: "Conjunto de projetos realizados nos desafios técnicos da DIO, envolvendo .NET, C, JavaScript e lógica de programação. Projetos: Classes, Nível de Herói, Calculadora de Partidas Rankeadas.",
         technologies: ["JavaScript", "C", "Python"],
@@ -459,7 +465,7 @@ const HeaderQuote = () => {
 
 const Header = () => {
     const { t, language } = useLanguage();
-    const resumeUrl = language === 'en' ? 'Assets/resume_en.pdf' : 'Assets/curriculo.pdf';
+    const resumeUrl = language === 'en' ? '/assets/Translated_CV_Eduardo.docx' : '/assets/curriculo.pdf';
     return (
         <header className="hero">
             <AnimatedDiv className="container">
