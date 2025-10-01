@@ -1,5 +1,5 @@
 /* =============================================
-   PORTFÓLIO EDUARDO GELAIN - CSS
+   PORTFÓLIO EDUARDO GELAIN - CSS - WIP
    ============================================= */
 
 /* ----------------------------------
@@ -14,6 +14,8 @@
   --color-accent: #00aaff;
   --color-accent-hover: #0077b6;
   --color-border: rgba(42, 42, 42, 0.5);
+  --color-doom-red: #d40000;
+  --color-doom-red-hover: #a00000;
 
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
@@ -51,7 +53,7 @@ a { color: var(--color-accent); text-decoration: none; transition: color 0.2s ea
 a:hover { color: var(--color-accent-hover); }
 
 /* Cursor de Link/Botão */
-:is(a, button, .project-card__image-link, .filter-btn) {
+:is(a, button, .project-card__image-link, .filter-btn, .easter-egg-trigger) {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%2300aaff' stroke-width='1.5' d='M4.5,19.5 L9,9 L19.5,4.5 L15,15 Z'/%3E%3Cpath fill='%2300aaff' d='M9,9 L15,15 L11,13 Z'/%3E%3C/svg%3E") 4 4, pointer;
 }
 :is(a, button):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: 4px; }
@@ -166,6 +168,80 @@ section:last-of-type { border-bottom: none; }
 .footer .contact-links { display: flex; justify-content: center; gap: 1rem; align-items: center; }
 .footer .contact-links a, .footer .contact-links span { color: var(--color-text-secondary); font-size: 1rem; }
 
+/* --- Easter Egg: DOOM --- */
+.easter-egg-section { padding: 3rem 0; border-bottom: none; }
+.easter-egg-trigger {
+    max-width: 400px;
+    margin: 2rem auto;
+    border: 2px dashed var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.easter-egg-trigger:hover {
+    border-color: var(--color-accent);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
+}
+.easter-egg-trigger img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.easter-egg-trigger p {
+    padding: 1rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    margin: 0;
+    background-color: var(--color-background-secondary);
+}
+
+.doom-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+.doom-iframe {
+    flex-grow: 1;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.doom-exit-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background-color: var(--color-doom-red);
+    color: white;
+    border: 2px solid #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    font-family: 'Courier New', Courier, monospace;
+}
+.doom-exit-btn:hover {
+    background-color: var(--color-doom-red-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+.doom-exit-btn .fa-times {
+    font-size: 1.2rem;
+}
+
 /* ----------------------------------
    ANIMAÇÕES
    ---------------------------------- */
@@ -188,4 +264,10 @@ section:last-of-type { border-bottom: none; }
     .hero .contact-links { flex-direction: column; align-items: flex-start; }
     .hero .interactive-note { text-align: left; }
     .insignificant-project-item { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .doom-exit-btn {
+        top: 10px;
+        right: 10px;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }

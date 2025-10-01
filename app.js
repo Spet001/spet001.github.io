@@ -1,6 +1,5 @@
 const { useState, useEffect, useRef, createContext, useContext } = React;
 
-// --- DADOS DOS PROJETOS (COM TRADUÇÃO) ---
 const allProjects = [
     // Projetos Relevantes
     {
@@ -102,13 +101,13 @@ const allProjects = [
     },
     {
         id: 'better_xcloud',
-        image: "data:image/jpeg;base64,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",
+        image: "https://appteka.store/get/e2Uh17U-CKFD0EQCzMbpVnbmW7eAunos9DEZh4qwjhcwzjVLguNCNDY6pzVAOxl-HxsQW9JgUk-L8SGs544iQ4kU-I4=/7e569a30fdeba1ec3e9e780f198238e06df18896.png",
         technologies: ["JavaScript", "Otimização"],
         repoUrl: "https://github.com/Spet001/better-xcloud-optimized",
         category: 'minor',
         pt: {
             title: "Better XCloud Optimized",
-            description: "Fork do projeto 'better-xcloud' onde otimizei e refatorei o código JavaScript para melhorar a nitidez da imagem e a performance geral do serviço de cloud gaming."
+            description: "Fork do projeto 'better-xcloud' onde otimizei e refatorei o código JavaScript (que se deve utilizar com TamperMonkey) para melhorar a nitidez da imagem e a performance geral do serviço de cloud gaming."
         },
         en: {
             title: "Better XCloud Optimized",
@@ -167,7 +166,7 @@ const allProjects = [
         repoUrl: "https://github.com/Spet001/Cadeirante-Simulator--The-Game",
         category: 'minor',
         pt: {
-            title: "Cadeirante Simulator - WIP",
+            title: "Project GoofyGame - WIP",
             description: "Jogo de comédia onde o jogador é 'punido' com físicas de ragdoll exageradas, explorando os limites da engine Unity para criar momentos inesperados e engraçados."
         },
         en: {
@@ -278,7 +277,7 @@ const LanguageProvider = ({ children }) => {
     const [language, setLanguage] = useState('pt');
     const translations = {
         pt: {
-            available: "Disponível para novos projetos",
+            available: "Online!",
             title: "Eduardo Gelain",
             subtitle: "Desenvolvedor de Software & Jogos",
             resume: "Currículo",
@@ -292,6 +291,8 @@ const LanguageProvider = ({ children }) => {
             steamWishlist: "Wishlist na Steam!",
             nexus: "Ver no Nexus Mods",
             interactiveNote: "O meu portfólio é dinâmico! Use as setas <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> para controlar o background!",
+            doomExit: "Sair do DOOM",
+            easterEggHint: "P.S. Não há easter eggs aqui. Continue procurando...",
         },
         en: {
             available: "Available for new projects",
@@ -308,6 +309,8 @@ const LanguageProvider = ({ children }) => {
             steamWishlist: "Wishlist on Steam!",
             nexus: "View on Nexus Mods",
             interactiveNote: "My portfolio is dynamic! Use the arrow keys <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> to control the background!",
+            doomExit: "Exit DOOM",
+            easterEggHint: "P.S. There are no easter eggs here. Keep looking...",
         }
     };
     const t = (key) => translations[language][key] || key;
@@ -592,6 +595,41 @@ const Projects = () => {
     );
 }
 
+const DoomEasterEgg = ({ onExit }) => {
+    const { t } = useLanguage();
+    return (
+        <div className="doom-container">
+            <iframe
+                className="doom-iframe"
+                src="https://ustymukhman.github.io/webDOOM/public/"
+                title="webDOOM Easter Egg"
+                allowFullScreen
+            ></iframe>
+            <button onClick={onExit} className="doom-exit-btn">
+                <i className="fas fa-times"></i> {t('doomExit')}
+            </button>
+        </div>
+    );
+};
+
+const EasterEggTrigger = ({ onActivate }) => {
+    const { t } = useLanguage();
+    const [ref, isVisible] = useFadeIn({ threshold: 0.2 });
+     const imageUrl = "https://static.wikia.nocookie.net/gta-myths/images/b/b4/Gant_Bridge_Easter_Egg_Sign.png";
+
+    return (
+        <AnimatedDiv className="easter-egg-section">
+            <div ref={ref} className="easter-egg-trigger" onClick={onActivate}>
+                <img 
+                    src={imageUrl}
+                    alt="No Easter Eggs Here"
+                />
+                <p>{t('easterEggHint')}</p>
+            </div>
+        </AnimatedDiv>
+    );
+};
+
 const Footer = () => (
     <footer className="footer">
         <AnimatedDiv className="container">
@@ -606,19 +644,30 @@ const Footer = () => (
     </footer>
 );
 
-const App = () => (
-    <LanguageProvider>
-        <Starfield />
-        <div className="app">
-            <Header />
-            <main>
-                <About />
-                <Projects />
-            </main>
-            <Footer />
-        </div>
-    </LanguageProvider>
-);
+const App = () => {
+    const [isDoomActive, setIsDoomActive] = useState(false);
+
+    return (
+        <LanguageProvider>
+            {isDoomActive ? (
+                <DoomEasterEgg onExit={() => setIsDoomActive(false)} />
+            ) : (
+                <React.Fragment>
+                    <Starfield />
+                    <div className="app">
+                        <Header />
+                        <main>
+                            <About />
+                            <Projects />
+                            <EasterEggTrigger onActivate={() => setIsDoomActive(true)} />
+                        </main>
+                        <Footer />
+                    </div>
+                </React.Fragment>
+            )}
+        </LanguageProvider>
+    );
+};
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
