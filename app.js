@@ -11,227 +11,337 @@ const allProjects = [
         category: 'relevant',
         pt: {
             title: "QA Analyst - Sparky Rush",
-            description: "Como QA Analyst para o jogo 'Sparky Rush', fui responsável por identificar e documentar mais de 50 bugs, garantindo a qualidade e estabilidade do produto para seu lançamento na Steam."
+            description: "Atuei como QA Analyst profissional no desenvolvimento de 'Sparky Rush', um jogo de plataforma 3D publicado na Steam. Identifiquei e documentei mais de 50 bugs críticos, realizei testes extensivos de gameplay e ajudei a garantir a qualidade do produto final antes do lançamento comercial."
         },
         en: {
             title: "QA Analyst - Sparky Rush",
-            description: "As QA Analyst for the game 'Sparky Rush', I was responsible for identifying and documenting over 50 bugs, ensuring the product's quality and stability for its Steam release."
+            description: "Worked as a professional QA Analyst on the development of 'Sparky Rush', a 3D platformer published on Steam. Identified and documented over 50 critical bugs, conducted extensive gameplay testing, and helped ensure product quality before commercial release."
         }
     },
     {
         id: 'outcaster',
         image: "assets/Outcaster1.jpg",
-        technologies: ["Unity", "C#"],
+        technologies: ["Unity", "C#", "Game Development"],
         repoUrl: "https://github.com/Spet001/Outcaster",
         category: 'relevant',
         pt: {
-            title: "Outcaster - Jogo Autoral, em desenvolvimento",
-            description: "Lidero o desenvolvimento de um FPS de alta octanagem no estilo 'boomer shooter' em uma equipe de 15 pessoas. O projeto está em desenvolvimento, com foco em mecânicas de ritmo acelerado e estética retrô."
+            title: "Outcaster - FPS Autoral",
+            description: "Lidero o desenvolvimento de um FPS de alta velocidade no estilo 'boomer shooter' com uma equipe de 15 desenvolvedores. O projeto utiliza Unity e C# para criar mecânicas de movimento fluido, combate intenso e estética retrô-futurista, com foco na experiência de gameplay acelerada."
         },
         en: {
-            title: "Outcaster - Original Game, in development",
-            description: "I lead the development of a high-octane 'boomer shooter' style FPS with a team of 15 people. The project is in development, focusing on fast-paced mechanics and a retro aesthetic."
+            title: "Outcaster - Original FPS Game",
+            description: "Leading the development of a high-speed 'boomer shooter' style FPS with a team of 15 developers. The project uses Unity and C# to create fluid movement mechanics, intense combat, and retro-futuristic aesthetics, focusing on fast-paced gameplay experience."
+        }
+    },
+    {
+        id: 'pau_no_gato',
+        image: "https://img.itch.zone/aW1nLzIzNjkzMTg4LnBuZw==/315x250%23c/eUMvyr.png",
+        technologies: ["Unity", "C#", "Game Design", "GameJam"],
+        liveUrl: "https://zodiacogames.itch.io/atirei-o-pau-no-gato-mas-o-gato-no-morreu-e-agora-ele-vai-se-vingar",
+        liveUrlTextKey: "itchIo",
+        category: 'relevant',
+        pt: {
+            title: "Atirei o Pau no Gato - GameJam+ 2025",
+            description: "Jogo desenvolvido para a GameJam+ 2025 que passou para a fase de incubação. Um projeto criativo que mistura humor brasileiro com mecânicas de jogo inovadoras. O sucesso na GameJam garantiu recursos adicionais para expansão e polimento do conceito original."
+        },
+        en: {
+            title: "I Threw a Stick at the Cat - GameJam+ 2025",
+            description: "Game developed for GameJam+ 2025 that advanced to the incubation phase. A creative project that blends Brazilian humor with innovative game mechanics. Success in the GameJam secured additional resources for expansion and refinement of the original concept."
+        }
+    },
+    {
+        id: 'bo3_injector',
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/311210/header.jpg",
+        technologies: ["C#", ".NET", "Reverse Engineering", "GSC"],
+        repoUrl: "https://github.com/Spet001/BO3-MicrosoftStore-GSC-Injector",
+        category: 'relevant',
+        pt: {
+            title: "BO3 GSC Injector - Microsoft Store",
+            description: "Injetor avançado de scripts GSC (Game Script Code) para Call of Duty Black Ops 3 versão Microsoft Store. Utiliza técnicas sofisticadas de engenharia reversa para contornar as proteções UWP e permitir execução de scripts customizados em uma versão tradicionalmente fechada do jogo."
+        },
+        en: {
+            title: "BO3 GSC Injector - Microsoft Store",
+            description: "Advanced GSC (Game Script Code) injector for Call of Duty Black Ops 3 Microsoft Store version. Uses sophisticated reverse engineering techniques to bypass UWP protections and enable custom script execution in a traditionally locked game version."
+        }
+    },
+    {
+        id: 'dark_souls_suite',
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/211420/header.jpg",
+        technologies: ["JavaScript", "PowerShell", "Electron", "Node.js"],
+        repoUrl: "https://github.com/Spet001/Dark-Souls-PTDE-Enhancement-Suite",
+        category: 'relevant',
+        pt: {
+            title: "Dark Souls PTDE Enhancement Suite",
+            description: "Aplicação desktop completa desenvolvida em Electron para modernizar Dark Souls: Prepare to Die Edition. Inclui correções de registro, instalador automático de mods, integração FSR para upscaling, e interface multilíngue. Um toolkit abrangente que resolve problemas de compatibilidade e melhora significativamente a experiência em sistemas modernos."
+        },
+        en: {
+            title: "Dark Souls PTDE Enhancement Suite",
+            description: "Complete desktop application developed in Electron to modernize Dark Souls: Prepare to Die Edition. Includes registry fixes, automatic mod installer, FSR integration for upscaling, and multilingual interface. A comprehensive toolkit that resolves compatibility issues and significantly improves the experience on modern systems."
         }
     },
     {
         id: 'ff13fix',
         image: "https://staticdelivery.nexusmods.com/mods/2086/images/thumbnails/59/59-1754939857-517189306.png",
-        technologies: ["Python", "C#", "ILspy", "Reverse Engineering"],
+        technologies: ["Python", "C#", "Reverse Engineering", "UWP"],
         repoUrl: "https://github.com/Spet001/FF13-MS-Store",
         liveUrl: "https://www.nexusmods.com/finalfantasy13/mods/59",
         liveUrlTextKey: "nexus",
         category: 'relevant',
         pt: {
-            title: "FF13Fix UWP",
-            description: "Realizei um fork do FF13Fix e o refatorei para ser compatível com a versão da Microsoft Store, permitindo a injeção de DLLs e o carregamento de mods em jogos UWP, contornando as proteções da plataforma."
+            title: "FF13Fix UWP - Mod Loader",
+            description: "Realizei engenharia reversa completa do FF13Fix para criar compatibilidade com a versão UWP da Microsoft Store. O projeto quebra as proteções de sandboxing da plataforma, permitindo injeção de DLLs e carregamento de mods em um ambiente tradicionalmente fechado."
         },
         en: {
-            title: "FF13Fix UWP",
-            description: "I forked FF13Fix and refactored it to be compatible with the Microsoft Store version, allowing DLL injection and mod loading in UWP games, bypassing the platform's protections."
+            title: "FF13Fix UWP - Mod Loader",
+            description: "Performed complete reverse engineering of FF13Fix to create compatibility with the Microsoft Store UWP version. The project breaks platform sandboxing protections, enabling DLL injection and mod loading in a traditionally closed environment."
         }
     },
     {
         id: 'autoparms',
         image: "https://staticdelivery.nexusmods.com/mods/7333/images/thumbnails/181/181-1754787442-12213008.png",
-        technologies: ["Python", "Reverse Engineering"],
+        technologies: ["Python", "Reverse Engineering", "UWP Exploitation"],
         liveUrl: "https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/181",
         liveUrlTextKey: "nexus",
         category: 'relevant',
         pt: {
-            title: "AutoParMS",
-            description: "Desenvolvi uma ferramenta que força a instalação de mods na versão UWP de 'Like a Dragon', injetando-os no jogo apesar das restrições da plataforma, permitindo customização pela comunidade."
+            title: "AutoParMS - UWP Mod Injector",
+            description: "Ferramenta avançada de engenharia reversa que contorna as limitações de segurança da plataforma UWP para permitir modificações em 'Like a Dragon'. Utiliza técnicas de injeção de processo e manipulação de memória para habilitar mods em um ambiente restrito."
         },
         en: {
-            title: "AutoParMS",
-            description: "I developed a tool that forces the installation of mods on the UWP version of 'Like a Dragon', injecting them into the game despite platform restrictions, allowing for community customization."
+            title: "AutoParMS - UWP Mod Injector",
+            description: "Advanced reverse engineering tool that bypasses UWP platform security limitations to enable modifications in 'Like a Dragon'. Uses process injection techniques and memory manipulation to enable mods in a restricted environment."
+        }
+    },
+    {
+        id: 'boiii_uwp',
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/311210/header.jpg",
+        technologies: ["C", "C++", "Electron", "DLL Injection"],
+        repoUrl: "https://github.com/Spet001/BOIII-ReImagined-UWP",
+        category: 'relevant',
+        pt: {
+            title: "BOIII Reimagined UWP",
+            description: "Cliente customizado completo para Call of Duty Black Ops 3 versão UWP com instalador Electron. Inclui injeção de DLLs da Microsoft Store (XCurl, GameChat2, Party), sistema de backup automático, compatibilidade cruzada Steam/MS Store e navegador de servidores aprimorado para experiência multiplayer completa."
+        },
+        en: {
+            title: "BOIII Reimagined UWP",
+            description: "Complete custom client for Call of Duty Black Ops 3 UWP version with Electron installer. Includes Microsoft Store DLL injection (XCurl, GameChat2, Party), automatic backup system, Steam/MS Store cross-compatibility, and enhanced server browser for complete multiplayer experience."
         }
     },
     {
         id: 'ladfixms',
         image: "https://staticdelivery.nexusmods.com/mods/7333/images/thumbnails/187/187-1757613976-1077513334.png",
-        technologies: ["Python", "Reverse Engineering"],
+        technologies: ["Python", "Reverse Engineering", "UWP Exploitation"],
         liveUrl: "https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/187#",
         liveUrlTextKey: "nexus",
         category: 'relevant',
         pt: {
-            title: "LADFixMS",
-            description: "Desenvolvi uma ferramenta que força carregamento de DLLs na versão UWP de 'Like a Dragon Pirate Yakuza', injetando-os no jogo apesar das restrições da plataforma, permitindo customização pela comunidade."
+            title: "LADFixMS - DLL Injection Tool",
+            description: "Sistema avançado de injeção de DLLs especificamente desenvolvido para 'Like a Dragon Pirate Yakuza' na plataforma UWP. Utiliza técnicas sofisticadas de bypass de segurança para contornar as limitações impostas pela Microsoft Store, permitindo modificações profundas no comportamento do jogo."
         },
         en: {
-            title: "LADFixMS",
-            description: "I developed a tool that forces DLL loading on the UWP version of 'Like a Dragon Pirate Yakuza', injecting them into the game despite platform restrictions, enabling community customization."
+            title: "LADFixMS - DLL Injection Tool",
+            description: "Advanced DLL injection system specifically developed for 'Like a Dragon Pirate Yakuza' on UWP platform. Uses sophisticated security bypass techniques to circumvent Microsoft Store limitations, enabling deep modifications to game behavior."
         }
     },
-    // Projetos Menores
+    // Projetos Menores - Ordem reorganizada por relevância
+    {
+        id: 'bioshock2_fix',
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/8850/header.jpg",
+        technologies: ["JavaScript", "Electron", "Node.js", "DXVK"],
+        repoUrl: "https://github.com/Spet001/Bioshock-2-GFWL-CrashFix",
+        category: 'minor',
+        pt: {
+            title: "Bioshock 2 GFWL CrashFix",
+            description: "Aplicação desktop Electron que automatiza a correção de crashes na versão GFWL de Bioshock 2. Instala DXVK para melhor compatibilidade, corrige arquivos de configuração corrompidos, protege settings contra futuras corrupções e inclui interface multilíngue com sistema de log detalhado."
+        },
+        en: {
+            title: "Bioshock 2 GFWL CrashFix",
+            description: "Electron desktop application that automates crash fixes for the GFWL version of Bioshock 2. Installs DXVK for better compatibility, fixes corrupted configuration files, protects settings against future corruption, and includes multilingual interface with detailed logging system."
+        }
+    },
+    {
+        id: 'fable3_fixer',
+        image: "https://staticdelivery.nexusmods.com/mods/1393/images/thumbnails/27/27-1760404050-299923963.png",
+        technologies: ["JavaScript", "Electron", "DXVK", "ReShade"],
+        repoUrl: "https://github.com/Spet001/Fable3Fixer",
+        liveUrl: "https://www.nexusmods.com/fableIII/mods/27",
+        liveUrlTextKey: "nexus",
+        category: 'minor',
+        pt: {
+            title: "Fable 3 Fixer",
+            description: "Aplicação Electron de um clique que moderniza Fable 3 automaticamente. Instala DXVK para dobrar o FPS via renderização Vulkan, aplica preset ReShade compatível com GFWL para melhorias visuais, e inclui patch 4GB para estabilidade. Interface simples com instalação automática de todas as correções necessárias."
+        },
+        en: {
+            title: "Fable 3 Fixer",
+            description: "One-click Electron application that automatically modernizes Fable 3. Installs DXVK to double FPS via Vulkan rendering, applies GFWL-compatible ReShade preset for visual improvements, and includes 4GB patch for stability. Simple interface with automatic installation of all necessary fixes."
+        }
+    },
+    {
+        id: 'yugioh_web',
+        image: "https://api.duniagames.co.id/optimize-image?url=https%3A%2F%2Fapi.duniagames.co.id%2Fapi%2Fcontent%2Fupload%2Ffile%2F10761004641617614978.jpg&format=webp&width=736&signature=9ae54855200869f03ce89432e0bb46891a19c5c1607441acbbee41a57ff13860",
+        technologies: ["JavaScript", "HTML5", "CSS3", "Web Development"],
+        repoUrl: "https://github.com/Spet001/Yu-Gi-Oh-Forbidden-Memories-Web",
+        category: 'minor',
+        pt: {
+            title: "Yu-Gi-Oh! Forbidden Memories Web",
+            description: "Recriação web fiel do clássico Yu-Gi-Oh! Forbidden Memories para PlayStation. Implementa as mecânicas originais do jogo, sistema de cartas, batalhas e progressão usando tecnologias web modernas para uma experiência nostálgica acessível em qualquer navegador."
+        },
+        en: {
+            title: "Yu-Gi-Oh! Forbidden Memories Web",
+            description: "Faithful web recreation of the classic Yu-Gi-Oh! Forbidden Memories for PlayStation. Implements original game mechanics, card system, battles, and progression using modern web technologies for an accessible nostalgic experience in any browser."
+        }
+    },
+    {
+        id: 'outer_worlds_fix',
+        image: "https://staticdelivery.nexusmods.com/mods/3037/images/thumbnails/255/255-1759781056-241650861.jpg",
+        technologies: ["C++", "Game Modding", "Performance Optimization"],
+        repoUrl: "https://github.com/Spet001/The-Outer-Worlds-Fix",
+        liveUrl: "https://www.nexusmods.com/theouterworlds/mods/255",
+        liveUrlTextKey: "nexus",
+        category: 'minor',
+        pt: {
+            title: "The Outer Worlds Fix",
+            description: "Mod de correção e otimização para The Outer Worlds que resolve diversos problemas de performance e compatibilidade. Inclui melhorias de framerate, correções de bugs visuais e otimizações de memória para uma experiência de jogo mais estável e fluida em sistemas modernos."
+        },
+        en: {
+            title: "The Outer Worlds Fix",
+            description: "Correction and optimization mod for The Outer Worlds that resolves various performance and compatibility issues. Includes framerate improvements, visual bug fixes, and memory optimizations for a more stable and fluid gaming experience on modern systems."
+        }
+    },
     {
         id: 'qos_injector',
         image: "https://staticdelivery.nexusmods.com/mods/6689/images/thumbnails/77/77-1757967325-194898673.png",
-        technologies: ["Python", "ILspy"],
+        technologies: ["Python", "DLL Injection", "Graphics APIs"],
         liveUrl: "https://www.nexusmods.com/007quantumofsolace/mods/77",
         liveUrlTextKey: "nexus",
         category: 'minor',
         pt: {
-            title: "Quantum of Solace - Vulkan/DXVK Injector",
-            description: "Criei um script em Python para injeção de DLLs em '007 Quantum of Solace', permitindo a utilização de APIs gráficas como Vulkan via DXVK para melhor performance e compatibilidade."
+            title: "007 Quantum of Solace - Vulkan/DXVK Injector",
+            description: "Script Python avançado para injeção de DLLs em '007 Quantum of Solace', habilitando APIs gráficas modernas como Vulkan através do DXVK. Melhora significativamente a performance e compatibilidade do jogo em hardware atual."
         },
         en: {
-            title: "Quantum of Solace - Vulkan/DXVK Injector",
-            description: "Created a Python script for DLL injection in '007 Quantum of Solace', enabling the use of graphics APIs like Vulkan via DXVK for better performance and compatibility."
+            title: "007 Quantum of Solace - Vulkan/DXVK Injector",
+            description: "Advanced Python script for DLL injection in '007 Quantum of Solace', enabling modern graphics APIs like Vulkan through DXVK. Significantly improves game performance and compatibility on current hardware."
         }
     },
     {
         id: 'better_xcloud',
         image: "https://appteka.store/get/e2Uh17U-CKFD0EQCzMbpVnbmW7eAunos9DEZh4qwjhcwzjVLguNCNDY6pzVAOxl-HxsQW9JgUk-L8SGs544iQ4kU-I4=/7e569a30fdeba1ec3e9e780f198238e06df18896.png",
-        technologies: ["JavaScript", "Otimização"],
+        technologies: ["JavaScript", "Web Optimization", "Cloud Gaming"],
         repoUrl: "https://github.com/Spet001/better-xcloud-optimized",
         category: 'minor',
         pt: {
             title: "Better XCloud Optimized",
-            description: "Fork do projeto 'better-xcloud' onde otimizei e refatorei o código JavaScript (que se deve utilizar com TamperMonkey) para melhorar a nitidez da imagem e a performance geral do serviço de cloud gaming."
+            description: "Fork otimizado do projeto 'better-xcloud' com refatorações JavaScript para TamperMonkey. Melhora significativamente a nitidez de imagem, reduz latência e otimiza a performance geral do serviço Xbox Cloud Gaming para uma experiência superior."
         },
         en: {
             title: "Better XCloud Optimized",
-            description: "Fork of the 'better-xcloud' project where I optimized and refactored the JavaScript code to improve image sharpness and overall performance of the cloud gaming service."
+            description: "Optimized fork of the 'better-xcloud' project with JavaScript refactoring for TamperMonkey. Significantly improves image sharpness, reduces latency, and optimizes overall Xbox Cloud Gaming service performance for superior experience."
         }
     },
     {
         id: 'ff13_injector',
         image: "./assets/ff13-traducao.png",
-        technologies: ["Powershell"],
+        technologies: ["PowerShell", "File Injection", "Game Modding"],
         repoUrl: "https://github.com/Spet001/FF13--PTBR-MS-Store",
         category: 'minor',
         pt: {
-            title: "FF13 Injector",
-            description: "Injetor em powershell de arquivos de mods direto na imagem do jogo."
+            title: "FF13 PTBR Injector",
+            description: "Injetor PowerShell especializado para instalação direta de arquivos de modificação na imagem do jogo Final Fantasy XIII. Automatiza o processo de aplicação de patches e mods, incluindo traduções, em versões protegidas do jogo."
         },
         en: {
-            title: "FF13 Injector",
-            description: "A PowerShell injector for mod files directly into the game's image."
+            title: "FF13 PTBR Injector",
+            description: "Specialized PowerShell injector for direct installation of modification files into Final Fantasy XIII game image. Automates the process of applying patches and mods, including translations, to protected game versions."
         }
     },
     {
         id: 'gzdoom_uwp',
         image: "https://cdn2.steamgriddb.com/logo_thumb/4e680e460ccee706272f2e7ddc974adb.png",
-        technologies: ["C", "XboxDevMode"],
+        technologies: ["C", "UWP", "Xbox DevMode", "Engine Porting"],
         repoUrl: "https://github.com/Spet001/gzdoom_test",
         category: 'minor',
         pt: {
-            title: "GZDoom para UWP/Xbox DevKits - WIP",
-            description: "Realizei um fork do GZDoom com modificações em C para habilitar seu funcionamento em ambientes UWP, com foco em devkits de Xbox, explorando a portabilidade da engine."
+            title: "GZDoom UWP/Xbox Port - WIP",
+            description: "Port experimental do engine GZDoom para ambientes UWP e Xbox DevKits. Explora a viabilidade de executar engines de jogos clássicos em plataformas modernas fechadas, investigando limitações e possibilidades de portabilidade."
         },
         en: {
-            title: "GZDoom for UWP/Xbox DevKits - WIP",
-            description: "Forked GZDoom with C modifications to enable it to run in UWP environments, focusing on Xbox devkits, exploring the engine's portability."
+            title: "GZDoom UWP/Xbox Port - WIP",
+            description: "Experimental port of GZDoom engine to UWP environments and Xbox DevKits. Explores the feasibility of running classic game engines on modern closed platforms, investigating limitations and portability possibilities."
         }
     },
     {
         id: 'gamelist_extractor',
         image: "https://icons.veryicon.com/png/o/miscellaneous/effevo/game-49.png",
-        technologies: ["Python", "Selenium", "Tkinter"],
+        technologies: ["Python", "Selenium", "Tkinter", "Web Scraping"],
         repoUrl: "https://github.com/Spet001/Xbox-Gamelist-Extractor",
         category: 'minor',
         pt: {
             title: "Xbox Gamelist Extractor",
-            description: "Aplicação com interface gráfica que utiliza web scraping com Selenium para extrair e salvar a lista completa de jogos de perfis do Xbox a partir do site Gamertag Nation."
+            description: "Aplicação desktop com interface gráfica que utiliza web scraping automatizado com Selenium para extrair listas completas de jogos de perfis Xbox. Inclui exportação de dados e análise de estatísticas de gaming do usuário."
         },
         en: {
             title: "Xbox Gamelist Extractor",
-            description: "GUI application that uses web scraping with Selenium to extract and save the complete game list from Xbox profiles on the Gamertag Nation website."
+            description: "Desktop application with graphical interface that uses automated web scraping with Selenium to extract complete game lists from Xbox profiles. Includes data export and user gaming statistics analysis."
         }
     },
     {
         id: 'cadeirante_sim',
         image: "assets/cadeirante-simulator.gif",
-        technologies: ["Unity", "C#"],
+        technologies: ["Unity", "C#", "Physics Simulation", "Comedy Game"],
         repoUrl: "https://github.com/Spet001/Cadeirante-Simulator--The-Game",
         category: 'minor',
         pt: {
             title: "Project GoofyGame - WIP",
-            description: "Jogo de comédia onde o jogador é 'punido' com físicas de ragdoll exageradas, explorando os limites da engine Unity para criar momentos inesperados e engraçados."
+            description: "Jogo experimental de comédia que explora físicas exageradas e situações absurdas através de ragdoll extremo. Utiliza a engine Unity para criar momentos inesperados e hilaros, testando os limites da simulação física para entretenimento."
         },
         en: {
-            title: "Wheelchair Simulator - WIP",
-            description: "A comedy game where the player is 'punished' with exaggerated ragdoll physics, exploring the limits of the Unity engine to create unexpected and funny moments."
+            title: "Project GoofyGame - WIP",
+            description: "Experimental comedy game that explores exaggerated physics and absurd situations through extreme ragdoll mechanics. Uses Unity engine to create unexpected and hilarious moments, testing the limits of physics simulation for entertainment."
         }
     },
     {
         id: 'pygopher',
         image: "https://marketplace.canva.com/FEYrM/MAGCfbFEYrM/1/tl/canva-neon-esports-gaming-joystick-icon-MAGCfbFEYrM.png",
-        technologies: ["Python", "Tkinter", "Pygame"],
+        technologies: ["Python", "Tkinter", "Pygame", "Accessibility"],
         repoUrl: "https://github.com/Spet001/PYGopher",
         category: 'minor',
         pt: {
-            title: "PYGopher - Joystick Mouse Control",
-            description: "Fork do Gopher360, modernizado e reescrito em Python, que permite o controle total do mouse através de um joystick para maior acessibilidade e setups personalizados."
+            title: "PYGopher - Controle de Mouse via Joystick",
+            description: "Modernização completa do Gopher360 reescrita em Python. Permite controle total do mouse através de joystick para acessibilidade e setups personalizados, com interface configurável e suporte a múltiplos dispositivos de entrada."
         },
         en: {
             title: "PYGopher - Joystick Mouse Control",
-            description: "Fork of Gopher360, modernized and rewritten in Python, allowing full mouse control via a joystick for greater accessibility and custom setups."
+            description: "Complete modernization of Gopher360 rewritten in Python. Enables full mouse control via joystick for accessibility and custom setups, with configurable interface and support for multiple input devices."
         }
     },
     {
         id: 'textmap_converter',
         image: "https://aitap.github.io/2024/01/01/incomplete_sectors.png",
-        technologies: ["Python", "Tool"],
+        technologies: ["Python", "3D Conversion", "UDMF", "Game Tools"],
         repoUrl: "https://github.com/Spet001/TEXTMAP-to-Unity-Object",
         category: 'minor',
         pt: {
             title: "Conversor TEXTMAP para OBJ",
-            description: "Ferramenta de linha de comando que converte mapas de Doom (formato UDMF) em modelos 3D no formato .OBJ, preservando a geometria e as texturas para uso em outras engines."
+            description: "Ferramenta de linha de comando especializada para conversão de mapas Doom (formato UDMF) em modelos 3D OBJ. Preserva geometria complexa, texturas e metadados para reutilização em engines modernas e ferramentas de modelagem 3D."
         },
         en: {
             title: "TEXTMAP to OBJ Converter",
-            description: "Command-line tool that converts Doom maps (UDMF format) into 3D models in .OBJ format, preserving geometry and textures for use in other engines."
+            description: "Specialized command-line tool for converting Doom maps (UDMF format) into 3D OBJ models. Preserves complex geometry, textures, and metadata for reuse in modern engines and 3D modeling tools."
         }
     },
     {
         id: 'doom_wad_ptbr',
         image: "/assets/demotranslate.gif",
-        technologies: ["SLADE", "Graphics", "Doom Language (C)"],
+        technologies: ["SLADE", "Graphics Design", "Game Localization"],
         repoUrl: "https://github.com/Spet001/Doom-WAD-Traduzido-PTBR",
         category: 'minor',
         pt: {
             title: "Doom WAD Traduzido - PT-BR",
-            description: "Tradução gráfica do WAD original do Doom para o português brasileiro. Todas as telas, menus e HUDs foram adaptadas mantendo a estética clássica."
+            description: "Tradução gráfica completa do WAD original do Doom para português brasileiro. Inclui adaptação cultural de todas as telas, menus, HUDs e elementos visuais mantendo perfeitamente a estética pixel art clássica dos anos 90."
         },
         en: {
             title: "Doom WAD Translated - PT-BR",
-            description: "Graphic translation of the original Doom WAD to Brazilian Portuguese. All screens, menus, and HUDs were adapted while maintaining the classic aesthetic."
-        }
-    },
-    {
-        id: 'boiii_uwp',
-        image: "https://store-images.s-microsoft.com/image/apps.24461.66777443557046310.abf0f423-a960-4f91-982f-7c0e898cf325.6577cc39-16b4-4a2e-9981-368c1d0065cd?q=90&w=480&h=270",
-        technologies: ["ILspy", "C++"],
-        repoUrl: "https://github.com/Spet001/BOIII-ReImagined-UWP",
-        category: 'minor',
-        pt: {
-            title: "BOIII UWP",
-            description: "Custom client de Call of Duty Black Ops 3 para a versão UWP - WIP."
-        },
-        en: {
-            title: "BOIII UWP",
-            description: "Custom client for Call of Duty Black Ops 3 for the UWP version - WIP."
+            description: "Complete graphic translation of the original Doom WAD to Brazilian Portuguese. Includes cultural adaptation of all screens, menus, HUDs, and visual elements while perfectly maintaining the classic 90s pixel art aesthetic."
         }
     },
 ];
@@ -290,6 +400,7 @@ const LanguageProvider = ({ children }) => {
             liveUrlText: "Ver ao Vivo",
             steamWishlist: "Wishlist na Steam!",
             nexus: "Ver no Nexus Mods",
+            itchIo: "Ver na itch.io",
             interactiveNote: "O meu portfólio é dinâmico! Use as setas <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> para controlar o background!",
             doomExit: "Sair do DOOM",
             easterEggHint: "P.S. Não há easter eggs aqui. Continue procurando...",
@@ -308,6 +419,7 @@ const LanguageProvider = ({ children }) => {
             liveUrlText: "View Live",
             steamWishlist: "Wishlist on Steam!",
             nexus: "View on Nexus Mods",
+            itchIo: "View on itch.io",
             interactiveNote: "My portfolio is dynamic! Use the arrow keys <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> to control the background!",
             doomExit: "Exit DOOM",
             easterEggHint: "P.S. There are no easter eggs here. Keep looking...",
@@ -465,7 +577,7 @@ const SpetGamesLogo = () => (
 
 const Header = () => {
     const { t, language } = useLanguage();
-    const resumeUrl = language === 'en' ? './assets/Translated_CV_EduardoGelain.docx' : './assets/curriculo.pdf';
+    const resumeUrl = language === 'en' ? './assets/Eduardo_Gelain_Dev.pt.en.pdf' : './assets/Eduardo_Gelain_Dev.pdf';
     return (
         <header className="hero">
             <AnimatedDiv className="container">
