@@ -36,7 +36,7 @@ const allProjects = [
     {
         id: 'pau_no_gato',
         image: "https://img.itch.zone/aW1nLzIzNjkzMTg4LnBuZw==/315x250%23c/eUMvyr.png",
-        technologies: ["Unity", "C#", "Game Design", "GameJam"],
+        technologies: ["Unreal5", "C++", "Game Design", "GameJam"],
         liveUrl: "https://zodiacogames.itch.io/atirei-o-pau-no-gato-mas-o-gato-no-morreu-e-agora-ele-vai-se-vingar",
         liveUrlTextKey: "itchIo",
         category: 'relevant',
@@ -72,11 +72,11 @@ const allProjects = [
         category: 'relevant',
         pt: {
             title: "Dark Souls PTDE Enhancement Suite",
-            description: "Aplicação desktop completa desenvolvida em Electron para modernizar Dark Souls: Prepare to Die Edition. Inclui correções de registro, instalador automático de mods, integração FSR para upscaling, e interface multilíngue. Um toolkit abrangente que resolve problemas de compatibilidade e melhora significativamente a experiência em sistemas modernos."
+            description: "Aplicação desktop completa desenvolvida em Electron para modernizar Dark Souls: Prepare to Die Edition. Inclui correções de registro, instalador automático de mods (DSFIX), integração FSR para upscaling, e interface multilíngue. Um toolkit abrangente que resolve problemas de compatibilidade e melhora significativamente a experiência em sistemas modernos."
         },
         en: {
             title: "Dark Souls PTDE Enhancement Suite",
-            description: "Complete desktop application developed in Electron to modernize Dark Souls: Prepare to Die Edition. Includes registry fixes, automatic mod installer, FSR integration for upscaling, and multilingual interface. A comprehensive toolkit that resolves compatibility issues and significantly improves the experience on modern systems."
+            description: "Complete desktop application developed in Electron to modernize Dark Souls: Prepare to Die Edition. Includes registry fixes, automatic mod installer (DSFIX), FSR integration for upscaling, and multilingual interface. A comprehensive toolkit that resolves compatibility issues and significantly improves the experience on modern systems."
         }
     },
     {
