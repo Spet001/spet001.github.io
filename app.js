@@ -21,16 +21,17 @@ const allProjects = [
     {
         id: 'outcaster',
         image: "assets/Outcaster1.jpg",
-        technologies: ["Unity", "C#", "Game Development"],
-        repoUrl: "https://github.com/Spet001/Outcaster",
+        technologies: ["Unity", "C#", "Game Development", "Game Design"],
+        liveUrl: "https://spet01.itch.io/outcaster-retro-fps-template",
+        liveUrlTextKey: "itchIo",
         category: 'relevant',
         pt: {
-            title: "Outcaster - FPS Autoral",
-            description: "Lidero o desenvolvimento de um FPS de alta velocidade no estilo 'boomer shooter' com uma equipe de 15 desenvolvedores. O projeto utiliza Unity e C# para criar mecânicas de movimento fluido, combate intenso e estética retrô-futurista, com foco na experiência de gameplay acelerada."
+            title: "Outcaster - Template FPS 2.5D",
+            description: "Template completo de FPS retro no estilo 'boomer shooter' desenvolvido em Unity e C#. Disponibilizado gratuitamente para a comunidade, inclui mecânicas de movimento fluido, sistema de armas, inimigos com IA, e estética retrô-futurista pronta para ser expandida por outros desenvolvedores."
         },
         en: {
-            title: "Outcaster - Original FPS Game",
-            description: "Leading the development of a high-speed 'boomer shooter' style FPS with a team of 15 developers. The project uses Unity and C# to create fluid movement mechanics, intense combat, and retro-futuristic aesthetics, focusing on fast-paced gameplay experience."
+            title: "Outcaster - 2.5D FPS Template",
+            description: "Complete retro FPS template in 'boomer shooter' style developed in Unity and C#. Released for free to the community, includes fluid movement mechanics, weapon system, AI enemies, and retro-futuristic aesthetics ready to be expanded by other developers."
         }
     },
     {
@@ -361,14 +362,14 @@ const insignificantProjects = [
     },
     { 
         id: 'itch_io',
-        repoUrl: "#",
+        repoUrl: "https://spet01.itch.io/",
         pt: {
             title: "Itch.io:",
-            description: "EM BREVE!"
+            description: "Confira meus projetos de jogos e templates gratuitos na itch.io!"
         },
         en: {
             title: "Itch.io:",
-            description: "COMING SOON!"
+            description: "Check out my game projects and free templates on itch.io!"
         }
     },
 ];
