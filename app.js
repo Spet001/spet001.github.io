@@ -58,11 +58,11 @@ const allProjects = [
         category: 'relevant',
         pt: {
             title: "BO3 GSC Injector - Microsoft Store",
-            description: "Injetor avançado de scripts GSC (Game Script Code) para Call of Duty Black Ops 3 versão Microsoft Store. Utiliza técnicas sofisticadas de engenharia reversa para contornar as proteções UWP e permitir execução de scripts customizados em uma versão tradicionalmente fechada do jogo."
+            description: "Injetor avançado de scripts GSC (Game Script Code) para Call of Duty Black Ops 3 versão Microsoft Store/BO3 Enhanced. Utiliza técnicas sofisticadas de engenharia reversa para contornar as proteções UWP e permitir execução de scripts customizados em uma versão tradicionalmente fechada do jogo."
         },
         en: {
             title: "BO3 GSC Injector - Microsoft Store",
-            description: "Advanced GSC (Game Script Code) injector for Call of Duty Black Ops 3 Microsoft Store version. Uses sophisticated reverse engineering techniques to bypass UWP protections and enable custom script execution in a traditionally locked game version."
+            description: "Advanced GSC (Game Script Code) injector for Call of Duty Black Ops 3 Microsoft Store/BO3 Enhanced version. Uses sophisticated reverse engineering techniques to bypass UWP protections and enable custom script execution in a traditionally locked game version."
         }
     },
     {
@@ -106,11 +106,11 @@ const allProjects = [
         category: 'relevant',
         pt: {
             title: "AutoParMS - UWP Mod Injector",
-            description: "Ferramenta avançada de engenharia reversa que contorna as limitações de segurança da plataforma UWP para permitir modificações em 'Like a Dragon'. Utiliza técnicas de injeção de processo e manipulação de memória para habilitar mods em um ambiente restrito."
+            description: "Ferramenta avançada de engenharia reversa que contorna as limitações de segurança da plataforma UWP para permitir modificações em 'Like a Dragon - Pirate Yakuza in Hawaii'. Utiliza técnicas de injeção de arquivos diretamente nos arquivos proprietarios (.PAR) e manipulação de memória para habilitar mods em um ambiente restrito."
         },
         en: {
             title: "AutoParMS - UWP Mod Injector",
-            description: "Advanced reverse engineering tool that bypasses UWP platform security limitations to enable modifications in 'Like a Dragon'. Uses process injection techniques and memory manipulation to enable mods in a restricted environment."
+            description: "Advanced reverse engineering tool that bypasses UWP platform security limitations to enable modifications in 'Like a Dragon - Pirate Yakuza in Hawaii'. Uses file injection techniques directly into proprietary files (.PAR) and memory manipulation to enable mods in a restricted environment."
         }
     },
     {
@@ -121,11 +121,11 @@ const allProjects = [
         category: 'relevant',
         pt: {
             title: "BOIII Reimagined UWP",
-            description: "Cliente customizado completo para Call of Duty Black Ops 3 versão UWP com instalador Electron. Inclui injeção de DLLs da Microsoft Store (XCurl, GameChat2, Party), sistema de backup automático, compatibilidade cruzada Steam/MS Store e navegador de servidores aprimorado para experiência multiplayer completa."
+            description: "Cliente customizado completo para Call of Duty Black Ops 3 versão UWP com instalador Electron. Inclui injeção de DLLs da Microsoft Store (XCurl, GameChat2, Party), sistema de backup automático, compatibilidade cruzada Steam/MS Store e navegador de servidores (do cliente boiii) aprimorado para experiência multiplayer completa."
         },
         en: {
             title: "BOIII Reimagined UWP",
-            description: "Complete custom client for Call of Duty Black Ops 3 UWP version with Electron installer. Includes Microsoft Store DLL injection (XCurl, GameChat2, Party), automatic backup system, Steam/MS Store cross-compatibility, and enhanced server browser for complete multiplayer experience."
+            description: "Complete custom client for Call of Duty Black Ops 3 UWP version with Electron installer. Includes Microsoft Store DLL injection (XCurl, GameChat2, Party), automatic backup system, Steam/MS Store cross-compatibility, and enhanced server browser (from the boiii client) for complete multiplayer experience."
         }
     },
     {
