@@ -486,29 +486,44 @@ const Starfield = () => {
         };
 
         const drawMoon = (moonPos) => {
-            // Glow
-            const gradient = ctx.createRadialGradient(moonPos.x, moonPos.y, 40, moonPos.x, moonPos.y, 100);
-            gradient.addColorStop(0, 'rgba(255, 255, 240, 0.2)');
+            const baseRadius = 40;
+            const moonRadius = baseRadius * 0.9; // ~10% menor
+
+            // Glow (brilho reduzido)
+            const gradient = ctx.createRadialGradient(
+                moonPos.x,
+                moonPos.y,
+                moonRadius,
+                moonPos.x,
+                moonPos.y,
+                moonRadius * 2.2
+            );
+            gradient.addColorStop(0, 'rgba(255, 255, 240, 0.1)');
             gradient.addColorStop(1, 'rgba(255, 255, 240, 0)');
             ctx.fillStyle = gradient;
-            ctx.fillRect(moonPos.x - 100, moonPos.y - 100, 200, 200);
+            ctx.fillRect(
+                moonPos.x - moonRadius * 2.2,
+                moonPos.y - moonRadius * 2.2,
+                moonRadius * 4.4,
+                moonRadius * 4.4
+            );
 
             // Moon body
             ctx.beginPath();
-            ctx.arc(moonPos.x, moonPos.y, 40, 0, 2 * Math.PI);
-            ctx.fillStyle = '#f0e6d2';
+            ctx.arc(moonPos.x, moonPos.y, moonRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = '#e4ddc5';
             ctx.fill();
 
             // Craters
             ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
             ctx.beginPath();
-            ctx.arc(moonPos.x + 15, moonPos.y - 10, 8, 0, 2 * Math.PI);
+            ctx.arc(moonPos.x + 12, moonPos.y - 8, 7, 0, 2 * Math.PI);
             ctx.fill();
             ctx.beginPath();
-            ctx.arc(moonPos.x - 20, moonPos.y + 5, 12, 0, 2 * Math.PI);
+            ctx.arc(moonPos.x - 18, moonPos.y + 4, 10, 0, 2 * Math.PI);
             ctx.fill();
             ctx.beginPath();
-            ctx.arc(moonPos.x, moonPos.y + 20, 5, 0, 2 * Math.PI);
+            ctx.arc(moonPos.x, moonPos.y + 18, 4, 0, 2 * Math.PI);
             ctx.fill();
         };
 
