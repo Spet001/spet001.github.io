@@ -57,12 +57,27 @@ const allProjects = [
         repoUrl: "https://github.com/Spet001/BO3-MicrosoftStore-GSC-Injector",
         category: 'relevant',
         pt: {
-            title: "BO3 GSC Injector - Microsoft Store",
+            title: "BO3 GSC Injector - Microsoft Store/Bo3 Enhanced",
             description: "Injetor avançado de scripts GSC (Game Script Code) para Call of Duty Black Ops 3 versão Microsoft Store/BO3 Enhanced. Utiliza técnicas sofisticadas de engenharia reversa para contornar as proteções UWP e permitir execução de scripts customizados em uma versão tradicionalmente fechada do jogo."
         },
         en: {
             title: "BO3 GSC Injector - Microsoft Store",
             description: "Advanced GSC (Game Script Code) injector for Call of Duty Black Ops 3 Microsoft Store/BO3 Enhanced version. Uses sophisticated reverse engineering techniques to bypass UWP protections and enable custom script execution in a traditionally locked game version."
+        }
+    },
+    {
+        id: 'iw7_mod_ex',
+        image: "https://pbs.twimg.com/media/F_udiLiW4AA8bKR.png",
+        technologies: ["C++", "Reverse Engineering", "Game Modding"],
+        repoUrl: "https://github.com/Spet001/iw7-mod-ex",
+        category: 'relevant',
+        pt: {
+            title: "IW7-Mod-EX",
+            description: "Modificação avançada para Call of Duty: Infinite Warfare (IW7) focada em trazer o IW7-Mod para versões non-steam."
+        },
+        en: {
+            title: "IW7-MS Store Mod Extension",
+            description: "Advanced modification for Call of Duty: Infinite Warfare (IW7) focused on compatibility with the Microsoft Store (non-Steam) version. Implements compatibility layers and memory patches to enable mod usage in an originally closed game version."
         }
     },
     {
@@ -405,6 +420,12 @@ const LanguageProvider = ({ children }) => {
             interactiveNote: "O meu portfólio é dinâmico! Use as setas <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> para controlar o background!",
             doomExit: "Sair do DOOM",
             easterEggHint: "P.S. Não há easter eggs aqui. Continue procurando...",
+            navAbout: "Sobre Mim",
+            navProjects: "Projetos",
+            navCV: "CV",
+            navGithub: "Github",
+            navItch: "Itch.io",
+            heroProjectsBtn: "Projetos",
         },
         en: {
             available: "Available for new projects",
@@ -424,6 +445,12 @@ const LanguageProvider = ({ children }) => {
             interactiveNote: "My portfolio is dynamic! Use the arrow keys <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> to control the background!",
             doomExit: "Exit DOOM",
             easterEggHint: "P.S. There are no easter eggs here. Keep looking...",
+            navAbout: "About Me",
+            navProjects: "Projects",
+            navCV: "CV",
+            navGithub: "Github",
+            navItch: "Itch.io",
+            heroProjectsBtn: "Projects",
         }
     };
     const t = (key) => translations[language][key] || key;
@@ -576,26 +603,75 @@ const SpetGamesLogo = () => (
     </svg>
 );
 
+const Navbar = ({ onEasterEgg }) => {
+    const { t } = useLanguage();
+
+    const scrollToId = (id) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    return (
+        <nav className="top-nav">
+            <div className="container nav-inner">
+                <button className="nav-logo" onClick={() => scrollToId('hero')} aria-label="Topo">
+                    <SpetGamesLogo />
+                </button>
+                <div className="nav-links">
+                    <button onClick={() => scrollToId('about')}>{t('navAbout')}</button>
+                    <button onClick={() => scrollToId('projects')}>{t('navProjects')}</button>
+                    <a href={"./assets/Eduardo_Gelain_Dev.pdf"} target="_blank" rel="noopener noreferrer">{t('navCV')}</a>
+                    <a href="https://github.com/Spet001" target="_blank" rel="noopener noreferrer">{t('navGithub')}</a>
+                    <a href="https://spet01.itch.io/" target="_blank" rel="noopener noreferrer">{t('navItch')}</a>
+                </div>
+                <button className="easter-egg-trigger nav-easter-egg" onClick={onEasterEgg} aria-label="Easter Egg">
+                    <img
+                        src="https://static.wikia.nocookie.net/gta-myths/images/b/b4/Gant_Bridge_Easter_Egg_Sign.png"
+                        alt="No Easter Eggs Here"
+                    />
+                </button>
+            </div>
+        </nav>
+    );
+};
+
 const Header = () => {
     const { t, language } = useLanguage();
     const resumeUrl = language === 'en' ? './assets/Eduardo_Gelain_Dev.pt.en.pdf' : './assets/Eduardo_Gelain_Dev.pdf';
+    const scrollToProjects = () => {
+        const el = document.getElementById('projects');
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
-        <header className="hero">
+        <header className="hero" id="hero">
             <AnimatedDiv className="container">
-                <div className="status"><span className="status-dot"></span>{t('available')}</div>
-                <h1><SpetGamesLogo />{t('title')}</h1>
-                <p className="subtitle">{t('subtitle')}</p>
-                <div className="contact-links">
-                    <div className="contact-links-left">
-                        <LanguageSwitcher />
-                        <div className="divider"></div>
-                        <a href="mailto:gelain15mj@gmail.com" aria-label="E-mail"><i className="fas fa-envelope"></i></a>
-                        <a href="https://github.com/Spet001" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i className="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/eduardo-gelain/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+                <div className="hero-layout">
+                    <div className="hero-left">
+                        <div className="status"><span className="status-dot"></span>{t('available')}</div>
+                        <h1><SpetGamesLogo />{t('title')}</h1>
+                        <p className="subtitle">{t('subtitle')}</p>
+                        <button className="btn-hero-projects" onClick={scrollToProjects}>{t('heroProjectsBtn')}</button>
+                        <p className="interactive-note" dangerouslySetInnerHTML={{ __html: t('interactiveNote') }} />
                     </div>
-                    <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn-resume">{t('resume')}</a>
+                    <div className="hero-right">
+                        <div className="contact-links">
+                            <div className="contact-links-left">
+                                <LanguageSwitcher />
+                                <div className="divider"></div>
+                                <a href="mailto:gelain15mj@gmail.com" aria-label="E-mail"><i className="fas fa-envelope"></i></a>
+                                <a href="https://github.com/Spet001" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i className="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/eduardo-gelain/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+                            </div>
+                            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn-resume">{t('resume')}</a>
+                        </div>
+                        <About compact />
+                    </div>
                 </div>
-                 <p className="interactive-note" dangerouslySetInnerHTML={{ __html: t('interactiveNote') }} />
             </AnimatedDiv>
         </header>
     )
@@ -617,17 +693,27 @@ const TechIcons = () => {
     );
 };
 
-const About = () => {
+const About = ({ compact = false }) => {
     const { t } = useLanguage();
-    return (
-        <section className="about">
-            <AnimatedDiv className="container">
-                <h2>{t('aboutTitle')}</h2>
-                <p dangerouslySetInnerHTML={{ __html: t('aboutText') }} />
-                <TechIcons />
-            </AnimatedDiv>
-        </section>
-    )
+    const content = (
+        <React.Fragment>
+            {!compact && <h2>{t('aboutTitle')}</h2>}
+            <p dangerouslySetInnerHTML={{ __html: t('aboutText') }} />
+            <TechIcons />
+        </React.Fragment>
+    );
+
+    if (compact) {
+        return (
+            <section className="about about-compact" id="about">
+                <AnimatedDiv className="container">
+                    {content}
+                </AnimatedDiv>
+            </section>
+        );
+    }
+
+    return null;
 };
 
 const ProjectCard = ({ project }) => {
@@ -686,7 +772,7 @@ const Projects = () => {
 
     return (
         <React.Fragment>
-            <section className="projects">
+            <section className="projects" id="projects">
                 <div className="container">
                     <AnimatedDiv><h2>{t('projectsTitle')}</h2></AnimatedDiv>
                     <div className="project-grid">{relevant.map((p) => <ProjectCard key={p.id} project={p} />)}</div>
@@ -698,12 +784,7 @@ const Projects = () => {
                     <div className="project-grid">{minor.map((p) => <ProjectCard key={p.id} project={p} />)}</div>
                 </div>
             </section>
-            <section className="projects">
-                <div className="container">
-                    <AnimatedDiv><h2>{t('insignificantProjectsTitle')}</h2></AnimatedDiv>
-                    <div className="insignificant-project-grid">{insignificantProjects.map((p) => <InsignificantProjectItem key={p.id} project={p} />)}</div>
-                </div>
-            </section>
+            
         </React.Fragment>
     );
 }
@@ -725,23 +806,7 @@ const DoomEasterEgg = ({ onExit }) => {
     );
 };
 
-const EasterEggTrigger = ({ onActivate }) => {
-    const { t } = useLanguage();
-    const [ref, isVisible] = useFadeIn({ threshold: 0.2 });
-     const imageUrl = "https://static.wikia.nocookie.net/gta-myths/images/b/b4/Gant_Bridge_Easter_Egg_Sign.png";
-
-    return (
-        <AnimatedDiv className="easter-egg-section">
-            <div ref={ref} className="easter-egg-trigger" onClick={onActivate}>
-                <img 
-                    src={imageUrl}
-                    alt="No Easter Eggs Here"
-                />
-                <p>{t('easterEggHint')}</p>
-            </div>
-        </AnimatedDiv>
-    );
-};
+const EasterEggTrigger = () => null;
 
 const Footer = () => (
     <footer className="footer">
@@ -768,11 +833,12 @@ const App = () => {
                 <React.Fragment>
                     <Starfield />
                     <div className="app">
+                        <Navbar onEasterEgg={() => setIsDoomActive(true)} />
                         <Header />
                         <main>
                             <About />
                             <Projects />
-                            <EasterEggTrigger onActivate={() => setIsDoomActive(true)} />
+                            <EasterEggTrigger />
                         </main>
                         <Footer />
                     </div>
