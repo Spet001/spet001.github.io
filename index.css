@@ -79,6 +79,46 @@ section:last-of-type { border-bottom: none; }
     border-bottom: 1px solid var(--color-border);
 }
 
+.nav-easter-egg-wrap {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.easter-egg-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    min-width: 180px;
+    background-color: var(--color-background-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 0.5rem;
+    display: grid;
+    gap: 0.5rem;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-card);
+}
+
+.easter-egg-menu button {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-heading);
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    text-align: left;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.easter-egg-menu button:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background-color: rgba(0, 170, 255, 0.08);
+}
+
 .nav-inner {
     display: flex;
     align-items: center;
@@ -197,6 +237,7 @@ section:last-of-type { border-bottom: none; }
 
 .about-compact {
     border-radius: 12px;
+    margin-top: 1rem;
     padding: 1.25rem 1.5rem;
     background-color: rgba(15, 15, 15, 0.8);
     border: 1px solid var(--color-border);
@@ -289,7 +330,6 @@ section:last-of-type { border-bottom: none; }
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    margin-left: 0.5rem;
 }
 .easter-egg-trigger:hover {
     border-color: var(--color-accent);
@@ -347,6 +387,31 @@ section:last-of-type { border-bottom: none; }
 }
 .doom-exit-btn .fa-times {
     font-size: 1.2rem;
+}
+
+.doom-open-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: var(--color-heading);
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(6px);
+}
+
+.doom-open-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-1px);
 }
 
 /* ----------------------------------

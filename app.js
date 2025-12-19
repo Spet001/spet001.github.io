@@ -23,15 +23,17 @@ const allProjects = [
         image: "assets/Outcaster1.jpg",
         technologies: ["Unity", "C#", "Game Development", "Game Design"],
         liveUrl: "https://spet01.itch.io/outcaster-retro-fps-template",
-        liveUrlTextKey: "itchIo",
+        liveUrlTextKey: "itchIo25d",
+        liveUrl2: "https://spet01.itch.io/outcaster-a-3d-fps-template",
+        liveUrl2TextKey: "itchIo3d",
         category: 'relevant',
         pt: {
-            title: "Outcaster - Template FPS 2.5D",
-            description: "Template completo de FPS retro no estilo 'boomer shooter' desenvolvido em Unity e C#. Disponibilizado gratuitamente para a comunidade, inclui mecânicas de movimento fluido, sistema de armas, inimigos com IA, e estética retrô-futurista pronta para ser expandida por outros desenvolvedores."
+            title: "Outcaster - Templates FPS 2.5D/3D",
+            description: "Templates completos de FPS retro no estilo 'boomer shooter' desenvolvidos em Unity e C#. Disponibilizados gratuitamente para a comunidade, incluem mecânicas de movimento fluido, sistema de armas, inimigos com IA e estética retrô-futurista prontos para serem expandidos por outros desenvolvedores."
         },
         en: {
-            title: "Outcaster - 2.5D FPS Template",
-            description: "Complete retro FPS template in 'boomer shooter' style developed in Unity and C#. Released for free to the community, includes fluid movement mechanics, weapon system, AI enemies, and retro-futuristic aesthetics ready to be expanded by other developers."
+            title: "Outcaster - 2.5D/3D FPS Templates",
+            description: "Complete retro FPS templates in 'boomer shooter' style developed in Unity and C#. Released for free to the community, featuring fluid movement, weapon system, AI enemies, and retro-futuristic aesthetics ready to be expanded by other developers."
         }
     },
     {
@@ -240,6 +242,7 @@ const allProjects = [
             description: "Advanced Python script for DLL injection in '007 Quantum of Solace', enabling modern graphics APIs like Vulkan through DXVK. Significantly improves game performance and compatibility on current hardware."
         }
     },
+    /*
     {
         id: 'better_xcloud',
         image: "https://appteka.store/get/e2Uh17U-CKFD0EQCzMbpVnbmW7eAunos9DEZh4qwjhcwzjVLguNCNDY6pzVAOxl-HxsQW9JgUk-L8SGs544iQ4kU-I4=/7e569a30fdeba1ec3e9e780f198238e06df18896.png",
@@ -255,6 +258,7 @@ const allProjects = [
             description: "Optimized fork of the 'better-xcloud' project with JavaScript refactoring for TamperMonkey. Significantly improves image sharpness, reduces latency, and optimizes overall Xbox Cloud Gaming service performance for superior experience."
         }
     },
+    */
     {
         id: 'ff13_injector',
         image: "./assets/ff13-traducao.png",
@@ -270,6 +274,7 @@ const allProjects = [
             description: "Specialized PowerShell injector for direct installation of modification files into Final Fantasy XIII game image. Automates the process of applying patches and mods, including translations, to protected game versions."
         }
     },
+    /*
     {
         id: 'gzdoom_uwp',
         image: "https://cdn2.steamgriddb.com/logo_thumb/4e680e460ccee706272f2e7ddc974adb.png",
@@ -285,6 +290,7 @@ const allProjects = [
             description: "Experimental port of GZDoom engine to UWP environments and Xbox DevKits. Explores the feasibility of running classic game engines on modern closed platforms, investigating limitations and portability possibilities."
         }
     },
+    */
     {
         id: 'gamelist_extractor',
         image: "https://icons.veryicon.com/png/o/miscellaneous/effevo/game-49.png",
@@ -300,6 +306,7 @@ const allProjects = [
             description: "Desktop application with graphical interface that uses automated web scraping with Selenium to extract complete game lists from Xbox profiles. Includes data export and user gaming statistics analysis."
         }
     },
+    /*
     {
         id: 'cadeirante_sim',
         image: "assets/cadeirante-simulator.gif",
@@ -315,6 +322,7 @@ const allProjects = [
             description: "Experimental comedy game that explores exaggerated physics and absurd situations through extreme ragdoll mechanics. Uses Unity engine to create unexpected and hilarious moments, testing the limits of physics simulation for entertainment."
         }
     },
+    */
     {
         id: 'pygopher',
         image: "https://marketplace.canva.com/FEYrM/MAGCfbFEYrM/1/tl/canva-neon-esports-gaming-joystick-icon-MAGCfbFEYrM.png",
@@ -417,8 +425,14 @@ const LanguageProvider = ({ children }) => {
             steamWishlist: "Wishlist na Steam!",
             nexus: "Ver no Nexus Mods",
             itchIo: "Ver na itch.io",
+            itchIo25d: "Ver na itch (2.5D)",
+            itchIo3d: "Ver na itch (3D)",
             interactiveNote: "O meu portfólio é dinâmico! Use as setas <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> para controlar o background!",
             doomExit: "Sair do DOOM",
+            easterEggExit: "Sair",
+            easterEggOpenNewTab: "Abrir em nova guia",
+            easterEggDoom: "Easter egg DOOM",
+            easterEggGta: "Easter egg GTA VC",
             easterEggHint: "P.S. Não há easter eggs aqui. Continue procurando...",
             navAbout: "Sobre Mim",
             navProjects: "Projetos",
@@ -442,8 +456,14 @@ const LanguageProvider = ({ children }) => {
             steamWishlist: "Wishlist on Steam!",
             nexus: "View on Nexus Mods",
             itchIo: "View on itch.io",
+            itchIo25d: "View on itch.io (2.5D)",
+            itchIo3d: "View on itch.io (3D)",
             interactiveNote: "My portfolio is dynamic! Use the arrow keys <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> to control the background!",
             doomExit: "Exit DOOM",
+            easterEggExit: "Exit",
+            easterEggOpenNewTab: "Open in new tab",
+            easterEggDoom: "Easter egg DOOM",
+            easterEggGta: "Easter egg GTA VC",
             easterEggHint: "P.S. There are no easter eggs here. Keep looking...",
             navAbout: "About Me",
             navProjects: "Projects",
@@ -618,8 +638,15 @@ const SpetGamesLogo = () => (
     </svg>
 );
 
-const Navbar = ({ onEasterEgg }) => {
+const Navbar = ({
+    isEasterEggMenuOpen,
+    onToggleEasterEggMenu,
+    onCloseEasterEggMenu,
+    onStartDoom,
+    onStartGta,
+}) => {
     const { t } = useLanguage();
+    const wrapRef = useRef(null);
 
     const scrollToId = (id) => {
         const el = document.getElementById(id);
@@ -627,6 +654,27 @@ const Navbar = ({ onEasterEgg }) => {
             el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
+
+    useEffect(() => {
+        if (!isEasterEggMenuOpen) return;
+
+        const onDocMouseDown = (e) => {
+            if (!wrapRef.current) return;
+            if (wrapRef.current.contains(e.target)) return;
+            onCloseEasterEggMenu();
+        };
+
+        const onDocKeyDown = (e) => {
+            if (e.key === 'Escape') onCloseEasterEggMenu();
+        };
+
+        document.addEventListener('mousedown', onDocMouseDown);
+        document.addEventListener('keydown', onDocKeyDown);
+        return () => {
+            document.removeEventListener('mousedown', onDocMouseDown);
+            document.removeEventListener('keydown', onDocKeyDown);
+        };
+    }, [isEasterEggMenuOpen, onCloseEasterEggMenu]);
 
     return (
         <nav className="top-nav">
@@ -641,12 +689,29 @@ const Navbar = ({ onEasterEgg }) => {
                     <a href="https://github.com/Spet001" target="_blank" rel="noopener noreferrer">{t('navGithub')}</a>
                     <a href="https://spet01.itch.io/" target="_blank" rel="noopener noreferrer">{t('navItch')}</a>
                 </div>
-                <button className="easter-egg-trigger nav-easter-egg" onClick={onEasterEgg} aria-label="Easter Egg">
+            </div>
+
+            <div className="nav-easter-egg-wrap" ref={wrapRef}>
+                <button
+                    type="button"
+                    className="easter-egg-trigger nav-easter-egg"
+                    onClick={onToggleEasterEggMenu}
+                    aria-label="Easter Egg"
+                    aria-haspopup="menu"
+                    aria-expanded={isEasterEggMenuOpen ? 'true' : 'false'}
+                >
                     <img
                         src="https://static.wikia.nocookie.net/gta-myths/images/b/b4/Gant_Bridge_Easter_Egg_Sign.png"
                         alt="No Easter Eggs Here"
                     />
                 </button>
+
+                {isEasterEggMenuOpen && (
+                    <div className="easter-egg-menu" role="menu">
+                        <button type="button" role="menuitem" onClick={onStartDoom}>{t('easterEggDoom')}</button>
+                        <button type="button" role="menuitem" onClick={onStartGta}>{t('easterEggGta')}</button>
+                    </div>
+                )}
             </div>
         </nav>
     );
@@ -735,6 +800,7 @@ const ProjectCard = ({ project }) => {
     const { t, language } = useLanguage();
     const [ref, isVisible] = useFadeIn({ threshold: 0.1 });
     const hasLiveLink = project.liveUrl && project.liveUrl !== "#";
+    const hasLiveLink2 = project.liveUrl2 && project.liveUrl2 !== "#";
     const hasRepoLink = project.repoUrl && project.repoUrl !== "#";
 
     const content = project[language] || project['pt'];
@@ -757,6 +823,7 @@ const ProjectCard = ({ project }) => {
                 <div className="card-footer">
                     {hasRepoLink && <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">{t('repoButton')}</a>}
                     {hasLiveLink && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">{t(project.liveUrlTextKey) || t('liveUrlText')}</a>}
+                    {hasLiveLink2 && <a href={project.liveUrl2} target="_blank" rel="noopener noreferrer" className="btn-primary">{t(project.liveUrl2TextKey) || t('liveUrlText')}</a>}
                 </div>
             </div>
         </div>
@@ -804,18 +871,30 @@ const Projects = () => {
     );
 }
 
-const DoomEasterEgg = ({ onExit }) => {
+const GameEasterEgg = ({ src, title, onExit, openInNewTabUrl = null }) => {
     const { t } = useLanguage();
     return (
         <div className="doom-container">
             <iframe
                 className="doom-iframe"
-                src="https://ustymukhman.github.io/webDOOM/public/"
-                title="webDOOM Easter Egg"
+                src={src}
+                title={title}
                 allowFullScreen
             ></iframe>
+
+            {openInNewTabUrl && (
+                <a
+                    className="doom-open-btn"
+                    href={openInNewTabUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i className="fas fa-external-link-alt"></i> {t('easterEggOpenNewTab')}
+                </a>
+            )}
+
             <button onClick={onExit} className="doom-exit-btn">
-                <i className="fas fa-times"></i> {t('doomExit')}
+                <i className="fas fa-times"></i> {t('easterEggExit')}
             </button>
         </div>
     );
@@ -838,17 +917,61 @@ const Footer = () => (
 );
 
 const App = () => {
-    const [isDoomActive, setIsDoomActive] = useState(false);
+    const [activeEasterEgg, setActiveEasterEgg] = useState(null); // 'doom' | 'gta' | null
+    const [isEasterEggMenuOpen, setIsEasterEggMenuOpen] = useState(false);
+
+    const easterEggConfig = (key) => {
+        if (key === 'doom') {
+            return {
+                src: 'https://ustymukhman.github.io/webDOOM/public/',
+                title: 'webDOOM Easter Egg',
+                openInNewTabUrl: null,
+            };
+        }
+
+        if (key === 'gta') {
+            return {
+                // DOS.Zone page embeds this CDN iframe internally. It may still be blocked
+                // by CSP (frame-ancestors) depending on their current configuration.
+                src: 'https://cdn.dos.zone/vcsky/release/vc-sky-en-v4/index.html?lang=en',
+                title: 'GTA VC (DOS.Zone) Easter Egg',
+                openInNewTabUrl: 'https://dos.zone/grand-theft-auto-vice-city/',
+            };
+        }
+
+        return null;
+    };
+
+    const startDoom = () => {
+        setIsEasterEggMenuOpen(false);
+        setActiveEasterEgg('doom');
+    };
+
+    const startGta = () => {
+        setIsEasterEggMenuOpen(false);
+        setActiveEasterEgg('gta');
+    };
 
     return (
         <LanguageProvider>
-            {isDoomActive ? (
-                <DoomEasterEgg onExit={() => setIsDoomActive(false)} />
+            {activeEasterEgg ? (
+                <GameEasterEgg
+                    src={easterEggConfig(activeEasterEgg)?.src}
+                    title={easterEggConfig(activeEasterEgg)?.title}
+                    openInNewTabUrl={easterEggConfig(activeEasterEgg)?.openInNewTabUrl}
+                    onExit={() => setActiveEasterEgg(null)}
+                />
             ) : (
                 <React.Fragment>
                     <Starfield />
                     <div className="app">
-                        <Navbar onEasterEgg={() => setIsDoomActive(true)} />
+                        <Navbar
+                            isEasterEggMenuOpen={isEasterEggMenuOpen}
+                            onToggleEasterEggMenu={() => setIsEasterEggMenuOpen((v) => !v)}
+                            onCloseEasterEggMenu={() => setIsEasterEggMenuOpen(false)}
+                            onStartDoom={startDoom}
+                            onStartGta={startGta}
+                        />
                         <Header />
                         <main>
                             <About />
