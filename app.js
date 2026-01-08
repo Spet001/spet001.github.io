@@ -131,10 +131,27 @@ const allProjects = [
         }
     },
     {
+        id: 'doom_wad_ptbr',
+        image: "/assets/demotranslate.gif",
+        technologies: ["SLADE", "Graphics Design", "Game Localization"],
+        repoUrl: "https://github.com/Spet001/Doom-WAD-Traduzido-PTBR",
+        category: 'relevant',
+        pt: {
+            title: "Doom WAD Traduzido - PT-BR",
+            description: "Tradução gráfica completa do WAD original do Doom para português brasileiro. Inclui adaptação cultural de todas as telas, menus, HUDs e elementos visuais mantendo perfeitamente a estética pixel art clássica dos anos 90."
+        },
+        en: {
+            title: "Doom WAD Translated - PT-BR",
+            description: "Complete graphic translation of the original Doom WAD to Brazilian Portuguese. Includes cultural adaptation of all screens, menus, HUDs, and visual elements while perfectly maintaining the classic 90s pixel art aesthetic."
+        }
+    },
+    {
         id: 'boiii_uwp',
         image: "https://cdn.cloudflare.steamstatic.com/steam/apps/311210/header.jpg",
         technologies: ["C", "C++", "Electron", "DLL Injection"],
         repoUrl: "https://github.com/Spet001/BOIII-ReImagined-UWP",
+        liveUrl: "https://www.nexusmods.com/callofdutyblackops3/mods/36",
+        liveUrlTextKey: "nexus",
         category: 'relevant',
         pt: {
             title: "BOIII Reimagined UWP",
@@ -353,21 +370,6 @@ const allProjects = [
             description: "Specialized command-line tool for converting Doom maps (UDMF format) into 3D OBJ models. Preserves complex geometry, textures, and metadata for reuse in modern engines and 3D modeling tools."
         }
     },
-    {
-        id: 'doom_wad_ptbr',
-        image: "/assets/demotranslate.gif",
-        technologies: ["SLADE", "Graphics Design", "Game Localization"],
-        repoUrl: "https://github.com/Spet001/Doom-WAD-Traduzido-PTBR",
-        category: 'minor',
-        pt: {
-            title: "Doom WAD Traduzido - PT-BR",
-            description: "Tradução gráfica completa do WAD original do Doom para português brasileiro. Inclui adaptação cultural de todas as telas, menus, HUDs e elementos visuais mantendo perfeitamente a estética pixel art clássica dos anos 90."
-        },
-        en: {
-            title: "Doom WAD Translated - PT-BR",
-            description: "Complete graphic translation of the original Doom WAD to Brazilian Portuguese. Includes cultural adaptation of all screens, menus, HUDs, and visual elements while perfectly maintaining the classic 90s pixel art aesthetic."
-        }
-    },
 ];
 
 const insignificantProjects = [
@@ -417,7 +419,7 @@ const LanguageProvider = ({ children }) => {
             resume: "Currículo",
             aboutTitle: "Sobre Mim",
             aboutText: "Desenvolvedor de Software e Jogos com especialização em <strong>C#, Python e Unity</strong>. Minha paixão reside em transformar desafios complexos em soluções de alta performance, seja criando experiências de gameplay imersivas, desenvolvendo ferramentas de automação ou aplicando <strong>engenharia reversa</strong> para expandir as fronteiras de jogos existentes. Este portfólio é um reflexo da minha jornada de aprendizado contínuo, destacando projetos que demonstram minha dedicação à qualidade, inovação e minha busca incessante por expandir as fronteiras da tecnologia. Busco colaborar em projetos ambiciosos e continuar aprimorando minhas habilidades em tecnologia.",
-            projectsTitle: "Projetos em Destaque",
+            projectsTitle: "Projetos",
             minorProjectsTitle: "Outros Projetos",
             insignificantProjectsTitle: "Estudos e Desafios",
             repoButton: "Repositório",
@@ -448,7 +450,7 @@ const LanguageProvider = ({ children }) => {
             resume: "Resume",
             aboutTitle: "About Me",
             aboutText: "Software and Game Developer specializing in <strong>C#, Python, and Unity</strong>. My passion lies in transforming complex challenges into high-performance solutions, whether it's crafting immersive gameplay experiences, developing automation tools, or applying <strong>reverse engineering</strong> to expand the boundaries of existing games. This portfolio reflects my journey of continuous learning, showcasing projects that demonstrate my dedication to quality, innovation, and my relentless pursuit of pushing technological frontiers. I am seeking to collaborate on ambitious projects and continue to hone my skills in technology.",
-            projectsTitle: "Featured Projects",
+            projectsTitle: "Projects",
             minorProjectsTitle: "Other Projects",
             insignificantProjectsTitle: "Studies & Challenges",
             repoButton: "Repository",
@@ -849,25 +851,14 @@ const InsignificantProjectItem = ({ project }) => {
 
 const Projects = () => {
     const { t } = useLanguage();
-    const relevant = allProjects.filter(p => p.category === 'relevant');
-    const minor = allProjects.filter(p => p.category === 'minor');
 
     return (
-        <React.Fragment>
-            <section className="projects" id="projects">
-                <div className="container">
-                    <AnimatedDiv><h2>{t('projectsTitle')}</h2></AnimatedDiv>
-                    <div className="project-grid">{relevant.map((p) => <ProjectCard key={p.id} project={p} />)}</div>
-                </div>
-            </section>
-            <section className="projects">
-                <div className="container">
-                    <AnimatedDiv><h2>{t('minorProjectsTitle')}</h2></AnimatedDiv>
-                    <div className="project-grid">{minor.map((p) => <ProjectCard key={p.id} project={p} />)}</div>
-                </div>
-            </section>
-            
-        </React.Fragment>
+        <section className="projects" id="projects">
+            <div className="container">
+                <AnimatedDiv><h2>{t('projectsTitle')}</h2></AnimatedDiv>
+                <div className="project-grid">{allProjects.map((p) => <ProjectCard key={p.id} project={p} />)}</div>
+            </div>
+        </section>
     );
 }
 
