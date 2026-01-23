@@ -297,6 +297,45 @@ section:last-of-type { border-bottom: none; }
     opacity: 0.5;
 }
 
+/* --- More Projects - Smaller Cards (40% reduction) --- */
+.project-grid.minor {
+    grid-template-columns: repeat(auto-fit, minmax(192px, 1fr)); /* 320px * 0.6 = 192px */
+}
+
+.project-grid.minor .project-card__image-link {
+    height: 132px; /* 220px * 0.6 = 132px */
+}
+
+.project-grid.minor .card-content {
+    padding: 0.9rem; /* 1.5rem * 0.6 = 0.9rem */
+}
+
+.project-grid.minor h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-grid.minor .card-content p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.project-grid.minor .tech-tags {
+    margin-bottom: 1rem;
+}
+
+.project-grid.minor .tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+}
+
+.project-grid.minor .btn-primary,
+.project-grid.minor .btn-secondary {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+
 /* --- Insignificant Projects --- */
 .insignificant-project-grid { display: grid; gap: 1rem; }
 .insignificant-project-item { display: flex; justify-content: space-between; align-items: center; background-color: var(--color-background-secondary); padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid var(--color-border); transition: border-color 0.2s ease; }

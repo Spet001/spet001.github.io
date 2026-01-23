@@ -1,32 +1,17 @@
 const { useState, useEffect, useRef, createContext, useContext } = React;
 
 const allProjects = [
-    // Projetos Relevantes
-    {
-        id: 'sparky',
-        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257185670/d0cf56f005af6f109edd9ee603dc2da75fa0aaf1/movie_232x130.jpg?t=1756993430",
-        technologies: ["QA", "Unity", "C#"],
-        liveUrl: "https://store.steampowered.com/app/3592020/Sparky_Rush_Purrils_in_Pawsville/?curator_clanid=4777282",
-        liveUrlTextKey: "steamWishlist",
-        category: 'relevant',
-        pt: {
-            title: "QA Analyst - Sparky Rush",
-            description: "Atuei como QA Analyst profissional no desenvolvimento de 'Sparky Rush', um jogo de plataforma 3D publicado na Steam. Identifiquei e documentei mais de 50 bugs críticos, realizei testes extensivos de gameplay e ajudei a garantir a qualidade do produto final antes do lançamento comercial."
-        },
-        en: {
-            title: "QA Analyst - Sparky Rush",
-            description: "Worked as a professional QA Analyst on the development of 'Sparky Rush', a 3D platformer published on Steam. Identified and documented over 50 critical bugs, conducted extensive gameplay testing, and helped ensure product quality before commercial release."
-        }
-    },
+    // PROJETOS EM DESTAQUE - Featured Projects
+    // 1. Outcaster templates
     {
         id: 'outcaster',
-        image: "assets/Outcaster1.jpg",
+        image: "assets/outcaster img2.png",
         technologies: ["Unity", "C#", "Game Development", "Game Design"],
         liveUrl: "https://spet01.itch.io/outcaster-retro-fps-template",
         liveUrlTextKey: "itchIo25d",
         liveUrl2: "https://spet01.itch.io/outcaster-a-3d-fps-template",
         liveUrl2TextKey: "itchIo3d",
-        category: 'relevant',
+        category: 'featured',
         pt: {
             title: "Outcaster - Templates FPS 2.5D/3D",
             description: "Templates completos de FPS retro no estilo 'boomer shooter' desenvolvidos em Unity e C#. Disponibilizados gratuitamente para a comunidade, incluem mecânicas de movimento fluido, sistema de armas, inimigos com IA e estética retrô-futurista prontos para serem expandidos por outros desenvolvedores."
@@ -36,28 +21,47 @@ const allProjects = [
             description: "Complete retro FPS templates in 'boomer shooter' style developed in Unity and C#. Released for free to the community, featuring fluid movement, weapon system, AI enemies, and retro-futuristic aesthetics ready to be expanded by other developers."
         }
     },
+    // 2. Doom traduzido
     {
-        id: 'pau_no_gato',
-        image: "https://img.itch.zone/aW1nLzIzNjkzMTg4LnBuZw==/315x250%23c/eUMvyr.png",
-        technologies: ["Unreal5", "C++", "Game Design", "GameJam"],
-        liveUrl: "https://zodiacogames.itch.io/atirei-o-pau-no-gato-mas-o-gato-no-morreu-e-agora-ele-vai-se-vingar",
-        liveUrlTextKey: "itchIo",
-        category: 'relevant',
+        id: 'doom_wad_ptbr',
+        image: "/assets/demotranslate.gif",
+        technologies: ["SLADE", "Graphics Design", "Game Localization"],
+        repoUrl: "https://github.com/Spet001/Doom-WAD-Traduzido-PTBR",
+        category: 'featured',
         pt: {
-            title: "Atirei o Pau no Gato - GameJam+ 2025",
-            description: "Jogo desenvolvido para a GameJam+ 2025 que passou para a fase de incubação. Um projeto criativo que mistura humor brasileiro com mecânicas de jogo inovadoras. O sucesso na GameJam garantiu recursos adicionais para expansão e polimento do conceito original."
+            title: "Doom WAD Traduzido - PT-BR",
+            description: "Tradução gráfica completa do WAD original do Doom para português brasileiro. Inclui adaptação cultural de todas as telas, menus, HUDs e elementos visuais mantendo perfeitamente a estética pixel art clássica dos anos 90."
         },
         en: {
-            title: "I Threw a Stick at the Cat - GameJam+ 2025",
-            description: "Game developed for GameJam+ 2025 that advanced to the incubation phase. A creative project that blends Brazilian humor with innovative game mechanics. Success in the GameJam secured additional resources for expansion and refinement of the original concept."
+            title: "Doom WAD Translated - PT-BR",
+            description: "Complete graphic translation of the original Doom WAD to Brazilian Portuguese. Includes cultural adaptation of all screens, menus, HUDs, and visual elements while perfectly maintaining the classic 90s pixel art aesthetic."
         }
     },
+    // 3. UWP Server Selector - Boiii Reimagined
+    {
+        id: 'boiii_uwp',
+        image: "assets/bo3.png",
+        technologies: ["C", "C++", "Electron", "DLL Injection"],
+        repoUrl: "https://github.com/Spet001/BOIII-ReImagined-UWP",
+        liveUrl: "https://www.nexusmods.com/callofdutyblackops3/mods/36",
+        liveUrlTextKey: "nexus",
+        category: 'featured',
+        pt: {
+            title: "UWP Server Selector - Boiii Reimagined",
+            description: "Cliente customizado completo para Call of Duty Black Ops 3 versão UWP com instalador Electron. Inclui injeção de DLLs da Microsoft Store (XCurl, GameChat2, Party), sistema de backup automático, compatibilidade cruzada Steam/MS Store e navegador de servidores (do cliente boiii) aprimorado para experiência multiplayer completa."
+        },
+        en: {
+            title: "UWP Server Selector - Boiii Reimagined",
+            description: "Complete custom client for Call of Duty Black Ops 3 UWP version with Electron installer. Includes Microsoft Store DLL injection (XCurl, GameChat2, Party), automatic backup system, Steam/MS Store cross-compatibility, and enhanced server browser (from the boiii client) for complete multiplayer experience."
+        }
+    },
+    // 4. GSC Injector
     {
         id: 'bo3_injector',
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/311210/header.jpg",
+        image: "assets/gscinjector.png",
         technologies: ["C#", ".NET", "Reverse Engineering", "GSC"],
         repoUrl: "https://github.com/Spet001/BO3-MicrosoftStore-GSC-Injector",
-        category: 'relevant',
+        category: 'featured',
         pt: {
             title: "BO3 GSC Injector - Microsoft Store/Bo3 Enhanced",
             description: "Injetor avançado de scripts GSC (Game Script Code) para Call of Duty Black Ops 3 versão Microsoft Store/BO3 Enhanced. Utiliza técnicas sofisticadas de engenharia reversa para contornar as proteções UWP e permitir execução de scripts customizados em uma versão tradicionalmente fechada do jogo."
@@ -67,12 +71,66 @@ const allProjects = [
             description: "Advanced GSC (Game Script Code) injector for Call of Duty Black Ops 3 Microsoft Store/BO3 Enhanced version. Uses sophisticated reverse engineering techniques to bypass UWP protections and enable custom script execution in a traditionally locked game version."
         }
     },
+    // 5. Sparky
+    {
+        id: 'sparky',
+        image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257185670/d0cf56f005af6f109edd9ee603dc2da75fa0aaf1/movie_232x130.jpg?t=1756993430",
+        technologies: ["QA", "Unity", "C#"],
+        liveUrl: "https://store.steampowered.com/app/3592020/Sparky_Rush_Purrils_in_Pawsville/?curator_clanid=4777282",
+        liveUrlTextKey: "steamWishlist",
+        category: 'featured',
+        pt: {
+            title: "QA Analyst - Sparky Rush",
+            description: "Atuei como QA Analyst profissional no desenvolvimento de 'Sparky Rush', um jogo de plataforma 3D publicado na Steam. Identifiquei e documentei mais de 50 bugs críticos, realizei testes extensivos de gameplay e ajudei a garantir a qualidade do produto final antes do lançamento comercial."
+        },
+        en: {
+            title: "QA Analyst - Sparky Rush",
+            description: "Worked as a professional QA Analyst on the development of 'Sparky Rush', a 3D platformer published on Steam. Identified and documented over 50 critical bugs, conducted extensive gameplay testing, and helped ensure product quality before commercial release."
+        }
+    },
+    // 6. Atirei o pau no gato
+    {
+        id: 'pau_no_gato',
+        image: "https://img.itch.zone/aW1nLzIzNjkzMTg4LnBuZw==/315x250%23c/eUMvyr.png",
+        technologies: ["Unreal5", "C++", "Game Design", "GameJam"],
+        liveUrl: "https://zodiacogames.itch.io/atirei-o-pau-no-gato-mas-o-gato-no-morreu-e-agora-ele-vai-se-vingar",
+        liveUrlTextKey: "itchIo",
+        category: 'featured',
+        pt: {
+            title: "Atirei o Pau no Gato - GameJam+ 2025",
+            description: "Jogo desenvolvido para a GameJam+ 2025 que passou para a fase de incubação. Um projeto criativo que mistura humor brasileiro com mecânicas de jogo inovadoras. O sucesso na GameJam garantiu recursos adicionais para expansão e polimento do conceito original."
+        },
+        en: {
+            title: "I Threw a Stick at the Cat - GameJam+ 2025",
+            description: "Game developed for GameJam+ 2025 that advanced to the incubation phase. A creative project that blends Brazilian humor with innovative game mechanics. Success in the GameJam secured additional resources for expansion and refinement of the original concept."
+        }
+    },
+    // 7. Grid Based Unreal 5 (NEW)
+    {
+        id: 'grid_based_ue5',
+        image: "https://img.itch.zone/aW1nLzI1MDk0NDM3LnBuZw==/315x250%23c/3CpBL%2B.png",
+        technologies: ["Unreal5", "C++", "Game Development", "Blueprint"],
+        liveUrl: "https://spet01.itch.io/grid-based-first-person-movement-template-unreal-5",
+        liveUrlTextKey: "itchIo",
+        repoUrl: "https://github.com/Spet001/Project-J-UE5",
+        category: 'featured',
+        pt: {
+            title: "Grid-Based First Person Movement - Unreal 5",
+            description: "Template completo para criação de dungeon crawlers em primeira pessoa com movimento baseado em grid no Unreal Engine 5. Desenvolvido com modularidade e facilidade de uso em mente, lida com a lógica central de movimento permitindo foco em level design, combate e puzzles. Compatível com estética retrô ou visuais de alta fidelidade usando Lumen/Nanite."
+        },
+        en: {
+            title: "Grid-Based First Person Movement - Unreal 5",
+            description: "Complete template for creating grid-based, first-person dungeon crawler games in Unreal Engine 5. Designed with modularidade and ease of use in mind, it handles the core movement logic so you can focus on level design, combat, and puzzles. Whether you are aiming for a retro aesthetic or high-fidelity visuals using Lumen/Nanite, this movement system is ready to be the backbone of your project."
+        }
+    },
+
+    // MAIS PROJETOS - Minor Projects
     {
         id: 'iw7_mod_ex',
         image: "https://pbs.twimg.com/media/F_udiLiW4AA8bKR.png",
         technologies: ["C++", "Reverse Engineering", "Game Modding"],
         repoUrl: "https://github.com/Spet001/iw7-mod-ex",
-        category: 'relevant',
+        category: 'minor',
         pt: {
             title: "IW7-Mod-EX",
             description: "Modificação avançada para Call of Duty: Infinite Warfare (IW7) focada em trazer o IW7-Mod para versões non-steam."
@@ -87,7 +145,7 @@ const allProjects = [
         image: "https://cdn.cloudflare.steamstatic.com/steam/apps/211420/header.jpg",
         technologies: ["JavaScript", "PowerShell", "Electron", "Node.js"],
         repoUrl: "https://github.com/Spet001/Dark-Souls-PTDE-Enhancement-Suite",
-        category: 'relevant',
+        category: 'minor',
         pt: {
             title: "Dark Souls PTDE Enhancement Suite",
             description: "Aplicação desktop completa desenvolvida em Electron para modernizar Dark Souls: Prepare to Die Edition. Inclui correções de registro, instalador automático de mods (DSFIX), integração FSR para upscaling, e interface multilíngue. Um toolkit abrangente que resolve problemas de compatibilidade e melhora significativamente a experiência em sistemas modernos."
@@ -104,7 +162,7 @@ const allProjects = [
         repoUrl: "https://github.com/Spet001/FF13-MS-Store",
         liveUrl: "https://www.nexusmods.com/finalfantasy13/mods/59",
         liveUrlTextKey: "nexus",
-        category: 'relevant',
+        category: 'minor',
         pt: {
             title: "FF13Fix UWP - Mod Loader",
             description: "Realizei engenharia reversa completa do FF13Fix para criar compatibilidade com a versão UWP da Microsoft Store. O projeto quebra as proteções de sandboxing da plataforma, permitindo injeção de DLLs e carregamento de mods em um ambiente tradicionalmente fechado."
@@ -120,7 +178,7 @@ const allProjects = [
         technologies: ["Python", "Reverse Engineering", "UWP Exploitation"],
         liveUrl: "https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/181",
         liveUrlTextKey: "nexus",
-        category: 'relevant',
+        category: 'minor',
         pt: {
             title: "AutoParMS - UWP Mod Injector",
             description: "Ferramenta avançada de engenharia reversa que contorna as limitações de segurança da plataforma UWP para permitir modificações em 'Like a Dragon - Pirate Yakuza in Hawaii'. Utiliza técnicas de injeção de arquivos diretamente nos arquivos proprietarios (.PAR) e manipulação de memória para habilitar mods em um ambiente restrito."
@@ -131,44 +189,12 @@ const allProjects = [
         }
     },
     {
-        id: 'doom_wad_ptbr',
-        image: "/assets/demotranslate.gif",
-        technologies: ["SLADE", "Graphics Design", "Game Localization"],
-        repoUrl: "https://github.com/Spet001/Doom-WAD-Traduzido-PTBR",
-        category: 'relevant',
-        pt: {
-            title: "Doom WAD Traduzido - PT-BR",
-            description: "Tradução gráfica completa do WAD original do Doom para português brasileiro. Inclui adaptação cultural de todas as telas, menus, HUDs e elementos visuais mantendo perfeitamente a estética pixel art clássica dos anos 90."
-        },
-        en: {
-            title: "Doom WAD Translated - PT-BR",
-            description: "Complete graphic translation of the original Doom WAD to Brazilian Portuguese. Includes cultural adaptation of all screens, menus, HUDs, and visual elements while perfectly maintaining the classic 90s pixel art aesthetic."
-        }
-    },
-    {
-        id: 'boiii_uwp',
-        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/311210/header.jpg",
-        technologies: ["C", "C++", "Electron", "DLL Injection"],
-        repoUrl: "https://github.com/Spet001/BOIII-ReImagined-UWP",
-        liveUrl: "https://www.nexusmods.com/callofdutyblackops3/mods/36",
-        liveUrlTextKey: "nexus",
-        category: 'relevant',
-        pt: {
-            title: "BOIII Reimagined UWP",
-            description: "Cliente customizado completo para Call of Duty Black Ops 3 versão UWP com instalador Electron. Inclui injeção de DLLs da Microsoft Store (XCurl, GameChat2, Party), sistema de backup automático, compatibilidade cruzada Steam/MS Store e navegador de servidores (do cliente boiii) aprimorado para experiência multiplayer completa."
-        },
-        en: {
-            title: "BOIII Reimagined UWP",
-            description: "Complete custom client for Call of Duty Black Ops 3 UWP version with Electron installer. Includes Microsoft Store DLL injection (XCurl, GameChat2, Party), automatic backup system, Steam/MS Store cross-compatibility, and enhanced server browser (from the boiii client) for complete multiplayer experience."
-        }
-    },
-    {
         id: 'ladfixms',
         image: "https://staticdelivery.nexusmods.com/mods/7333/images/thumbnails/187/187-1757613976-1077513334.png",
         technologies: ["Python", "Reverse Engineering", "UWP Exploitation"],
         liveUrl: "https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/187#",
         liveUrlTextKey: "nexus",
-        category: 'relevant',
+        category: 'minor',
         pt: {
             title: "LADFixMS - DLL Injection Tool",
             description: "Sistema avançado de injeção de DLLs especificamente desenvolvido para 'Like a Dragon Pirate Yakuza' na plataforma UWP. Utiliza técnicas sofisticadas de bypass de segurança para contornar as limitações impostas pela Microsoft Store, permitindo modificações profundas no comportamento do jogo."
@@ -178,7 +204,6 @@ const allProjects = [
             description: "Advanced DLL injection system specifically developed for 'Like a Dragon Pirate Yakuza' on UWP platform. Uses sophisticated security bypass techniques to circumvent Microsoft Store limitations, enabling deep modifications to game behavior."
         }
     },
-    // Projetos Menores - Ordem reorganizada por relevância
     {
         id: 'bioshock2_fix',
         image: "https://cdn.cloudflare.steamstatic.com/steam/apps/8850/header.jpg",
@@ -373,7 +398,7 @@ const allProjects = [
 ];
 
 const insignificantProjects = [
-    { 
+    {
         id: 'other_repos',
         repoUrl: "https://github.com/Spet001?tab=repositories",
         pt: {
@@ -385,7 +410,7 @@ const insignificantProjects = [
             description: "A collection of projects developed during bootcamps, logic challenges, and small applications for self-study. Feel free to check out all my repositories!"
         }
     },
-    { 
+    {
         id: 'itch_io',
         repoUrl: "https://spet01.itch.io/",
         pt: {
@@ -551,7 +576,7 @@ const Starfield = () => {
 
         const handleKeyDown = (e) => { keysPressed.current[e.key] = true; };
         const handleKeyUp = (e) => { delete keysPressed.current[e.key]; };
-        
+
         window.addEventListener('keydown', handleKeyDown);
         window.addEventListener('keyup', handleKeyUp);
 
@@ -567,7 +592,7 @@ const Starfield = () => {
             updateMoonPosition();
             ctx.fillStyle = 'rgba(10, 10, 10, 0.7)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
+
             drawMoon(moonPosRef.current);
 
             ctx.fillStyle = 'white';
@@ -583,7 +608,7 @@ const Starfield = () => {
             });
             animationFrameId = requestAnimationFrame(render);
         };
-        
+
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
         render();
@@ -634,8 +659,8 @@ const LanguageSwitcher = () => {
 const SpetGamesLogo = () => (
     <svg className="spet-games-logo" viewBox="0 0 90 80" aria-hidden="true">
         <g>
-            <path d="M75,20 L40,20 C30,20 20,30 20,40 L20,50 C20,60 30,70 40,70 L60,70" stroke="currentColor" strokeWidth="12" fill="none" strokeLinecap="round"/>
-            <path d="M60,70 C70,70 80,60 80,50 L80,45" stroke="currentColor" strokeWidth="12" fill="none" strokeLinecap="round"/>
+            <path d="M75,20 L40,20 C30,20 20,30 20,40 L20,50 C20,60 30,70 40,70 L60,70" stroke="currentColor" strokeWidth="12" fill="none" strokeLinecap="round" />
+            <path d="M60,70 C70,70 80,60 80,50 L80,45" stroke="currentColor" strokeWidth="12" fill="none" strokeLinecap="round" />
         </g>
     </svg>
 );
@@ -760,13 +785,13 @@ const Header = () => {
 };
 
 const TechIcons = () => {
-    const techs = ['cs', 'python', 'unity', 'c', 'cpp', 'js', 'git', 'github', 'vscode', 'powershell', 'selenium' ];
+    const techs = ['cs', 'python', 'unity', 'c', 'cpp', 'js', 'git', 'github', 'vscode', 'powershell', 'selenium'];
     return (
         <div className="tech-icons">
             {techs.map(tech => (
-                <img 
-                    key={tech} 
-                    src={`https://skillicons.dev/icons?i=${tech}&theme=dark`} 
+                <img
+                    key={tech}
+                    src={`https://skillicons.dev/icons?i=${tech}&theme=dark`}
                     alt={`${tech} icon`}
                     title={tech.charAt(0).toUpperCase() + tech.slice(1)}
                 />
@@ -809,19 +834,19 @@ const ProjectCard = ({ project }) => {
 
     return (
         <div ref={ref} className={`project-card fade-in ${isVisible ? 'visible' : ''}`}>
-             <a href={hasRepoLink ? project.repoUrl : (hasLiveLink ? project.liveUrl : '#')} target="_blank" rel="noopener noreferrer" className="project-card__image-link">
+            <a href={hasRepoLink ? project.repoUrl : (hasLiveLink ? project.liveUrl : '#')} target="_blank" rel="noopener noreferrer" className="project-card__image-link">
                 {project.image ? (
                     <img src={project.image} alt={content.title} />
                 ) : (
                     <div className="project-card-no-image">
-                         <i className={project.icon || "fas fa-tools"}></i>
+                        <i className={project.icon || "fas fa-tools"}></i>
                     </div>
                 )}
             </a>
             <div className="card-content">
                 <h3>{content.title}</h3>
                 <p>{content.description}</p>
-                 <div className="tech-tags">{project.technologies.map(tech => <span key={tech} className="tag">{tech}</span>)}</div>
+                <div className="tech-tags">{project.technologies.map(tech => <span key={tech} className="tag">{tech}</span>)}</div>
                 <div className="card-footer">
                     {hasRepoLink && <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">{t('repoButton')}</a>}
                     {hasLiveLink && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">{t(project.liveUrlTextKey) || t('liveUrlText')}</a>}
@@ -850,14 +875,27 @@ const InsignificantProjectItem = ({ project }) => {
 };
 
 const Projects = () => {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
+
+    const featuredProjects = allProjects.filter(p => p.category === 'featured');
+    const minorProjects = allProjects.filter(p => p.category === 'minor');
+
+    const featuredTitle = language === 'pt' ? 'Projetos em Destaque' : 'Featured Projects';
+    const minorTitle = language === 'pt' ? 'Mais Projetos!' : 'More Projects!';
 
     return (
         <section className="projects" id="projects">
             <div className="container">
-                <AnimatedDiv><h2>{t('projectsTitle')}</h2></AnimatedDiv>
-                <div className="project-grid">{allProjects.map((p) => <ProjectCard key={p.id} project={p} />)}</div>
+                <AnimatedDiv><h2>{featuredTitle}</h2></AnimatedDiv>
+                <div className="project-grid featured">{featuredProjects.map((p) => <ProjectCard key={p.id} project={p} />)}</div>
             </div>
+
+            {minorProjects.length > 0 && (
+                <div className="container" style={{ marginTop: '4rem' }}>
+                    <AnimatedDiv><h2>{minorTitle}</h2></AnimatedDiv>
+                    <div className="project-grid minor">{minorProjects.map((p) => <ProjectCard key={p.id} project={p} />)}</div>
+                </div>
+            )}
         </section>
     );
 }
