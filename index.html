@@ -1,24 +1,1190 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo Gelain | Desenvolvedor de Software & Jogos</title>
-    <meta name="description" content="Portfólio de Eduardo Gelain - Desenvolvedor de Software e Jogos especializado em Unity, Python, C# e engenharia reversa.">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Cg transform='translate(5, 5)'%3E%3Cpath d='M75,20 L40,20 C30,20 20,30 20,40 L20,50 C20,60 30,70 40,70 L60,70' stroke='%2300aaff' stroke-width='10' fill='none' stroke-linecap='round'/%3E%3Cpath d='M60,70 C70,70 80,60 80,50 L80,45' stroke='%2300aaff' stroke-width='10' fill='none' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E">
+    <title>Eduardo Gelain | Software & Game Developer</title>
+    <meta name="description"
+        content="Portfólio de Eduardo Gelain - Desenvolvedor de Software e Jogos especializado em Unity, Python, C# e engenharia reversa.">
+
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#00aaff',
+                        primaryHover: '#0077b6',
+                        dark: '#050505',
+                        darkPanel: 'rgba(15, 23, 42, 0.7)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for base tweaks -->
+    <style>
+        body {
+            background-color: #050505;
+            color: #e2e8f0;
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='white' stroke-width='1.5' d='M4.5,19.5 L9,9 L19.5,4.5 L15,15 Z'/%3E%3Cpath fill='white' d='M9,9 L15,15 L11,13 Z'/%3E%3C/svg%3E") 4 4, auto;
+            overflow-x: hidden;
+        }
+
+        a,
+        button,
+        .clickable {
+            cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%2300aaff' stroke-width='1.5' d='M4.5,19.5 L9,9 L19.5,4.5 L15,15 Z'/%3E%3Cpath fill='%2300aaff' d='M9,9 L15,15 L11,13 Z'/%3E%3C/svg%3E") 4 4, pointer;
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(0, 170, 255, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 170, 255, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+
+    <!-- React & Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body>
+
+<body class="antialiased selection:bg-primary selection:text-white">
     <div id="root"></div>
 
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const { useState, useEffect, useRef, createContext, useContext } = React;
 
-    <script type="text/babel" src="app.js"></script>
+        // --- DATA & TRANSLATIONS ---
+        const translations = {
+            pt: {
+                nav: { about: "Sobre", projects: "Projetos", cv: "Currículo", github: "GitHub" },
+                hero: {
+                    status: "Disponível para oportunidades",
+                    role: "Software & Game Developer",
+                    desc: "Especialista em C#, Python e Unity. Focado em desenvolvimento de software, otimização de performance e engenharia reversa para criar soluções robustas.",
+                    cta: "Ver Projetos",
+                    hint: "Use as setas (↑ ← ↓ →) para explorar o espaço!"
+                },
+                about: {
+                    title: "Sobre Mim",
+                    text: "Sou um desenvolvedor apaixonado por desvendar sistemas complexos e otimizar processos. Minha jornada transita entre a criação de experiências interativas (GameDev) e a construção de ferramentas de alta performance.",
+                    bullets: [
+                        "Engenharia de Software & Ferramentas: Desenvolvimento de aplicações desktop e automação utilizando Python, Electron e Node.js.",
+                        "Desenvolvimento de Jogos: Arquitetura de sistemas na Unity (C#), com foco em código modular e Design Patterns.",
+                        "Engenharia Reversa & Modding: Exploração de ambientes restritos (UWP/Windows Store), injeção de DLLs nativas (C/C++) e otimização de renderização (DXVK/Vulkan).",
+                        "Quality Assurance (QA): Experiência prática com testes de software rigorosos, identificação de edge-cases e documentação em Jira/Trello."
+                    ],
+                    skillsTitle: "Stack Tecnológico",
+                    softSkillsTitle: "Soft Skills"
+                },
+                projects: {
+                    title: "Projetos em Destaque",
+                    btnRepo: "Código Fonte",
+                    btnLive: "Ver Projeto",
+                    minorTitle: "Ferramentas & Outros Projetos"
+                },
+                easter: {
+                    hint: "P.S. Não há easter eggs aqui...",
+                    doom: "Jogar DOOM",
+                    gta: "Jogar GTA VC",
+                    exit: "Sair do Jogo",
+                    openNew: "Abrir em nova aba"
+                }
+            },
+            en: {
+                nav: { about: "About", projects: "Projects", cv: "Resume", github: "GitHub" },
+                hero: {
+                    status: "Available for new opportunities",
+                    role: "Software & Game Developer",
+                    desc: "Specialized in C#, Python, and Unity. Focused on software architecture, performance optimization, and reverse engineering to build robust solutions.",
+                    cta: "View Projects",
+                    hint: "Use the arrow keys (↑ ← ↓ →) to explore space!"
+                },
+                about: {
+                    title: "About Me",
+                    text: "I am a developer passionate about unraveling complex systems and optimizing processes. My journey moves between creating interactive experiences (GameDev) and building high-performance tools.",
+                    bullets: [
+                        "Software Engineering & Tooling: Desktop application development and automation using Python, Electron, and Node.js.",
+                        "Game Development: Systems architecture in Unity (C#), focusing on modular code, Design Patterns, and publishing commercial games on Steam.",
+                        "Reverse Engineering & Modding: Exploring restricted environments (UWP/Windows Store), native DLL injection (C/C++), and rendering optimization (DXVK/Vulkan).",
+                        "Quality Assurance (QA): Hands-on experience with rigorous software testing, identifying edge-cases, and documentation using Jira/Trello."
+                    ],
+                    skillsTitle: "Tech Stack",
+                    softSkillsTitle: "Soft Skills"
+                },
+                projects: {
+                    title: "Featured Projects",
+                    btnRepo: "Source Code",
+                    btnLive: "Live Demo",
+                    minorTitle: "Tools & Minor Projects"
+                },
+                easter: {
+                    hint: "P.S. There are no easter eggs here...",
+                    doom: "Play DOOM",
+                    gta: "Play GTA VC",
+                    exit: "Exit Game",
+                    openNew: "Open in new tab"
+                }
+            }
+        };
+
+        const projectData = [
+            // --- PROJETOS EM DESTAQUE ---
+            {
+                id: 'outcaster',
+                featured: true,
+                image: 'assets/outcaster img2.png',
+                live: 'https://spet01.itch.io/outcaster-a-3d-fps-template',
+                pt: {
+                    title: 'Outcaster - FPS Templates',
+                    bullets: [
+                        'Templates completos de FPS retro (boomer shooter) criados em <strong>Unity</strong> e <strong>C#</strong>.',
+                        'Sistemas de <strong>Game Design</strong> integrando movimento fluido, armas e inimigos com IA.',
+                        'Estética retrô-futurista com arquitetura de código modular, pronta para ser expandida.',
+                        'Projeto open-source disponibilizado para a comunidade de <strong>Desenvolvimento de Jogos</strong>.'
+                    ]
+                },
+                en: {
+                    title: 'Outcaster - FPS Templates',
+                    bullets: [
+                        'Complete retro FPS (boomer shooter) templates created in <strong>Unity</strong> and <strong>C#</strong>.',
+                        '<strong>Game Design</strong> systems integrating fluid movement, weapons, and AI enemies.',
+                        'Retro-futuristic aesthetic with modular code architecture, ready to be expanded.',
+                        'Open-source project released to help the <strong>Game Development</strong> community.'
+                    ]
+                }
+            },
+            {
+                id: 'doom_wad_ptbr',
+                featured: true,
+                image: '/assets/demotranslate.gif',
+                repo: 'https://github.com/Spet001/Doom-WAD-Traduzido-PTBR',
+                pt: {
+                    title: 'Doom WAD Traduzido (PT-BR)',
+                    bullets: [
+                        'Tradução gráfica completa do WAD original do Doom para português brasileiro (<strong>Game Localization</strong>).',
+                        'Adaptação cultural de telas, menus e HUDs utilizando <strong>Graphics Design</strong>.',
+                        'Edição e injeção de assets através da ferramenta <strong>SLADE</strong>.',
+                        'Preservação perfeita da estética pixel art clássica dos anos 90.'
+                    ]
+                },
+                en: {
+                    title: 'Doom WAD Translated (PT-BR)',
+                    bullets: [
+                        'Complete graphical translation of the original Doom WAD to Brazilian Portuguese (<strong>Game Localization</strong>).',
+                        'Cultural adaptation of screens, menus, and HUDs utilizing <strong>Graphics Design</strong>.',
+                        'Asset editing and injection using the <strong>SLADE</strong> tool.',
+                        'Perfect preservation of the classic 90s pixel art aesthetic.'
+                    ]
+                }
+            },
+            {
+                id: 'resurge',
+                featured: true,
+                image: 'https://resurge.gamer.gd/RESURGE_600_x_240_px_1.gif',
+                repo: 'https://github.com/Spet001/BOIII-ReImagined-UWP',
+                live: 'https://resurge.gamer.gd/',
+                pt: {
+                    title: 'Resurge Client (BO3)',
+                    bullets: [
+                        'Cliente customizado de alta performance em <strong>C</strong> e <strong>C++</strong> para Call of Duty BO3 (UWP/Steam).',
+                        'Mecanismo de <strong>DLL Injection</strong> direta no Xgameruntime para contornar o sandboxing UWP.',
+                        'Modding de Rede viabilizando crossplay Steam-Xbox via engenharia reversa.',
+                        'Gerenciador nativo construído em <strong>Electron</strong> para automatizar downgrades e o T7 Patch.'
+                    ]
+                },
+                en: {
+                    title: 'Resurge Client (BO3)',
+                    bullets: [
+                        'High-performance custom client in <strong>C</strong> and <strong>C++</strong> for Call of Duty BO3 (UWP/Steam).',
+                        'Direct <strong>DLL Injection</strong> mechanism into Xgameruntime to bypass UWP sandboxing.',
+                        'Network Modding enabling Steam-Xbox crossplay via reverse engineering.',
+                        'Native manager built in <strong>Electron</strong> to automate downgrades and the T7 Patch.'
+                    ]
+                }
+            },
+            {
+                id: 'bo3_injector',
+                featured: true,
+                image: 'assets/gscinjector.png',
+                repo: 'https://github.com/Spet001/BO3-MicrosoftStore-GSC-Injector',
+                pt: {
+                    title: 'BO3 GSC Injector',
+                    bullets: [
+                        'Injetor avançado de scripts <strong>GSC</strong> desenvolvido em <strong>C#</strong> e <strong>.NET</strong>.',
+                        'Focado na versão Microsoft Store (BO3 Enhanced), utilizando <strong>Engenharia Reversa</strong> avançada.',
+                        'Contorna restrições de segurança da plataforma UWP para executar scripts customizados.',
+                        'Permite modificações profundas em uma versão tradicionalmente fechada do jogo.'
+                    ]
+                },
+                en: {
+                    title: 'BO3 GSC Injector',
+                    bullets: [
+                        'Advanced <strong>GSC</strong> script injector developed in <strong>C#</strong> and <strong>.NET</strong>.',
+                        'Focused on the Microsoft Store version (BO3 Enhanced), utilizing advanced <strong>Reverse Engineering</strong>.',
+                        'Bypasses UWP platform security restrictions to execute custom scripts.',
+                        'Enables deep modifications in a traditionally locked game version.'
+                    ]
+                }
+            },
+            {
+                id: 'sparky',
+                featured: true,
+                image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257185670/d0cf56f005af6f109edd9ee603dc2da75fa0aaf1/movie_232x130.jpg?t=1756993430',
+                live: 'https://store.steampowered.com/app/3592020/Sparky_Rush_Purrils_in_Pawsville/',
+                pt: {
+                    title: 'QA Analyst - Sparky Rush',
+                    bullets: [
+                        'Atuação profissional como <strong>QA Analyst</strong> no jogo de plataforma 3D "Sparky Rush", publicado na Steam.',
+                        'Identificação, reprodução e documentação detalhada de mais de 50 bugs críticos.',
+                        'Testes extensivos de gameplay e mecânicas desenvolvidas em <strong>Unity</strong> e <strong>C#</strong>.',
+                        'Trabalho direto com a equipe para garantir o polimento e qualidade final comercial.'
+                    ]
+                },
+                en: {
+                    title: 'QA Analyst - Sparky Rush',
+                    bullets: [
+                        'Professional <strong>QA Analyst</strong> role on the 3D platformer "Sparky Rush", published on Steam.',
+                        'Identification, reproduction, and detailed documentation of over 50 critical bugs.',
+                        'Extensive gameplay testing of mechanics developed in <strong>Unity</strong> and <strong>C#</strong>.',
+                        'Direct collaboration with the team to ensure polish and commercial final quality.'
+                    ]
+                }
+            },
+            {
+                id: 'pau_no_gato',
+                featured: true,
+                image: 'https://img.itch.zone/aW1nLzIzNjkzMTg4LnBuZw==/315x250%23c/eUMvyr.png',
+                live: 'https://zodiacogames.itch.io/atirei-o-pau-no-gato-mas-o-gato-no-morreu-e-agora-ele-vai-se-vingar',
+                pt: {
+                    title: 'Atirei o Pau no Gato',
+                    bullets: [
+                        'Jogo criativo desenvolvido na GameJam+ 2025 que alcançou a fase de incubação.',
+                        'Programação de lógicas e mecânicas utilizando <strong>Unreal Engine 5</strong> e <strong>C++</strong>.',
+                        'Integração de mecânicas inovadoras de <strong>Game Design</strong> e humor brasileiro.',
+                        'O sucesso na GameJam garantiu recursos para polimento do conceito original.'
+                    ]
+                },
+                en: {
+                    title: 'I Threw a Stick at the Cat',
+                    bullets: [
+                        'Creative game developed during GameJam+ 2025 that reached the incubation phase.',
+                        'Logic and mechanics programming using <strong>Unreal Engine 5</strong> and <strong>C++</strong>.',
+                        'Integration of innovative <strong>Game Design</strong> mechanics and Brazilian humor.',
+                        'Success in the GameJam secured resources to polish the original concept.'
+                    ]
+                }
+            },
+            {
+                id: 'grid_based_ue5',
+                featured: true,
+                image: 'https://img.itch.zone/aW1nLzI1MDk0NDM3LnBuZw==/315x250%23c/3CpBL%2B.png',
+                repo: 'https://github.com/Spet001/Project-J-UE5',
+                live: 'https://spet01.itch.io/grid-based-first-person-movement-template-unreal-5',
+                pt: {
+                    title: 'Grid-Based Movement (UE5)',
+                    bullets: [
+                        'Template para dungeon crawlers em primeira pessoa desenvolvido no <strong>Unreal Engine 5</strong>.',
+                        'Sistemas construídos com <strong>C++</strong> e <strong>Blueprints</strong> focados em arquitetura modular.',
+                        'Gerencia toda a lógica de movimento baseado em grid, simplificando o level design.',
+                        'Preparado para estéticas retro ou gráficos de alta fidelidade via Lumen/Nanite.'
+                    ]
+                },
+                en: {
+                    title: 'Grid-Based Movement (UE5)',
+                    bullets: [
+                        'Template for first-person dungeon crawlers developed in <strong>Unreal Engine 5</strong>.',
+                        'Systems built with <strong>C++</strong> and <strong>Blueprints</strong> focused on modular architecture.',
+                        'Handles all grid-based movement logic, simplifying level design.',
+                        'Ready for retro aesthetics or high-fidelity graphics via Lumen/Nanite.'
+                    ]
+                }
+            },
+
+            // --- PROJETOS MENORES (FERRAMENTAS & ESTUDOS) ---
+            {
+                id: 'iw7_mod_ex',
+                featured: false,
+                image: 'https://pbs.twimg.com/media/F_udiLiW4AA8bKR.png',
+                repo: 'https://github.com/Spet001/iw7-mod-ex',
+                pt: {
+                    title: 'IW7-Mod-EX',
+                    bullets: [
+                        'Modificação avançada em <strong>C++</strong> para Call of Duty: Infinite Warfare (IW7).',
+                        'Utiliza <strong>Engenharia Reversa</strong> para trazer suporte a mods nas versões da Windows Store.',
+                        'Implementa camadas de compatibilidade e manipulação de memória (memory patches).'
+                    ]
+                },
+                en: {
+                    title: 'IW7-Mod-EX',
+                    bullets: [
+                        'Advanced modification in <strong>C++</strong> for Call of Duty: Infinite Warfare (IW7).',
+                        'Uses <strong>Reverse Engineering</strong> to bring mod support to Windows Store versions.',
+                        'Implements compatibility layers and memory patching.'
+                    ]
+                }
+            },
+            {
+                id: 'dark_souls_suite',
+                featured: false,
+                image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/211420/header.jpg',
+                repo: 'https://github.com/Spet001/Dark-Souls-PTDE-Enhancement-Suite',
+                pt: {
+                    title: 'Dark Souls PTDE Suite',
+                    bullets: [
+                        'Aplicação Desktop robusta desenvolvida em <strong>Electron</strong>, <strong>Node.js</strong> e <strong>JavaScript</strong>.',
+                        'Executa correções no registro do Windows usando scripts <strong>PowerShell</strong>.',
+                        'Instalador automático do mod DSFIX e integração FSR para upscaling moderno.'
+                    ]
+                },
+                en: {
+                    title: 'Dark Souls PTDE Suite',
+                    bullets: [
+                        'Robust Desktop application developed in <strong>Electron</strong>, <strong>Node.js</strong>, and <strong>JavaScript</strong>.',
+                        'Executes Windows registry fixes using <strong>PowerShell</strong> scripts.',
+                        'Automatic installer for the DSFIX mod and FSR integration for modern upscaling.'
+                    ]
+                }
+            },
+            {
+                id: 'ff13fix',
+                featured: false,
+                image: 'https://staticdelivery.nexusmods.com/mods/2086/images/thumbnails/59/59-1754939857-517189306.png',
+                repo: 'https://github.com/Spet001/FF13-MS-Store',
+                live: 'https://www.nexusmods.com/finalfantasy13/mods/59',
+                pt: {
+                    title: 'FF13Fix UWP Mod Loader',
+                    bullets: [
+                        'Engenharia reversa do projeto FF13Fix original usando <strong>Python</strong> e <strong>C#</strong>.',
+                        'Cria compatibilidade com a versão UWP (Microsoft Store).',
+                        'Quebra o sandboxing da plataforma para permitir injeção de DLLs de mods.'
+                    ]
+                },
+                en: {
+                    title: 'FF13Fix UWP Mod Loader',
+                    bullets: [
+                        'Reverse engineering of the original FF13Fix project using <strong>Python</strong> and <strong>C#</strong>.',
+                        'Creates compatibility with the UWP (Microsoft Store) version.',
+                        'Breaks platform sandboxing to allow injection of mod DLLs.'
+                    ]
+                }
+            },
+            {
+                id: 'autoparms',
+                featured: false,
+                image: 'https://staticdelivery.nexusmods.com/mods/7333/images/thumbnails/181/181-1754787442-12213008.png',
+                live: 'https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/181',
+                pt: {
+                    title: 'AutoParMS (Yakuza UWP)',
+                    bullets: [
+                        'Script avançado em <strong>Python</strong> para exploração do sistema UWP (<strong>UWP Exploitation</strong>).',
+                        'Injeção direta de arquivos nos pacotes proprietários (.PAR) da engine do jogo.',
+                        'Habilita o uso de mods no ambiente restrito do "Like a Dragon Pirate Yakuza".'
+                    ]
+                },
+                en: {
+                    title: 'AutoParMS (Yakuza UWP)',
+                    bullets: [
+                        'Advanced <strong>Python</strong> script for UWP system exploitation (<strong>UWP Exploitation</strong>).',
+                        'Direct file injection into the game engine\'s proprietary packages (.PAR).',
+                        'Enables mod usage in the restricted environment of "Like a Dragon Pirate Yakuza".'
+                    ]
+                }
+            },
+            {
+                id: 'ladfixms',
+                featured: false,
+                image: 'https://staticdelivery.nexusmods.com/mods/7333/images/thumbnails/187/187-1757613976-1077513334.png',
+                live: 'https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/187',
+                pt: {
+                    title: 'LADFixMS DLL Injector',
+                    bullets: [
+                        'Ferramenta programada em <strong>Python</strong> focada em <strong>Engenharia Reversa</strong>.',
+                        'Sistema de injeção de DLLs para contornar a segurança da Microsoft Store.',
+                        'Permite modificações de comportamento profundas nos jogos da franquia Yakuza.'
+                    ]
+                },
+                en: {
+                    title: 'LADFixMS DLL Injector',
+                    bullets: [
+                        'Tool programmed in <strong>Python</strong> focused on <strong>Reverse Engineering</strong>.',
+                        'DLL injection system to bypass Microsoft Store security.',
+                        'Allows deep behavior modifications in Yakuza franchise games.'
+                    ]
+                }
+            },
+            {
+                id: 'bioshock2_fix',
+                featured: false,
+                image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/8850/header.jpg',
+                repo: 'https://github.com/Spet001/Bioshock-2-GFWL-CrashFix',
+                pt: {
+                    title: 'Bioshock 2 GFWL CrashFix',
+                    bullets: [
+                        'App Desktop construído com <strong>Electron</strong> e <strong>JavaScript</strong>.',
+                        'Automatiza a instalação de bibliotecas <strong>DXVK</strong> para renderização Vulkan.',
+                        'Corrige crashes nativos do GFWL e protege arquivos de configuração do jogo.'
+                    ]
+                },
+                en: {
+                    title: 'Bioshock 2 GFWL CrashFix',
+                    bullets: [
+                        'Desktop App built with <strong>Electron</strong> and <strong>JavaScript</strong>.',
+                        'Automates the installation of <strong>DXVK</strong> libraries for Vulkan rendering.',
+                        'Fixes native GFWL crashes and protects game configuration files.'
+                    ]
+                }
+            },
+            {
+                id: 'fable3_fixer',
+                featured: false,
+                image: 'https://staticdelivery.nexusmods.com/mods/1393/images/thumbnails/27/27-1760404050-299923963.png',
+                repo: 'https://github.com/Spet001/Fable3Fixer',
+                live: 'https://www.nexusmods.com/fableIII/mods/27',
+                pt: {
+                    title: 'Fable 3 Fixer',
+                    bullets: [
+                        'Instalador 1-click desenvolvido em <strong>JavaScript</strong> e <strong>Electron</strong>.',
+                        'Aplica o <strong>DXVK</strong> para dobrar a taxa de quadros (FPS) em hardwares modernos.',
+                        'Inclui o patch 4GB e um preset visual compatível do <strong>ReShade</strong>.'
+                    ]
+                },
+                en: {
+                    title: 'Fable 3 Fixer',
+                    bullets: [
+                        '1-click installer developed in <strong>JavaScript</strong> and <strong>Electron</strong>.',
+                        'Applies <strong>DXVK</strong> to double the frame rate (FPS) on modern hardware.',
+                        'Includes the 4GB patch and a compatible visual <strong>ReShade</strong> preset.'
+                    ]
+                }
+            },
+            {
+                id: 'yugioh_web',
+                featured: false,
+                image: 'https://api.duniagames.co.id/optimize-image?url=https%3A%2F%2Fapi.duniagames.co.id%2Fapi%2Fcontent%2Fupload%2Ffile%2F10761004641617614978.jpg&format=webp&width=736&signature=9ae54855200869f03ce89432e0bb46891a19c5c1607441acbbee41a57ff13860',
+                repo: 'https://github.com/Spet001/Yu-Gi-Oh-Forbidden-Memories-Web',
+                pt: {
+                    title: 'Yu-Gi-Oh! FM Web',
+                    bullets: [
+                        'Recriação web do clássico de PlayStation utilizando <strong>JavaScript</strong>, <strong>HTML5</strong> e <strong>CSS3</strong>.',
+                        'Implementação lógica do sistema original de cartas, fusões e batalhas.',
+                        'Experiência nostálgica e otimizada rodando inteiramente direto no navegador.'
+                    ]
+                },
+                en: {
+                    title: 'Yu-Gi-Oh! FM Web',
+                    bullets: [
+                        'Web recreation of the PlayStation classic using <strong>JavaScript</strong>, <strong>HTML5</strong>, and <strong>CSS3</strong>.',
+                        'Logical implementation of the original card system, fusions, and battles.',
+                        'Nostalgic and optimized experience running entirely in the browser.'
+                    ]
+                }
+            },
+            {
+                id: 'outer_worlds_fix',
+                featured: false,
+                image: 'https://staticdelivery.nexusmods.com/mods/3037/images/thumbnails/255/255-1759781056-241650861.jpg',
+                repo: 'https://github.com/Spet001/The-Outer-Worlds-Fix',
+                live: 'https://www.nexusmods.com/theouterworlds/mods/255',
+                pt: {
+                    title: 'The Outer Worlds Fix',
+                    bullets: [
+                        'Modificação escrita em <strong>C++</strong> focada em <strong>Otimização de Performance</strong>.',
+                        'Direcionado para a correção da versão defeituosa na Windows Store.',
+                        'Resolve problemas de framerate, stutters pesados e otimiza a alocação de memória.'
+                    ]
+                },
+                en: {
+                    title: 'The Outer Worlds Fix',
+                    bullets: [
+                        'Modification written in <strong>C++</strong> focused on <strong>Performance Optimization</strong>.',
+                        'Targeted at fixing the flawed Windows Store version.',
+                        'Resolves framerate issues, heavy stutters, and optimizes memory allocation.'
+                    ]
+                }
+            },
+            {
+                id: 'qos_injector',
+                featured: false,
+                image: 'https://staticdelivery.nexusmods.com/mods/6689/images/thumbnails/77/77-1757967325-194898673.png',
+                live: 'https://www.nexusmods.com/007quantumofsolace/mods/77',
+                pt: {
+                    title: '007 QoS Vulkan Injector',
+                    bullets: [
+                        'Script de injeção em <strong>Python</strong> utilizando técnicas de manipulação de <strong>APIs Gráficas</strong>.',
+                        'Injeta dinamicamente bibliotecas Vulkan (DXVK) no jogo 007 Quantum of Solace.',
+                        'Melhora substancialmente a performance e estabilidade em hardwares recentes.'
+                    ]
+                },
+                en: {
+                    title: '007 QoS Vulkan Injector',
+                    bullets: [
+                        'Injection script in <strong>Python</strong> using <strong>Graphics APIs</strong> manipulation techniques.',
+                        'Dynamically injects Vulkan libraries (DXVK) into the 007 Quantum of Solace game.',
+                        'Substantially improves performance and stability on recent hardware.'
+                    ]
+                }
+            },
+            {
+                id: 'gamelist_extractor',
+                featured: false,
+                image: 'https://icons.veryicon.com/png/o/miscellaneous/effevo/game-49.png',
+                repo: 'https://github.com/Spet001/Xbox-Gamelist-Extractor',
+                pt: {
+                    title: 'Xbox Gamelist Extractor',
+                    bullets: [
+                        'Automação de <strong>Web Scraping</strong> utilizando <strong>Python</strong> e a biblioteca <strong>Selenium</strong>.',
+                        'Aplicação Desktop com interface gráfica construída em <strong>Tkinter</strong>.',
+                        'Extrai listas massivas de jogos e estatísticas de uso de perfis da rede Xbox.'
+                    ]
+                },
+                en: {
+                    title: 'Xbox Gamelist Extractor',
+                    bullets: [
+                        '<strong>Web Scraping</strong> automation using <strong>Python</strong> and the <strong>Selenium</strong> library.',
+                        'Desktop application with graphical interface built in <strong>Tkinter</strong>.',
+                        'Extracts massive game lists and usage statistics from Xbox network profiles.'
+                    ]
+                }
+            },
+            {
+                id: 'pygopher',
+                featured: false,
+                image: 'https://marketplace.canva.com/FEYrM/MAGCfbFEYrM/1/tl/canva-neon-esports-gaming-joystick-icon-MAGCfbFEYrM.png',
+                repo: 'https://github.com/Spet001/PYGopher',
+                pt: {
+                    title: 'PYGopher - Mouse Joystick',
+                    bullets: [
+                        'Modernização completa do projeto Gopher360, reescrita de forma nativa em <strong>Python</strong>.',
+                        'Interface gráfica de configuração feita com <strong>Tkinter</strong> focada em <strong>Acessibilidade</strong>.',
+                        'Permite controle total do mouse no Windows mapeando comandos via joystick.'
+                    ]
+                },
+                en: {
+                    title: 'PYGopher - Mouse Joystick',
+                    bullets: [
+                        'Complete modernization of the Gopher360 project, natively rewritten in <strong>Python</strong>.',
+                        'Graphical configuration interface made with <strong>Tkinter</strong> focused on <strong>Accessibility</strong>.',
+                        'Allows full mouse control in Windows by mapping commands via joystick.'
+                    ]
+                }
+            },
+            {
+                id: 'textmap_converter',
+                featured: false,
+                image: 'https://aitap.github.io/2024/01/01/incomplete_sectors.png',
+                repo: 'https://github.com/Spet001/TEXTMAP-to-Unity-Object',
+                pt: {
+                    title: 'UDMF TEXTMAP to OBJ',
+                    bullets: [
+                        'Ferramenta de linha de comando baseada em <strong>Python</strong> para pipelines de ferramentas.',
+                        'Processa metadados <strong>UDMF</strong> de mapas retro do jogo Doom (TEXTMAP).',
+                        'Realiza a <strong>Conversão 3D</strong> da geometria gerando arquivos ".OBJ" prontos para Unity.'
+                    ]
+                },
+                en: {
+                    title: 'UDMF TEXTMAP to OBJ',
+                    bullets: [
+                        'Command-line tool based on <strong>Python</strong> for tooling pipelines.',
+                        'Processes <strong>UDMF</strong> metadata from retro Doom maps (TEXTMAP).',
+                        'Performs <strong>3D Conversion</strong> of geometry generating ".OBJ" files ready for Unity.'
+                    ]
+                }
+            }
+        ];
+
+        // --- CONTEXT ---
+        const LanguageContext = createContext();
+
+        // --- CUSTOM HOOKS ---
+        const useIntersectionObserver = (options = {}) => {
+            const [isIntersecting, setIsIntersecting] = useState(false);
+            const ref = useRef(null);
+
+            useEffect(() => {
+                const element = ref.current;
+                if (!element) return;
+                const observer = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) {
+                        setIsIntersecting(true);
+                        observer.unobserve(element);
+                    }
+                }, { threshold: 0.1, ...options });
+
+                observer.observe(element);
+                return () => observer.unobserve(element);
+            }, [options]);
+
+            return [ref, isIntersecting];
+        };
+
+        const FadeInSection = ({ children, className = '', delay = '' }) => {
+            const [ref, isVisible] = useIntersectionObserver();
+            return (
+                <div ref={ref} className={`fade-in-section ${isVisible ? 'is-visible' : ''} ${className}`} style={{ transitionDelay: delay }}>
+                    {children}
+                </div>
+            );
+        };
+
+        // --- COMPONENTS ---
+        const Starfield = () => {
+            const canvasRef = useRef(null);
+            const moonPosRef = useRef({ x: window.innerWidth * 0.7, y: window.innerHeight * 0.3 });
+            const keysRef = useRef({});
+
+            useEffect(() => {
+                const canvas = canvasRef.current;
+                const ctx = canvas.getContext('2d');
+                let animationFrameId;
+                let stars = [];
+
+                const initStars = () => {
+                    stars = Array.from({ length: 400 }).map(() => ({
+                        x: Math.random() * window.innerWidth,
+                        y: Math.random() * window.innerHeight,
+                        z: Math.random() * window.innerWidth,
+                        size: Math.random() * 1.5 + 0.5
+                    }));
+                };
+
+                const handleResize = () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    initStars();
+                };
+
+                handleResize();
+
+                const handleKeyDown = (e) => keysRef.current[e.key] = true;
+                const handleKeyUp = (e) => keysRef.current[e.key] = false;
+                window.addEventListener('keydown', handleKeyDown);
+                window.addEventListener('keyup', handleKeyUp);
+                window.addEventListener('resize', handleResize);
+
+                const render = () => {
+                    const speed = 4;
+                    if (keysRef.current['ArrowUp']) moonPosRef.current.y -= speed;
+                    if (keysRef.current['ArrowDown']) moonPosRef.current.y += speed;
+                    if (keysRef.current['ArrowLeft']) moonPosRef.current.x -= speed;
+                    if (keysRef.current['ArrowRight']) moonPosRef.current.x += speed;
+
+                    ctx.fillStyle = '#050505';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                    // Draw Moon
+                    const gradient = ctx.createRadialGradient(
+                        moonPosRef.current.x, moonPosRef.current.y, 10,
+                        moonPosRef.current.x, moonPosRef.current.y, 60
+                    );
+                    gradient.addColorStop(0, 'rgba(0, 170, 255, 0.15)');
+                    gradient.addColorStop(1, 'rgba(0, 170, 255, 0)');
+
+                    ctx.fillStyle = gradient;
+                    ctx.beginPath();
+                    ctx.arc(moonPosRef.current.x, moonPosRef.current.y, 80, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    ctx.fillStyle = '#e2e8f0';
+                    ctx.beginPath();
+                    ctx.arc(moonPosRef.current.x, moonPosRef.current.y, 30, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // Craters
+                    ctx.fillStyle = 'rgba(15, 23, 42, 0.2)';
+                    ctx.beginPath(); ctx.arc(moonPosRef.current.x - 10, moonPosRef.current.y - 10, 6, 0, Math.PI * 2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(moonPosRef.current.x + 12, moonPosRef.current.y + 5, 8, 0, Math.PI * 2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(moonPosRef.current.x - 5, moonPosRef.current.y + 15, 4, 0, Math.PI * 2); ctx.fill();
+
+                    // Move & Draw Stars
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                    stars.forEach(star => {
+                        star.z -= 0.5; // speed
+                        if (star.z <= 0) {
+                            star.z = canvas.width;
+                            star.x = Math.random() * canvas.width;
+                            star.y = Math.random() * canvas.height;
+                        }
+                        const perspective = canvas.width / star.z;
+                        const px = (star.x - canvas.width / 2) * perspective + canvas.width / 2;
+                        const py = (star.y - canvas.height / 2) * perspective + canvas.height / 2;
+                        const pSize = star.size * perspective * 0.5;
+
+                        ctx.beginPath();
+                        ctx.arc(px, py, pSize > 0 ? pSize : 0.1, 0, Math.PI * 2);
+                        ctx.fill();
+                    });
+
+                    animationFrameId = requestAnimationFrame(render);
+                };
+
+                render();
+
+                return () => {
+                    window.removeEventListener('keydown', handleKeyDown);
+                    window.removeEventListener('keyup', handleKeyUp);
+                    window.removeEventListener('resize', handleResize);
+                    cancelAnimationFrame(animationFrameId);
+                };
+            }, []);
+
+            return <canvas ref={canvasRef} className="fixed inset-0 -z-10 opacity-70" />;
+        };
+
+        const Logo = () => (
+            <div className="flex items-center gap-2 text-xl font-bold tracking-tighter text-white">
+                <svg viewBox="0 0 90 80" className="w-8 h-8 text-primary" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round">
+                    <path d="M75,20 L40,20 C30,20 20,30 20,40 L20,50 C20,60 30,70 40,70 L60,70" />
+                    <path d="M60,70 C70,70 80,60 80,50 L80,45" />
+                </svg>
+                <span>Spet<span className="text-primary">Dev</span></span>
+            </div>
+        );
+
+        const Navbar = ({ setEasterEgg }) => {
+            const { lang, setLang, t } = useContext(LanguageContext);
+            const cvLink = lang === 'en' ? './assets/Eduardo_Gelain_Dev.pt.en.pdf' : './assets/Eduardo_Gelain_Dev.pdf';
+            const [showMenu, setShowMenu] = useState(false);
+
+            return (
+                <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 transition-all">
+                    <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+                        <div className="flex items-center gap-6">
+                            <a href="#top"><Logo /></a>
+
+                            {/* Easter egg switch */}
+                            <div className="relative hidden md:block">
+                                <button
+                                    onClick={() => setShowMenu(!showMenu)}
+                                    className="opacity-20 hover:opacity-100 transition-opacity flex items-center"
+                                    title="Easter Eggs"
+                                >
+                                    <img src="https://static.wikia.nocookie.net/gta-myths/images/b/b4/Gant_Bridge_Easter_Egg_Sign.png" alt="Sign" className="h-8 w-auto object-contain" />
+                                </button>
+
+                                {showMenu && (
+                                    <div className="absolute top-full left-0 mt-4 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-xl overflow-hidden z-50">
+                                        <button onClick={() => { setEasterEgg('doom'); setShowMenu(false); }} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition">
+                                            <i className="fas fa-ghost mr-2"></i>{t('easter.doom')}
+                                        </button>
+                                        <button onClick={() => { setEasterEgg('gta'); setShowMenu(false); }} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition border-t border-slate-700">
+                                            <i className="fas fa-car mr-2"></i>{t('easter.gta')}
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                            <a href="#about" className="hover:text-primary transition-colors">{t('nav.about')}</a>
+                            <a href="#projects" className="hover:text-primary transition-colors">{t('nav.projects')}</a>
+                            <a href={cvLink} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('nav.cv')}</a>
+                            <a href="https://github.com/Spet001" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+                                <i className="fab fa-github text-lg"></i>
+                            </a>
+
+                            <div className="w-px h-5 bg-slate-700 mx-2"></div>
+
+                            <div className="flex gap-2 bg-slate-900 rounded-full p-1 border border-slate-800">
+                                <button onClick={() => setLang('pt')} className={`px-3 py-1 rounded-full text-xs transition-colors ${lang === 'pt' ? 'bg-primary text-white' : 'hover:text-white'}`}>PT</button>
+                                <button onClick={() => setLang('en')} className={`px-3 py-1 rounded-full text-xs transition-colors ${lang === 'en' ? 'bg-primary text-white' : 'hover:text-white'}`}>EN</button>
+                            </div>
+                        </div>
+
+                        {/* Mobile Lang Toggle */}
+                        <div className="md:hidden flex items-center gap-4">
+                            {/* Easter egg switch mobile */}
+                            <div className="relative">
+                                <button
+                                    onClick={() => setShowMenu(!showMenu)}
+                                    className="opacity-50 hover:opacity-100 transition-opacity flex items-center"
+                                >
+                                    <img src="https://static.wikia.nocookie.net/gta-myths/images/b/b4/Gant_Bridge_Easter_Egg_Sign.png" alt="Sign" className="h-6 w-auto object-contain" />
+                                </button>
+                                {showMenu && (
+                                    <div className="absolute top-full right-0 mt-4 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-xl overflow-hidden z-50">
+                                        <button onClick={() => { setEasterEgg('doom'); setShowMenu(false); }} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition">
+                                            <i className="fas fa-ghost mr-2"></i>{t('easter.doom')}
+                                        </button>
+                                        <button onClick={() => { setEasterEgg('gta'); setShowMenu(false); }} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition border-t border-slate-700">
+                                            <i className="fas fa-car mr-2"></i>{t('easter.gta')}
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+
+                            <button onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')} className="text-xs font-bold border border-slate-700 px-3 py-1 rounded-full hover:border-primary text-primary transition">
+                                {lang === 'pt' ? 'EN' : 'PT'}
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            );
+        };
+
+        const Hero = () => {
+            const { t } = useContext(LanguageContext);
+            return (
+                <section id="top" className="min-h-screen flex items-center pt-20">
+                    <div className="max-w-6xl mx-auto px-6 w-full">
+                        <FadeInSection>
+                            <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+                                <span className="relative flex h-3 w-3">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                </span>
+                                {t('hero.status')}
+                            </div>
+                        </FadeInSection>
+
+                        <FadeInSection delay="100ms">
+                            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+                                Eduardo Gelain
+                            </h1>
+                            <h2 className="text-2xl md:text-3xl text-primary font-medium mb-6">
+                                {t('hero.role')}
+                            </h2>
+                        </FadeInSection>
+
+                        <FadeInSection delay="200ms">
+                            <p className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed">
+                                {t('hero.desc')}
+                            </p>
+
+                            <div className="flex flex-wrap items-center gap-4">
+                                <a href="#projects" className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primaryHover transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/25">
+                                    {t('hero.cta')}
+                                </a>
+                                <div className="flex items-center gap-4 px-4 text-slate-400">
+                                    <a href="https://github.com/Spet001" target="_blank" rel="noreferrer" className="hover:text-white transition transform hover:scale-110"><i className="fab fa-github text-2xl"></i></a>
+                                    <a href="https://www.linkedin.com/in/eduardo-gelain/" target="_blank" rel="noreferrer" className="hover:text-white transition transform hover:scale-110"><i className="fab fa-linkedin text-2xl"></i></a>
+                                    <a href="mailto:gelain15mj@gmail.com" className="hover:text-white transition transform hover:scale-110"><i className="fas fa-envelope text-2xl"></i></a>
+                                </div>
+                            </div>
+                        </FadeInSection>
+
+                        <FadeInSection delay="400ms">
+                            <p className="mt-16 text-sm text-slate-500 flex items-center gap-2">
+                                <i className="fas fa-keyboard opacity-50"></i> {t('hero.hint')}
+                            </p>
+                        </FadeInSection>
+                    </div>
+                </section>
+            );
+        };
+
+        const TechStack = () => {
+            const icons = ['cs', 'python', 'unity', 'c', 'cpp', 'js', 'ts', 'react', 'git', 'powershell'];
+            return (
+                <div className="flex flex-wrap gap-3 mt-6">
+                    {icons.map(icon => (
+                        <img
+                            key={icon}
+                            src={`https://skillicons.dev/icons?i=${icon}&theme=dark`}
+                            alt={icon}
+                            className="w-10 h-10 hover:scale-110 hover:-translate-y-1 transition-transform cursor-help opacity-80 hover:opacity-100"
+                        />
+                    ))}
+                </div>
+            );
+        };
+
+        const About = () => {
+            const { t } = useContext(LanguageContext);
+            const bullets = t('about.bullets', { returnObjects: true });
+
+            return (
+                <section id="about" className="py-24 relative">
+                    <div className="max-w-6xl mx-auto px-6">
+                        <FadeInSection>
+                            <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+                                <i className="fas fa-terminal text-primary text-xl"></i> {t('about.title')}
+                            </h2>
+                        </FadeInSection>
+
+                        <div className="grid md:grid-cols-12 gap-12">
+                            <div className="md:col-span-7 space-y-6">
+                                <FadeInSection delay="100ms">
+                                    <p className="text-slate-300 text-lg leading-relaxed">
+                                        {t('about.text')}
+                                    </p>
+                                </FadeInSection>
+
+                                <FadeInSection delay="200ms">
+                                    <ul className="space-y-4 mt-6">
+                                        {Array.isArray(bullets) && bullets.map((bullet, idx) => {
+                                            const [bold, ...rest] = bullet.split(':');
+                                            return (
+                                                <li key={idx} className="flex items-start gap-3 text-slate-400">
+                                                    <i className="fas fa-check-circle text-primary mt-1.5 text-sm shrink-0"></i>
+                                                    <span className="leading-relaxed">
+                                                        <strong className="text-slate-200">{bold}:</strong>{rest.join(':')}
+                                                    </span>
+                                                </li>
+                                            );
+                                        })}
+                                    </ul>
+                                </FadeInSection>
+                            </div>
+
+                            <div className="md:col-span-5">
+                                <FadeInSection delay="300ms">
+                                    <div className="glass-panel p-8 rounded-2xl h-full flex flex-col justify-center">
+                                        <h3 className="text-xl font-semibold text-white mb-4">{t('about.skillsTitle')}</h3>
+                                        <TechStack />
+
+                                        <h3 className="text-xl font-semibold text-white mt-8 mb-4">{t('about.softSkillsTitle')}</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Problem Solving', 'Reverse Engineering', 'Clean Architecture', 'QA / Bug Tracking', 'Automation'].map(skill => (
+                                                <span key={skill} className="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-xs text-slate-300 font-medium">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </FadeInSection>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        const ProjectCard = ({ project, lang }) => {
+            const data = project[lang];
+            const { t } = useContext(LanguageContext);
+
+            return (
+                <FadeInSection>
+                    <div className="glass-panel rounded-2xl overflow-hidden flex flex-col h-full group">
+                        {/* Image section */}
+                        <div className="h-48 overflow-hidden relative bg-slate-900 border-b border-slate-800">
+                            {project.image ? (
+                                <img src={project.image} alt={data.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+                            ) : (
+                                <div className="w-full h-full flex items-center justify-center text-4xl text-slate-700">
+                                    <i className="fas fa-code"></i>
+                                </div>
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="p-6 flex flex-col flex-grow">
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{data.title}</h3>
+
+                            <ul className="space-y-2 mb-6 flex-grow">
+                                {data.bullets.map((bullet, idx) => (
+                                    <li key={idx} className="text-sm text-slate-400 flex items-start gap-2">
+                                        <span className="text-primary mt-1 text-[10px]">▹</span>
+                                        <span dangerouslySetInnerHTML={{ __html: bullet }}></span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {/* Actions */}
+                            <div className="flex gap-3 mt-auto">
+                                {project.repo && (
+                                    <a href={project.repo} target="_blank" rel="noreferrer" className="flex-1 flex justify-center items-center gap-2 py-2 text-sm font-medium text-slate-300 bg-slate-800/50 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors">
+                                        <i className="fab fa-github"></i> {t('projects.btnRepo')}
+                                    </a>
+                                )}
+                                {project.live && (
+                                    <a href={project.live} target="_blank" rel="noreferrer" className="flex-1 flex justify-center items-center gap-2 py-2 text-sm font-medium text-white bg-primary/90 hover:bg-primary rounded-lg transition-colors shadow-lg shadow-primary/20">
+                                        <i className="fas fa-external-link-alt"></i> {t('projects.btnLive')}
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </FadeInSection>
+            );
+        };
+
+
+
+        const Projects = () => {
+            const { t, lang } = useContext(LanguageContext);
+            const featured = projectData.filter(p => p.featured);
+            const minor = projectData.filter(p => !p.featured);
+
+            return (
+                <section id="projects" className="py-24 relative">
+                    <div className="max-w-6xl mx-auto px-6">
+                        <FadeInSection>
+                            <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+                                <i className="fas fa-layer-group text-primary text-xl"></i> {t('projects.title')}
+                            </h2>
+                        </FadeInSection>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                            {featured.map(project => (
+                                <ProjectCard key={project.id} project={project} lang={lang} />
+                            ))}
+                        </div>
+
+                        <FadeInSection>
+                            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                                <i className="fas fa-wrench text-primary text-xl"></i> {t('projects.minorTitle')}
+                            </h3>
+                        </FadeInSection>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {minor.map(project => (
+                                <ProjectCard key={project.id} project={project} lang={lang} />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        const EasterEgg = ({ active, setActive }) => {
+            const { t } = useContext(LanguageContext);
+
+            if (!active) return null;
+
+            const url = active === 'doom'
+                ? 'https://ustymukhman.github.io/webDOOM/public/'
+                : 'https://cdn.dos.zone/vcsky/release/vc-sky-en-v4/index.html?lang=en';
+
+            return (
+                <div className="fixed inset-0 z-[100] bg-black flex flex-col">
+                    <div className="p-4 flex justify-between items-center bg-slate-900 border-b border-slate-800">
+                        <div className="flex gap-4">
+                            <a href={url} target="_blank" rel="noreferrer" className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded text-sm transition">
+                                <i className="fas fa-external-link-alt mr-2"></i>{t('easter.openNew')}
+                            </a>
+                        </div>
+                        <button onClick={() => setActive(null)} className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded flex items-center gap-2 transition">
+                            <i className="fas fa-times"></i> {t('easter.exit')}
+                        </button>
+                    </div>
+                    <iframe src={url} className="w-full flex-grow border-none" title="Easter Egg Game"></iframe>
+                </div>
+            );
+        };
+
+        const Footer = ({ setEasterEgg }) => {
+            const { t } = useContext(LanguageContext);
+            const [showMenu, setShowMenu] = useState(false);
+
+            return (
+                <footer className="py-12 border-t border-slate-800/50 relative mt-12 bg-slate-950/50">
+                    <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm">
+                        <div>
+                            &copy; {new Date().getFullYear()} Eduardo Gelain. Made with <i className="fas fa-coffee text-amber-600"></i> & React.
+                        </div>
+
+                        {/* Easter egg hidden menu */}
+                        <div className="relative">
+                            <button
+                                onClick={() => setShowMenu(!showMenu)}
+                                className="opacity-50 hover:opacity-100 transition-opacity text-xs"
+                            >
+                                {t('easter.hint')}
+                            </button>
+
+                            {showMenu && (
+                                <div className="absolute bottom-full right-0 mb-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-xl overflow-hidden z-50">
+                                    <button onClick={() => setEasterEgg('doom')} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition">
+                                        <i className="fas fa-ghost mr-2"></i>{t('easter.doom')}
+                                    </button>
+                                    <button onClick={() => setEasterEgg('gta')} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition border-t border-slate-700">
+                                        <i className="fas fa-car mr-2"></i>{t('easter.gta')}
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </footer>
+            );
+        };
+
+        const App = () => {
+            const [lang, setLang] = useState('pt');
+            const [easterEgg, setEasterEgg] = useState(null);
+
+            const t = (path, options = {}) => {
+                const keys = path.split('.');
+                let result = translations[lang];
+                for (const key of keys) {
+                    if (result[key] === undefined) return path;
+                    result = result[key];
+                }
+                return result;
+            };
+
+            return (
+                <LanguageContext.Provider value={{ lang, setLang, t }}>
+                    <Starfield />
+                    <Navbar setEasterEgg={setEasterEgg} />
+                    <main>
+                        <Hero />
+                        <About />
+                        <Projects />
+                    </main>
+                    <Footer setEasterEgg={setEasterEgg} />
+                    <EasterEgg active={easterEgg} setActive={setEasterEgg} />
+                </LanguageContext.Provider>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
 </body>
+
 </html>
