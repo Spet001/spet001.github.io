@@ -2,6 +2,8 @@ const { useState, useEffect, useRef, createContext, useContext } = React;
 
 const allProjects = [
     // PROJETOS EM DESTAQUE - Featured Projects
+    // NOTA PARA SI PRÓPRIO: Faz um rewrite disso tudo, por favor
+    //
     // 1. Outcaster templates
     {
         id: 'outcaster',
@@ -37,22 +39,22 @@ const allProjects = [
             description: "Complete graphic translation of the original Doom WAD to Brazilian Portuguese. Includes cultural adaptation of all screens, menus, HUDs, and visual elements while perfectly maintaining the classic 90s pixel art aesthetic."
         }
     },
-    // 3. UWP Server Selector - Boiii Reimagined
+    // 3. Resurge
     {
         id: 'boiii_uwp',
-        image: "assets/bo3.png",
+        image: "https://resurge.gamer.gd/RESURGE_600_x_240_px_1.gif",
         technologies: ["C", "C++", "Electron", "DLL Injection"],
         repoUrl: "https://github.com/Spet001/BOIII-ReImagined-UWP",
-        liveUrl: "https://www.nexusmods.com/callofdutyblackops3/mods/36",
-        liveUrlTextKey: "nexus",
+        liveUrl: "https://resurge.gamer.gd/",
+        liveUrlTextKey: "resurgeWebsite",
         category: 'featured',
         pt: {
-            title: "UWP Server Selector - Boiii Reimagined",
-            description: "Cliente customizado completo para Call of Duty Black Ops 3 versão UWP com instalador Electron. Inclui injeção de DLLs da Microsoft Store (XCurl, GameChat2, Party), sistema de backup automático, compatibilidade cruzada Steam/MS Store e navegador de servidores (do cliente boiii) aprimorado para experiência multiplayer completa."
+            title: "Resurge Client",
+            description: `Cliente C/C++ de alta performance para BO3 (UWP/Steam).\n\n• Injeção de DLL: Contorna o sandboxing UWP injetando direto no Xgameruntime.\n• Modding de Rede: Viabiliza crossplay Steam-Xbox via engenharia reversa.\n• Gerenciador Electron: Automatiza downgrades, correções de segurança (T7 Patch) e atualizações via app nativo.`
         },
         en: {
-            title: "UWP Server Selector - Boiii Reimagined",
-            description: "Complete custom client for Call of Duty Black Ops 3 UWP version with Electron installer. Includes Microsoft Store DLL injection (XCurl, GameChat2, Party), automatic backup system, Steam/MS Store cross-compatibility, and enhanced server browser (from the boiii client) for complete multiplayer experience."
+            title: "Resurge Client",
+            description: `High-performance C/C++ custom client for BO3 (UWP/Steam).\n\n• DLL Injection: Bypasses UWP sandboxing by injecting directly into Xgameruntime.\n• Network Modding: Enables Steam-Xbox crossplay via reverse engineering.\n• Electron Manager: Automates downgrades, security fixes (T7 Patch), and updates via native app.`
         }
     },
     // 4. GSC Injector
@@ -301,21 +303,7 @@ const allProjects = [
         }
     },
     */
-    {
-        id: 'ff13_injector',
-        image: "./assets/ff13-traducao.png",
-        technologies: ["PowerShell", "File Injection", "Game Modding"],
-        repoUrl: "https://github.com/Spet001/FF13--PTBR-MS-Store",
-        category: 'minor',
-        pt: {
-            title: "FF13 PTBR Injector",
-            description: "Injetor PowerShell especializado para instalação direta de arquivos de modificação na imagem do jogo Final Fantasy XIII. Automatiza o processo de aplicação de patches e mods, incluindo traduções, em versões protegidas do jogo."
-        },
-        en: {
-            title: "FF13 PTBR Injector",
-            description: "Specialized PowerShell injector for direct installation of modification files into Final Fantasy XIII game image. Automates the process of applying patches and mods, including translations, to protected game versions."
-        }
-    },
+
     /*
     {
         id: 'gzdoom_uwp',
@@ -454,6 +442,7 @@ const LanguageProvider = ({ children }) => {
             itchIo: "Ver na itch.io",
             itchIo25d: "Ver na itch (2.5D)",
             itchIo3d: "Ver na itch (3D)",
+            resurgeWebsite: "Saiba Mais no Website",
             interactiveNote: "O meu portfólio é dinâmico! Use as setas <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> para controlar o background!",
             doomExit: "Sair do DOOM",
             easterEggExit: "Sair",
@@ -485,6 +474,7 @@ const LanguageProvider = ({ children }) => {
             itchIo: "View on itch.io",
             itchIo25d: "View on itch.io (2.5D)",
             itchIo3d: "View on itch.io (3D)",
+            resurgeWebsite: "Learn More on Website",
             interactiveNote: "My portfolio is dynamic! Use the arrow keys <span class='kbd-key'>&uarr;</span> <span class='kbd-key'>&larr;</span> <span class='kbd-key'>&darr;</span> <span class='kbd-key'>&rarr;</span> to control the background!",
             doomExit: "Exit DOOM",
             easterEggExit: "Exit",
@@ -845,7 +835,7 @@ const ProjectCard = ({ project }) => {
             </a>
             <div className="card-content">
                 <h3>{content.title}</h3>
-                <p>{content.description}</p>
+                <p style={{ whiteSpace: 'pre-wrap' }}>{content.description}</p>
                 <div className="tech-tags">{project.technologies.map(tech => <span key={tech} className="tag">{tech}</span>)}</div>
                 <div className="card-footer">
                     {hasRepoLink && <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary">{t('repoButton')}</a>}
