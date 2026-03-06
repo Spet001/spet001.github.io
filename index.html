@@ -127,7 +127,7 @@
                         "Quality Assurance (QA): Experiência prática com testes de software rigorosos, identificação de edge-cases e documentação em Jira/Trello."
                     ],
                     skillsTitle: "Stack Tecnológico",
-                    softSkillsTitle: "Soft Skills"
+
                 },
                 projects: {
                     title: "Projetos em Destaque",
@@ -162,7 +162,7 @@
                         "Quality Assurance (QA): Hands-on experience with rigorous software testing, identifying edge-cases, and documentation using Jira/Trello."
                     ],
                     skillsTitle: "Tech Stack",
-                    softSkillsTitle: "Soft Skills"
+
                 },
                 projects: {
                     title: "Featured Projects",
@@ -186,7 +186,7 @@
                 id: 'outcaster',
                 featured: true,
                 image: 'assets/outcaster img2.png',
-                live: 'https://spet01.itch.io/outcaster-a-3d-fps-template',
+                live: 'https://spet01.itch.io/',
                 pt: {
                     title: 'Outcaster - FPS Templates',
                     bullets: [
@@ -353,7 +353,7 @@
                 }
             },
 
-            // --- PROJETOS MENORES (FERRAMENTAS & ESTUDOS) ---
+
             {
                 id: 'iw7_mod_ex',
                 featured: false,
@@ -819,9 +819,6 @@
                                         <button onClick={() => { setEasterEgg('doom'); setShowMenu(false); }} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition">
                                             <i className="fas fa-ghost mr-2"></i>{t('easter.doom')}
                                         </button>
-                                        <button onClick={() => { setEasterEgg('gta'); setShowMenu(false); }} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition border-t border-slate-700">
-                                            <i className="fas fa-car mr-2"></i>{t('easter.gta')}
-                                        </button>
                                     </div>
                                 )}
                             </div>
@@ -857,9 +854,6 @@
                                     <div className="absolute top-full right-0 mt-4 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-xl overflow-hidden z-50">
                                         <button onClick={() => { setEasterEgg('doom'); setShowMenu(false); }} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition">
                                             <i className="fas fa-ghost mr-2"></i>{t('easter.doom')}
-                                        </button>
-                                        <button onClick={() => { setEasterEgg('gta'); setShowMenu(false); }} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition border-t border-slate-700">
-                                            <i className="fas fa-car mr-2"></i>{t('easter.gta')}
                                         </button>
                                     </div>
                                 )}
@@ -984,15 +978,6 @@
                                     <div className="glass-panel p-8 rounded-2xl h-full flex flex-col justify-center">
                                         <h3 className="text-xl font-semibold text-white mb-4">{t('about.skillsTitle')}</h3>
                                         <TechStack />
-
-                                        <h3 className="text-xl font-semibold text-white mt-8 mb-4">{t('about.softSkillsTitle')}</h3>
-                                        <div className="flex flex-wrap gap-2">
-                                            {['Problem Solving', 'Reverse Engineering', 'Clean Architecture', 'QA / Bug Tracking', 'Automation'].map(skill => (
-                                                <span key={skill} className="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-xs text-slate-300 font-medium">
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
                                     </div>
                                 </FadeInSection>
                             </div>
@@ -1124,10 +1109,6 @@
             return (
                 <footer className="py-12 border-t border-slate-800/50 relative mt-12 bg-slate-950/50">
                     <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-sm">
-                        <div>
-                            &copy; {new Date().getFullYear()} Eduardo Gelain. Made with <i className="fas fa-coffee text-amber-600"></i> & React.
-                        </div>
-
                         {/* Easter egg hidden menu */}
                         <div className="relative">
                             <button
@@ -1141,9 +1122,6 @@
                                 <div className="absolute bottom-full right-0 mb-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-xl overflow-hidden z-50">
                                     <button onClick={() => setEasterEgg('doom')} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition">
                                         <i className="fas fa-ghost mr-2"></i>{t('easter.doom')}
-                                    </button>
-                                    <button onClick={() => setEasterEgg('gta')} className="w-full text-left px-4 py-3 hover:bg-primary/20 hover:text-primary text-white transition border-t border-slate-700">
-                                        <i className="fas fa-car mr-2"></i>{t('easter.gta')}
                                     </button>
                                 </div>
                             )}
