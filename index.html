@@ -111,26 +111,25 @@
             pt: {
                 nav: { about: "Sobre", projects: "Projetos", cv: "Currículo", github: "GitHub" },
                 hero: {
-                    status: "Disponível para oportunidades",
+                    status: "",
                     role: "Software & Game Developer",
-                    desc: "Especialista em C#, Python e Unity. Focado em desenvolvimento de software, otimização de performance e engenharia reversa para criar soluções robustas.",
+                    desc: "Focado em desenvolvimento de software, otimização de performance e engenharia reversa para criar soluções robustas.",
                     cta: "Ver Projetos",
-                    hint: "Use as setas (↑ ← ↓ →) para explorar o espaço!"
+                    hint: "Tente usar as setas (↑ ← ↓ →) para uma surpresa interativa!"
                 },
                 about: {
                     title: "Sobre Mim",
-                    text: "Sou um desenvolvedor apaixonado por desvendar sistemas complexos e otimizar processos. Minha jornada transita entre a criação de experiências interativas (GameDev) e a construção de ferramentas de alta performance.",
+                    text: "Sou um Dev apaixonado em destrinchar sistemas, desenvolver soluções e otimizar processos. Minha jornada transita desde a criação de experiências interativas (como jogos) até a construção de otimizações complexas.",
                     bullets: [
-                        "Engenharia de Software & Ferramentas: Desenvolvimento de aplicações desktop e automação utilizando Python, Electron e Node.js.",
-                        "Desenvolvimento de Jogos: Arquitetura de sistemas na Unity (C#), com foco em código modular e Design Patterns.",
-                        "Engenharia Reversa & Modding: Exploração de ambientes restritos (UWP/Windows Store), injeção de DLLs nativas (C/C++) e otimização de renderização (DXVK/Vulkan).",
-                        "Quality Assurance (QA): Experiência prática com testes de software rigorosos, identificação de edge-cases e documentação em Jira/Trello."
+                        "Desenvolvimento de Jogos: Desenvolvimento de jogos/apps em Unity (C#) e Unreal (C++).",
+                        "Engenharia Reversa & Modding: Desenvolvimento e exploração em ambientes restritos (como o UWP/Windows Store), desenvolvimento de DLLs de injeção nativas (C/C++) e ferramentas de otimização/fixes.",
+                        "Quality Assurance (QA): Experiência prática com testes de software/jogos rigorosos, identificação de edge-cases e documentação."
                     ],
                     skillsTitle: "Stack Tecnológico",
 
                 },
                 projects: {
-                    title: "Projetos em Destaque",
+                    title: "Projetos/Experiências Profissionais",
                     btnRepo: "Código Fonte",
                     btnLive: "Ver Projeto",
                     minorTitle: "Ferramentas & Outros Projetos"
@@ -146,26 +145,25 @@
             en: {
                 nav: { about: "About", projects: "Projects", cv: "Resume", github: "GitHub" },
                 hero: {
-                    status: "Available for new opportunities",
+                    status: "",
                     role: "Software & Game Developer",
-                    desc: "Specialized in C#, Python, and Unity. Focused on software architecture, performance optimization, and reverse engineering to build robust solutions.",
+                    desc: "Focused on software architecture, performance optimization, and reverse engineering to build robust solutions.",
                     cta: "View Projects",
-                    hint: "Use the arrow keys (↑ ← ↓ →) to explore space!"
+                    hint: "Try using the arrow keys (↑ ← ↓ →) for an interactive surprise!"
                 },
                 about: {
                     title: "About Me",
-                    text: "I am a developer passionate about unraveling complex systems and optimizing processes. My journey moves between creating interactive experiences (GameDev) and building high-performance tools.",
+                    text: "I am a Dev passionate about unraveling systems, developing solutions, and optimizing processes. My journey moves from creating interactive experiences (like games) to building complex optimizations.",
                     bullets: [
-                        "Software Engineering & Tooling: Desktop application development and automation using Python, Electron, and Node.js.",
-                        "Game Development: Systems architecture in Unity (C#), focusing on modular code, Design Patterns, and publishing commercial games on Steam.",
-                        "Reverse Engineering & Modding: Exploring restricted environments (UWP/Windows Store), native DLL injection (C/C++), and rendering optimization (DXVK/Vulkan).",
-                        "Quality Assurance (QA): Hands-on experience with rigorous software testing, identifying edge-cases, and documentation using Jira/Trello."
+                        "Game Development: Development of games/apps in Unity (C#) and Unreal (C++).",
+                        "Reverse Engineering & Modding: Development and exploration in restricted environments (like UWP/Windows Store), development of native injection DLLs (C/C++) and optimization/fix tools.",
+                        "Quality Assurance (QA): Hands-on experience with rigorous software/game testing, identifying edge-cases, and documentation."
                     ],
                     skillsTitle: "Tech Stack",
 
                 },
                 projects: {
-                    title: "Featured Projects",
+                    title: "Projects/Professional Experiences",
                     btnRepo: "Source Code",
                     btnLive: "Live Demo",
                     minorTitle: "Tools & Minor Projects"
@@ -181,10 +179,34 @@
         };
 
         const projectData = [
-            // --- PROJETOS EM DESTAQUE ---
+            {
+                id: 'estagiario_ti',
+                categories: ['Experiência Profissional'],
+                image: '',
+                pt: {
+                    title: 'Estagiário de TI - Escola Estadual Valério Strang',
+                    bullets: [
+                        'Prestar apoio tecnico operacional nas unidades escolares.',
+                        'Prestar suporte ao uso pedagógico da tecnologia.',
+                        'Realizar acompanhamento e orientação básica aos usuários e apoiar à articulação com equipes responsáveis.',
+                        'Prestar apoio ao monitoramento e registro.',
+                        'Prestar manutenção de hardware e otimização de software (via scripts python e .ps1), instalação de SO, etc.'
+                    ]
+                },
+                en: {
+                    title: 'IT Intern - Valério Strang State School',
+                    bullets: [
+                        'Provide technical operational support in school units.',
+                        'Support the pedagogical use of technology.',
+                        'Perform monitoring and basic guidance to users and support articulation with responsible teams.',
+                        'Provide support for monitoring and logging.',
+                        'Provide hardware maintenance and software optimization (via Python and .ps1 scripts), OS installation, etc.'
+                    ]
+                }
+            },
             {
                 id: 'outcaster',
-                featured: true,
+                categories: ['GameDev'],
                 image: 'assets/outcaster img2.png',
                 live: 'https://spet01.itch.io/',
                 pt: {
@@ -208,7 +230,7 @@
             },
             {
                 id: 'doom_wad_ptbr',
-                featured: true,
+                categories: ['GameModding'],
                 image: '/assets/demotranslate.gif',
                 repo: 'https://github.com/Spet001/Doom-WAD-Traduzido-PTBR',
                 pt: {
@@ -232,7 +254,7 @@
             },
             {
                 id: 'resurge',
-                featured: true,
+                categories: ['GameModding'],
                 image: 'https://resurge.gamer.gd/RESURGE_600_x_240_px_1.gif',
                 repo: 'https://github.com/Spet001/BOIII-ReImagined-UWP',
                 live: 'https://resurge.gamer.gd/',
@@ -257,7 +279,7 @@
             },
             {
                 id: 'bo3_injector',
-                featured: true,
+                categories: ['GameModding'],
                 image: 'assets/gscinjector.png',
                 repo: 'https://github.com/Spet001/BO3-MicrosoftStore-GSC-Injector',
                 pt: {
@@ -281,11 +303,11 @@
             },
             {
                 id: 'sparky',
-                featured: true,
+                categories: ['Experiência Profissional'],
                 image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/257185670/d0cf56f005af6f109edd9ee603dc2da75fa0aaf1/movie_232x130.jpg?t=1756993430',
                 live: 'https://store.steampowered.com/app/3592020/Sparky_Rush_Purrils_in_Pawsville/',
                 pt: {
-                    title: 'QA Analyst - Sparky Rush',
+                    title: 'Analista de Testes Manuais QA - Sparky Rush',
                     bullets: [
                         'Atuação profissional como <strong>QA Analyst</strong> no jogo de plataforma 3D "Sparky Rush", publicado na Steam.',
                         'Identificação, reprodução e documentação detalhada de mais de 50 bugs críticos.',
@@ -294,7 +316,7 @@
                     ]
                 },
                 en: {
-                    title: 'QA Analyst - Sparky Rush',
+                    title: 'Manual QA Tester - Sparky Rush',
                     bullets: [
                         'Professional <strong>QA Analyst</strong> role on the 3D platformer "Sparky Rush", published on Steam.',
                         'Identification, reproduction, and detailed documentation of over 50 critical bugs.',
@@ -305,7 +327,7 @@
             },
             {
                 id: 'pau_no_gato',
-                featured: true,
+                categories: ['GameDev'],
                 image: 'https://img.itch.zone/aW1nLzIzNjkzMTg4LnBuZw==/315x250%23c/eUMvyr.png',
                 live: 'https://zodiacogames.itch.io/atirei-o-pau-no-gato-mas-o-gato-no-morreu-e-agora-ele-vai-se-vingar',
                 pt: {
@@ -329,9 +351,8 @@
             },
             {
                 id: 'grid_based_ue5',
-                featured: true,
+                categories: ['GameDev'],
                 image: 'https://img.itch.zone/aW1nLzI1MDk0NDM3LnBuZw==/315x250%23c/3CpBL%2B.png',
-                repo: 'https://github.com/Spet001/Project-J-UE5',
                 live: 'https://spet01.itch.io/grid-based-first-person-movement-template-unreal-5',
                 pt: {
                     title: 'Grid-Based Movement (UE5)',
@@ -353,77 +374,31 @@
                 }
             },
 
-
-            {
-                id: 'iw7_mod_ex',
-                featured: false,
-                image: 'https://pbs.twimg.com/media/F_udiLiW4AA8bKR.png',
-                repo: 'https://github.com/Spet001/iw7-mod-ex',
-                pt: {
-                    title: 'IW7-Mod-EX',
-                    bullets: [
-                        'Modificação avançada em <strong>C++</strong> para Call of Duty: Infinite Warfare (IW7).',
-                        'Utiliza <strong>Engenharia Reversa</strong> para trazer suporte a mods nas versões da Windows Store.',
-                        'Implementa camadas de compatibilidade e manipulação de memória (memory patches).'
-                    ]
-                },
-                en: {
-                    title: 'IW7-Mod-EX',
-                    bullets: [
-                        'Advanced modification in <strong>C++</strong> for Call of Duty: Infinite Warfare (IW7).',
-                        'Uses <strong>Reverse Engineering</strong> to bring mod support to Windows Store versions.',
-                        'Implements compatibility layers and memory patching.'
-                    ]
-                }
-            },
-            {
-                id: 'dark_souls_suite',
-                featured: false,
-                image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/211420/header.jpg',
-                repo: 'https://github.com/Spet001/Dark-Souls-PTDE-Enhancement-Suite',
-                pt: {
-                    title: 'Dark Souls PTDE Suite',
-                    bullets: [
-                        'Aplicação Desktop robusta desenvolvida em <strong>Electron</strong>, <strong>Node.js</strong> e <strong>JavaScript</strong>.',
-                        'Executa correções no registro do Windows usando scripts <strong>PowerShell</strong>.',
-                        'Instalador automático do mod DSFIX e integração FSR para upscaling moderno.'
-                    ]
-                },
-                en: {
-                    title: 'Dark Souls PTDE Suite',
-                    bullets: [
-                        'Robust Desktop application developed in <strong>Electron</strong>, <strong>Node.js</strong>, and <strong>JavaScript</strong>.',
-                        'Executes Windows registry fixes using <strong>PowerShell</strong> scripts.',
-                        'Automatic installer for the DSFIX mod and FSR integration for modern upscaling.'
-                    ]
-                }
-            },
             {
                 id: 'ff13fix',
-                featured: false,
+                categories: ['GameModding'],
                 image: 'https://staticdelivery.nexusmods.com/mods/2086/images/thumbnails/59/59-1754939857-517189306.png',
-                repo: 'https://github.com/Spet001/FF13-MS-Store',
                 live: 'https://www.nexusmods.com/finalfantasy13/mods/59',
                 pt: {
-                    title: 'FF13Fix UWP Mod Loader',
+                    title: 'FF13Fix for MS Store',
                     bullets: [
                         'Engenharia reversa do projeto FF13Fix original usando <strong>Python</strong> e <strong>C#</strong>.',
                         'Cria compatibilidade com a versão UWP (Microsoft Store).',
-                        'Quebra o sandboxing da plataforma para permitir injeção de DLLs de mods.'
+                        'Quebra o sandboxing da plataforma para permitir injeção de DLLs de otimização de performance.'
                     ]
                 },
                 en: {
-                    title: 'FF13Fix UWP Mod Loader',
+                    title: 'FF13Fix for MS Store',
                     bullets: [
                         'Reverse engineering of the original FF13Fix project using <strong>Python</strong> and <strong>C#</strong>.',
                         'Creates compatibility with the UWP (Microsoft Store) version.',
-                        'Breaks platform sandboxing to allow injection of mod DLLs.'
+                        'Breaks platform sandboxing to allow injection of performance optimization DLLs.'
                     ]
                 }
             },
             {
                 id: 'autoparms',
-                featured: false,
+                categories: ['GameModding'],
                 image: 'https://staticdelivery.nexusmods.com/mods/7333/images/thumbnails/181/181-1754787442-12213008.png',
                 live: 'https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/181',
                 pt: {
@@ -444,54 +419,31 @@
                 }
             },
             {
-                id: 'ladfixms',
-                featured: false,
-                image: 'https://staticdelivery.nexusmods.com/mods/7333/images/thumbnails/187/187-1757613976-1077513334.png',
-                live: 'https://www.nexusmods.com/likeadragonpirateyakuzainhawaii/mods/187',
+                id: 'textmap_converter',
+                categories: ['Software Development'],
+                image: 'https://aitap.github.io/2024/01/01/incomplete_sectors.png',
+                repo: 'https://github.com/Spet001/TEXTMAP-to-Unity-Object',
                 pt: {
-                    title: 'LADFixMS DLL Injector',
+                    title: 'UDMF TEXTMAP to .OBJ',
                     bullets: [
-                        'Ferramenta programada em <strong>Python</strong> focada em <strong>Engenharia Reversa</strong>.',
-                        'Sistema de injeção de DLLs para contornar a segurança da Microsoft Store.',
-                        'Permite modificações de comportamento profundas nos jogos da franquia Yakuza.'
+                        'Ferramenta de linha de comando baseada em Python para pipelines de ferramentas.',
+                        'Processa metadados UDMF TEXTMAP.',
+                        'Realiza a Conversão 3D da geometria gerando arquivos ".OBJ" prontos para Unity/Softwares de edição 3D.'
                     ]
                 },
                 en: {
-                    title: 'LADFixMS DLL Injector',
+                    title: 'UDMF TEXTMAP to .OBJ',
                     bullets: [
-                        'Tool programmed in <strong>Python</strong> focused on <strong>Reverse Engineering</strong>.',
-                        'DLL injection system to bypass Microsoft Store security.',
-                        'Allows deep behavior modifications in Yakuza franchise games.'
-                    ]
-                }
-            },
-            {
-                id: 'bioshock2_fix',
-                featured: false,
-                image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/8850/header.jpg',
-                repo: 'https://github.com/Spet001/Bioshock-2-GFWL-CrashFix',
-                pt: {
-                    title: 'Bioshock 2 GFWL CrashFix',
-                    bullets: [
-                        'App Desktop construído com <strong>Electron</strong> e <strong>JavaScript</strong>.',
-                        'Automatiza a instalação de bibliotecas <strong>DXVK</strong> para renderização Vulkan.',
-                        'Corrige crashes nativos do GFWL e protege arquivos de configuração do jogo.'
-                    ]
-                },
-                en: {
-                    title: 'Bioshock 2 GFWL CrashFix',
-                    bullets: [
-                        'Desktop App built with <strong>Electron</strong> and <strong>JavaScript</strong>.',
-                        'Automates the installation of <strong>DXVK</strong> libraries for Vulkan rendering.',
-                        'Fixes native GFWL crashes and protects game configuration files.'
+                        'Command-line tool based on Python for tooling pipelines.',
+                        'Processes UDMF TEXTMAP metadata.',
+                        'Performs 3D Conversion of geometry generating ".OBJ" files ready for Unity/3D Editing Software.'
                     ]
                 }
             },
             {
                 id: 'fable3_fixer',
-                featured: false,
+                categories: ['GameModding'],
                 image: 'https://staticdelivery.nexusmods.com/mods/1393/images/thumbnails/27/27-1760404050-299923963.png',
-                repo: 'https://github.com/Spet001/Fable3Fixer',
                 live: 'https://www.nexusmods.com/fableIII/mods/27',
                 pt: {
                     title: 'Fable 3 Fixer',
@@ -507,139 +459,6 @@
                         '1-click installer developed in <strong>JavaScript</strong> and <strong>Electron</strong>.',
                         'Applies <strong>DXVK</strong> to double the frame rate (FPS) on modern hardware.',
                         'Includes the 4GB patch and a compatible visual <strong>ReShade</strong> preset.'
-                    ]
-                }
-            },
-            {
-                id: 'yugioh_web',
-                featured: false,
-                image: 'https://api.duniagames.co.id/optimize-image?url=https%3A%2F%2Fapi.duniagames.co.id%2Fapi%2Fcontent%2Fupload%2Ffile%2F10761004641617614978.jpg&format=webp&width=736&signature=9ae54855200869f03ce89432e0bb46891a19c5c1607441acbbee41a57ff13860',
-                repo: 'https://github.com/Spet001/Yu-Gi-Oh-Forbidden-Memories-Web',
-                pt: {
-                    title: 'Yu-Gi-Oh! FM Web',
-                    bullets: [
-                        'Recriação web do clássico de PlayStation utilizando <strong>JavaScript</strong>, <strong>HTML5</strong> e <strong>CSS3</strong>.',
-                        'Implementação lógica do sistema original de cartas, fusões e batalhas.',
-                        'Experiência nostálgica e otimizada rodando inteiramente direto no navegador.'
-                    ]
-                },
-                en: {
-                    title: 'Yu-Gi-Oh! FM Web',
-                    bullets: [
-                        'Web recreation of the PlayStation classic using <strong>JavaScript</strong>, <strong>HTML5</strong>, and <strong>CSS3</strong>.',
-                        'Logical implementation of the original card system, fusions, and battles.',
-                        'Nostalgic and optimized experience running entirely in the browser.'
-                    ]
-                }
-            },
-            {
-                id: 'outer_worlds_fix',
-                featured: false,
-                image: 'https://staticdelivery.nexusmods.com/mods/3037/images/thumbnails/255/255-1759781056-241650861.jpg',
-                repo: 'https://github.com/Spet001/The-Outer-Worlds-Fix',
-                live: 'https://www.nexusmods.com/theouterworlds/mods/255',
-                pt: {
-                    title: 'The Outer Worlds Fix',
-                    bullets: [
-                        'Modificação escrita em <strong>C++</strong> focada em <strong>Otimização de Performance</strong>.',
-                        'Direcionado para a correção da versão defeituosa na Windows Store.',
-                        'Resolve problemas de framerate, stutters pesados e otimiza a alocação de memória.'
-                    ]
-                },
-                en: {
-                    title: 'The Outer Worlds Fix',
-                    bullets: [
-                        'Modification written in <strong>C++</strong> focused on <strong>Performance Optimization</strong>.',
-                        'Targeted at fixing the flawed Windows Store version.',
-                        'Resolves framerate issues, heavy stutters, and optimizes memory allocation.'
-                    ]
-                }
-            },
-            {
-                id: 'qos_injector',
-                featured: false,
-                image: 'https://staticdelivery.nexusmods.com/mods/6689/images/thumbnails/77/77-1757967325-194898673.png',
-                live: 'https://www.nexusmods.com/007quantumofsolace/mods/77',
-                pt: {
-                    title: '007 QoS Vulkan Injector',
-                    bullets: [
-                        'Script de injeção em <strong>Python</strong> utilizando técnicas de manipulação de <strong>APIs Gráficas</strong>.',
-                        'Injeta dinamicamente bibliotecas Vulkan (DXVK) no jogo 007 Quantum of Solace.',
-                        'Melhora substancialmente a performance e estabilidade em hardwares recentes.'
-                    ]
-                },
-                en: {
-                    title: '007 QoS Vulkan Injector',
-                    bullets: [
-                        'Injection script in <strong>Python</strong> using <strong>Graphics APIs</strong> manipulation techniques.',
-                        'Dynamically injects Vulkan libraries (DXVK) into the 007 Quantum of Solace game.',
-                        'Substantially improves performance and stability on recent hardware.'
-                    ]
-                }
-            },
-            {
-                id: 'gamelist_extractor',
-                featured: false,
-                image: 'https://icons.veryicon.com/png/o/miscellaneous/effevo/game-49.png',
-                repo: 'https://github.com/Spet001/Xbox-Gamelist-Extractor',
-                pt: {
-                    title: 'Xbox Gamelist Extractor',
-                    bullets: [
-                        'Automação de <strong>Web Scraping</strong> utilizando <strong>Python</strong> e a biblioteca <strong>Selenium</strong>.',
-                        'Aplicação Desktop com interface gráfica construída em <strong>Tkinter</strong>.',
-                        'Extrai listas massivas de jogos e estatísticas de uso de perfis da rede Xbox.'
-                    ]
-                },
-                en: {
-                    title: 'Xbox Gamelist Extractor',
-                    bullets: [
-                        '<strong>Web Scraping</strong> automation using <strong>Python</strong> and the <strong>Selenium</strong> library.',
-                        'Desktop application with graphical interface built in <strong>Tkinter</strong>.',
-                        'Extracts massive game lists and usage statistics from Xbox network profiles.'
-                    ]
-                }
-            },
-            {
-                id: 'pygopher',
-                featured: false,
-                image: 'https://marketplace.canva.com/FEYrM/MAGCfbFEYrM/1/tl/canva-neon-esports-gaming-joystick-icon-MAGCfbFEYrM.png',
-                repo: 'https://github.com/Spet001/PYGopher',
-                pt: {
-                    title: 'PYGopher - Mouse Joystick',
-                    bullets: [
-                        'Modernização completa do projeto Gopher360, reescrita de forma nativa em <strong>Python</strong>.',
-                        'Interface gráfica de configuração feita com <strong>Tkinter</strong> focada em <strong>Acessibilidade</strong>.',
-                        'Permite controle total do mouse no Windows mapeando comandos via joystick.'
-                    ]
-                },
-                en: {
-                    title: 'PYGopher - Mouse Joystick',
-                    bullets: [
-                        'Complete modernization of the Gopher360 project, natively rewritten in <strong>Python</strong>.',
-                        'Graphical configuration interface made with <strong>Tkinter</strong> focused on <strong>Accessibility</strong>.',
-                        'Allows full mouse control in Windows by mapping commands via joystick.'
-                    ]
-                }
-            },
-            {
-                id: 'textmap_converter',
-                featured: false,
-                image: 'https://aitap.github.io/2024/01/01/incomplete_sectors.png',
-                repo: 'https://github.com/Spet001/TEXTMAP-to-Unity-Object',
-                pt: {
-                    title: 'UDMF TEXTMAP to OBJ',
-                    bullets: [
-                        'Ferramenta de linha de comando baseada em <strong>Python</strong> para pipelines de ferramentas.',
-                        'Processa metadados <strong>UDMF</strong> de mapas retro do jogo Doom (TEXTMAP).',
-                        'Realiza a <strong>Conversão 3D</strong> da geometria gerando arquivos ".OBJ" prontos para Unity.'
-                    ]
-                },
-                en: {
-                    title: 'UDMF TEXTMAP to OBJ',
-                    bullets: [
-                        'Command-line tool based on <strong>Python</strong> for tooling pipelines.',
-                        'Processes <strong>UDMF</strong> metadata from retro Doom maps (TEXTMAP).',
-                        'Performs <strong>3D Conversion</strong> of geometry generating ".OBJ" files ready for Unity.'
                     ]
                 }
             }
@@ -827,7 +646,7 @@
                         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                             <a href="#about" className="hover:text-primary transition-colors">{t('nav.about')}</a>
                             <a href="#projects" className="hover:text-primary transition-colors">{t('nav.projects')}</a>
-                            <a href={cvLink} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('nav.cv')}</a>
+                            {/* <a href={cvLink} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">{t('nav.cv')}</a> */}
                             <a href="https://github.com/Spet001" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
                                 <i className="fab fa-github text-lg"></i>
                             </a>
@@ -874,12 +693,11 @@
                 <section id="top" className="min-h-screen flex items-center pt-20">
                     <div className="max-w-6xl mx-auto px-6 w-full">
                         <FadeInSection>
-                            <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+                            <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
                                 <span className="relative flex h-3 w-3">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
                                 </span>
-                                {t('hero.status')}
                             </div>
                         </FadeInSection>
 
@@ -1042,32 +860,37 @@
 
         const Projects = () => {
             const { t, lang } = useContext(LanguageContext);
-            const featured = projectData.filter(p => p.featured);
-            const minor = projectData.filter(p => !p.featured);
+            const [filter, setFilter] = useState('todos');
+
+            const categories = ['todos', 'Software Development', 'GameDev', 'GameModding', 'Experiência Profissional'];
+
+            const filteredProjects = projectData.filter(p => filter === 'todos' || p.categories.includes(filter));
 
             return (
                 <section id="projects" className="py-24 relative">
                     <div className="max-w-6xl mx-auto px-6">
                         <FadeInSection>
-                            <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+                            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
                                 <i className="fas fa-layer-group text-primary text-xl"></i> {t('projects.title')}
                             </h2>
                         </FadeInSection>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                            {featured.map(project => (
-                                <ProjectCard key={project.id} project={project} lang={lang} />
-                            ))}
-                        </div>
-
-                        <FadeInSection>
-                            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                                <i className="fas fa-wrench text-primary text-xl"></i> {t('projects.minorTitle')}
-                            </h3>
+                        <FadeInSection delay="100ms">
+                            <div className="flex flex-wrap gap-3 mb-12">
+                                {categories.map(cat => (
+                                    <button 
+                                        key={cat}
+                                        onClick={() => setFilter(cat)}
+                                        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors border ${filter === cat ? 'bg-primary text-white border-primary' : 'bg-slate-800/50 text-slate-400 border-slate-700 hover:text-white hover:bg-slate-700 hover:border-slate-600'}`}
+                                    >
+                                        {cat === 'todos' ? (lang === 'pt' ? 'Todos' : 'All') : cat}
+                                    </button>
+                                ))}
+                            </div>
                         </FadeInSection>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {minor.map(project => (
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                            {filteredProjects.map(project => (
                                 <ProjectCard key={project.id} project={project} lang={lang} />
                             ))}
                         </div>
